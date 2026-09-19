@@ -1,0 +1,5 @@
+@media (min-width: 851px) {
+  .shop-hero { min-height: 480px; }
+  .shop-hero-copy { padding: 72px clamp(48px, 6vw, 96px); }
+  .shop-hero h1 { font-size: clamp(58px, 4.8vw, 76px); }
+}

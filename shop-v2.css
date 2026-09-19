@@ -1,0 +1,17 @@
+/* Product images already open their product pages, so the repeated text link is removed. */
+.shop-product .product-link { display:none; }
+.maker-story { display:grid; grid-template-columns:1fr 1fr; min-height:620px; background:var(--charcoal); color:#fff; }
+.maker-image { min-height:500px; overflow:hidden; }.maker-image img { width:100%; height:100%; object-fit:cover; display:block; }
+.maker-copy { padding:clamp(60px,8vw,120px); display:flex; flex-direction:column; justify-content:center; }
+.maker-copy h2 { font-family:var(--display); font-size:clamp(48px,4.8vw,74px); line-height:.96; text-transform:uppercase; margin:0; max-width:660px; }
+.maker-copy>p:not(.eyebrow) { font-size:18px; line-height:1.55; max-width:540px; margin:26px 0 32px; color:#e4e4e4; }
+.text-action { color:var(--gold); display:inline-block; width:max-content; text-transform:uppercase; letter-spacing:.9px; font-weight:700; font-size:12px; text-decoration:none; border-bottom:2px solid var(--gold); padding-bottom:6px; }
+.collection-explorer { display:grid; grid-template-columns:.78fr 1.22fr; gap:clamp(44px,8vw,120px); padding:clamp(76px,9vw,130px) clamp(24px,7vw,108px); background:var(--silver); }
+.collection-heading h2 { font-family:var(--display); font-size:clamp(52px,5vw,78px); line-height:.95; text-transform:uppercase; margin:0; }
+.collection-heading>p:not(.eyebrow) { font-size:17px; line-height:1.55; max-width:340px; margin:25px 0 0; }
+.collection-routes { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; align-self:end; }
+.collection-route { min-height:330px; padding:28px; text-decoration:none; color:var(--charcoal); display:flex; flex-direction:column; justify-content:space-between; transition:transform .25s ease, box-shadow .25s ease; }
+.collection-route:hover { transform:translateY(-6px); box-shadow:7px 8px 0 rgba(51,51,51,.28); }
+.collection-route span { font-size:11px; text-transform:uppercase; letter-spacing:1.1px; font-weight:700; }.collection-route strong { font-family:var(--display); font-size:33px; line-height:.95; text-transform:uppercase; font-weight:600; }.collection-route i { align-self:flex-end; font-style:normal; font-size:28px; }
+.route-street { background:var(--gold); }.route-color { background:var(--plum); color:#fff; }.route-world { background:#fff; }
+@media(max-width:850px){.maker-story{grid-template-columns:1fr}.maker-image{min-height:340px}.maker-copy{padding:70px 24px 82px}.maker-copy h2{font-size:clamp(48px,12vw,66px)}.collection-explorer{grid-template-columns:1fr;padding:72px 24px;gap:38px}.collection-routes{grid-template-columns:1fr}.collection-route{min-height:190px}.collection-route strong{font-size:31px}}
