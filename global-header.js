@@ -23,8 +23,14 @@
         </a>
         <nav aria-label="Primary navigation">${navLinks}</nav>
         <div class="header-actions">
-          <button class="search" type="button" aria-label="Search">Search</button>
           <a class="button button-gold small" href="./shop.html">Fund a Book</a>
+          <button class="cart-button" type="button" aria-label="Shopping cart" title="Shopping cart">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+              <path d="M3 3h2l2.4 11.2A2.25 2.25 0 0 0 9.6 16h8.2a2.25 2.25 0 0 0 2.2-1.7L22 7H6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+              <circle cx="10" cy="20" r="1.35" fill="currentColor"></circle>
+              <circle cx="18" cy="20" r="1.35" fill="currentColor"></circle>
+            </svg>
+          </button>
         </div>
       `;
     }
