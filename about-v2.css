@@ -19,7 +19,8 @@
   font-size: clamp(40px, 3.9vw, 56px);
   line-height: 1;
 }
-.about-story p, .about-impact p, .about-community p, .about-newsletter p:not(.form-note), .manifesto-copy p { font-size: 17px; line-height: 1.65; }
+/* Body copy only: :not(.eyebrow) keeps eyebrows at the shared 12px size from home.css. */
+.about-story p:not(.eyebrow), .about-impact p:not(.eyebrow), .about-community p:not(.eyebrow), .about-newsletter p:not(.form-note):not(.eyebrow), .manifesto-copy p { font-size: 17px; line-height: 1.65; }
 
 /* --- Hero --------------------------------------------------------------- */
 .about-hero { min-height: 0; height: min(640px, calc(100dvh - 80px)); grid-template-columns: 1fr 1fr; background: var(--white); }
