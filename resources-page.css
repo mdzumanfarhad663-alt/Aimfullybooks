@@ -59,7 +59,7 @@
 .resource-card h3 { font-size: clamp(26px, 2.2vw, 30px); line-height: 1; color: inherit; }
 .resource-card p { font-size: 15px; line-height: 1.6; margin: 14px 0 20px; max-width: 52ch; }
 .resource-card.silver p, .resource-card.gold p { color: #333; }
-.resource-action {
+.resource-card .resource-action { /* .resource-card prefix beats the old resources.css "a" rule (was rendering 11px) */
   margin-top: auto;
   width: fit-content;
   min-height: 44px;
@@ -68,9 +68,9 @@
   gap: 8px;
   color: inherit;
   font-family: var(--body);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
-  letter-spacing: .12em;
+  letter-spacing: .1em;
   text-transform: uppercase;
 }
 /* Focus ring readable on every card color. */
