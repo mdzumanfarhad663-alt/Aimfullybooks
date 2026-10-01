@@ -244,3 +244,39 @@ a:focus-visible, button:focus-visible, input:focus-visible, .route:focus-visible
   .route { min-height: 150px; }
   .header-actions .button { min-height: 40px; padding: 0 12px; }
 }
+
+/* ==========================================================================
+   Title scale (round 2b): one loud moment (hero), calm section titles.
+   Desktop line length is set with max-width; the <br> tags in the markup
+   only apply on mobile, where they give cleaner wrapping.
+   Elementor: set these as Global Fonts (H1 / H2 / quote) with responsive sizes.
+   ========================================================================== */
+.hero h1 { font-size: clamp(64px, 5.6vw, 80px); line-height: .98; max-width: 16ch; }
+.section h2,
+.section .section-heading h2,
+.review-intro h2,
+.process h2,
+.newsletter h2 { font-size: clamp(40px, 3.9vw, 56px); line-height: 1; max-width: 18ch; }
+.review-intro h2 { max-width: 22ch; }
+.centered h2 { margin-left: auto; margin-right: auto; }
+.quote blockquote { font-size: clamp(36px, 3.6vw, 52px); line-height: 1.05; max-width: 22ch; }
+.steps h3 { font-size: clamp(24px, 2vw, 30px); }
+.route h3 { font-size: clamp(26px, 2.2vw, 30px); }
+.footer-top p { font-size: 26px; }
+.section-heading { margin-bottom: 40px; }
+.review-grid { margin-top: 44px; }
+
+@media (min-width: 851px) {
+  .hero h1 br, .section h2 br { display: none; } /* desktop: wrap by max-width */
+}
+@media (max-width: 850px) {
+  .hero h1 { font-size: clamp(44px, 12vw, 52px); max-width: none; }
+  .section h2,
+  .section .section-heading h2,
+  .review-intro h2,
+  .process h2,
+  .newsletter h2 { font-size: clamp(32px, 9vw, 38px); max-width: none; }
+  .quote blockquote { font-size: clamp(28px, 8vw, 32px); }
+  .steps h3, .route h3 { font-size: 26px; }
+  .section-heading { margin-bottom: 32px; }
+}
