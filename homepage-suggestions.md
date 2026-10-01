@@ -77,3 +77,33 @@ Needed from the client: confirmation that artist submissions are open, and where
 3. Content for any approved sections (campaign data, logos, impact figures and photos, founder photo and bio).
 
 Every approved section can be built first with clearly marked placeholder content, then filled in once the material arrives.
+
+---
+
+# How It Works
+
+Recommendations for the How It Works page. Nothing here has been built. The page keeps the same three backer steps as the home page (Discover, Back, Share the impact).
+
+## 1. "Behind the scenes" strip: the 5D Launch Framework
+A short strip after the three steps showing how a book gets made, using the framework from the pitch deck: **Discover, Decide, Develop, Deliver, Do Good**.
+
+- Why: it explains the publishing side and the care behind each title, without replacing the backer's three simple steps.
+- Needed from the client: approval to show the framework publicly, and one line describing each stage.
+
+## 2. "For artists" section
+A short section explaining how an artist or community submits a book project. Today this only appears as one FAQ answer and the "Crowdfund your book" button.
+
+- Why: artists are a second audience and currently have no clear path.
+- Needed from the client: the submission process, what makes a good project, and where the button should lead (there is no crowdfund page yet).
+
+## 3. Typical timeline
+A simple explainer of what backers can expect for "Available now" versus "In progress" titles, with real delivery estimates.
+
+- Why: clear expectations reduce support questions and build trust.
+- Needed from the client: real, approved timeframes. No estimates will be shown until the client supplies them.
+
+## 4. "Pre-sold before it's printed" message
+One line, taken from the pitch deck, explaining that backing books before printing removes inventory risk and waste.
+
+- Why: it gives backers a reason to back early, not just buy later.
+- Needed from the client: approval, because the pitch deck is an investor document and this is a business-model message.
