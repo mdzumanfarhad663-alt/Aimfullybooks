@@ -280,3 +280,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, .route:focus-visible
   .steps h3, .route h3 { font-size: 26px; }
   .section-heading { margin-bottom: 32px; }
 }
+
+/* Hero image: hero-reference.png is a full mock-up with its own header (top)
+   and a light strip baked into the bottom ~5%. Crop both: shift up past the
+   header and oversize by 6% so the strip falls outside the frame.
+   Delete this rule once the real hero photo replaces it. */
+.hero-art img { position: absolute; top: -74px; left: 0; width: 100%; height: calc((100% + 74px) * 1.06); margin: 0; }
+@media (max-width: 850px) {
+  .hero-art img { top: -52px; height: calc((100% + 52px) * 1.06); }
+}

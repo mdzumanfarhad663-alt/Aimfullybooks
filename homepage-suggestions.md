@@ -53,7 +53,7 @@ Needed from the client: confirmation that artist submissions are open, and where
 
 ## Suggested cuts and merges
 
-- **Intro band and quote repeat each other.** Both are brand statements. Keep one: either the gold tagline band under the hero, or the large quote near the end. Fewer, stronger sections feel more premium.
+- **Done:** the gold tagline band under the hero was removed to reduce clutter. The tagline now sits above the hero headline, and the large quote near the end remains the single big brand statement.
 - **"Become a guest" and "Become a host" are unclear** to a first-time visitor. Either add one line explaining each programme, or move them to a dedicated page.
 
 ## Proposed order (if all suggestions are approved)
@@ -70,13 +70,10 @@ Needed from the client: confirmation that artist submissions are open, and where
 10. Newsletter
 11. Footer
 
-Removed in this order: the separate quote section (or the intro band, whichever the client prefers to keep).
-
 ## Decisions needed from the client
 
 1. Which of sections 1 to 5 to add.
-2. Which brand statement to keep: tagline band or quote.
-3. What to do with "Become a guest" and "Become a host".
-4. Content for any approved sections (campaign data, logos, impact figures and photos, founder photo and bio).
+2. What to do with "Become a guest" and "Become a host".
+3. Content for any approved sections (campaign data, logos, impact figures and photos, founder photo and bio).
 
 Every approved section can be built first with clearly marked placeholder content, then filled in once the material arrives.
