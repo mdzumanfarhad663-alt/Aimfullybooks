@@ -1,0 +1,129 @@
+/* ==========================================================================
+   Boundless Backer: reusable motion utilities
+   --------------------------------------------------------------------------
+   Pair with animations.js. Every class here is page-agnostic so it can be
+   reused on other pages and ported to WordPress/Elementor:
+   - Elementor: add these class names under Advanced > CSS Classes and load
+     this file (plus animations.js) once, site-wide.
+   - Only transform and opacity are animated (GPU friendly, no layout shift).
+   - Hidden "before reveal" states only apply when <html> has the .js class,
+     so content stays visible if JavaScript fails to load.
+   ========================================================================== */
+
+:root {
+  --ease-out: cubic-bezier(.2, .7, .2, 1);
+  --dur-reveal: 600ms;
+  --dur-hover: 240ms;
+  --stagger-step: 80ms;
+  --reveal-distance: 24px;
+  --shadow-soft: 0 10px 30px -12px rgba(51, 51, 51, .28);
+  --shadow-lift: 0 18px 40px -16px rgba(51, 51, 51, .38);
+}
+
+/* --- Scroll reveal ------------------------------------------------------
+   .reveal          fades and slides one element up when it enters view.
+   .reveal-stagger  does the same for each direct child, one after another.
+   animations.js adds .is-visible once (it never hides again).
+   Uses a keyframe animation on opacity + the standalone `translate`
+   property, so it never overrides an element's own hover transitions.     */
+.js .reveal,
+.js .reveal-stagger > * { opacity: 0; }
+.js .reveal.is-visible,
+.js .reveal-stagger.is-visible > * {
+  animation: reveal-up var(--dur-reveal) var(--ease-out) both;
+  animation-delay: calc(var(--i, 0) * var(--stagger-step));
+}
+@keyframes reveal-up {
+  from { opacity: 0; translate: 0 var(--reveal-distance); }
+  to { opacity: 1; translate: 0 0; }
+}
+
+/* --- Buttons: .btn-hover ------------------------------------------------
+   Small lift + soft shadow; the trailing arrow (span[aria-hidden]) nudges right. */
+.btn-hover {
+  transition: transform var(--dur-hover) var(--ease-out), box-shadow var(--dur-hover) var(--ease-out),
+    background-color var(--dur-hover) ease, border-color var(--dur-hover) ease, color var(--dur-hover) ease;
+}
+.btn-hover > span[aria-hidden] {
+  display: inline-block;
+  transition: transform var(--dur-hover) var(--ease-out);
+}
+.btn-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
+}
+.btn-hover:hover > span[aria-hidden] { transform: translateX(4px); }
+.btn-hover:active { transform: translateY(0); box-shadow: none; }
+
+/* --- Text links: .link-underline ----------------------------------------
+   Underline grows from left to right on hover/focus.                       */
+.link-underline {
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0 1px;
+  transition: background-size var(--dur-hover) var(--ease-out);
+  padding-bottom: 3px;
+}
+.link-underline:hover,
+.link-underline:focus-visible { background-size: 100% 1px; }
+
+/* --- Cards: .card-hover -------------------------------------------------
+   Lift + deeper shadow. Put .img-zoom on the image wrapper for a contained zoom. */
+.card-hover {
+  transition: transform var(--dur-hover) var(--ease-out), box-shadow var(--dur-hover) var(--ease-out);
+}
+.card-hover:hover,
+.card-hover:focus-within {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lift);
+}
+
+/* --- Images: .img-zoom --------------------------------------------------
+   Wrapper clips; the img scales slightly when the wrapper or its card is hovered. */
+.img-zoom { overflow: hidden; }
+.img-zoom img { transition: transform 600ms var(--ease-out); }
+.img-zoom:hover img,
+.card-hover:hover .img-zoom img { transform: scale(1.04); }
+
+/* --- Sticky header shrink: .is-scrolled --------------------------------
+   animations.js toggles .is-scrolled on .site-header after ~24px of scroll.
+   The header height never changes (that would shift the page); instead the
+   logo scales down and a soft shadow appears.                            */
+.site-header {
+  transition: box-shadow var(--dur-hover) ease, background-color var(--dur-hover) ease;
+}
+.site-header.is-scrolled {
+  box-shadow: 0 6px 24px -14px rgba(51, 51, 51, .35);
+  background: rgba(255, 255, 255, .98);
+}
+.site-header > * {
+  transition: transform var(--dur-hover) var(--ease-out);
+  transform-origin: left center;
+}
+.site-header.is-scrolled .brand { transform: scale(.88); }
+
+/* --- Reduced motion -----------------------------------------------------
+   No movement at all: content is shown immediately, hovers keep color only. */
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal,
+  .js .reveal-stagger > *,
+  .js .reveal.is-visible,
+  .js .reveal-stagger.is-visible > * {
+    opacity: 1;
+    animation: none;
+  }
+  .btn-hover,
+  .btn-hover > span[aria-hidden],
+  .card-hover,
+  .img-zoom img,
+  .site-header > * { transition: none; }
+  .btn-hover:hover,
+  .card-hover:hover,
+  .card-hover:focus-within,
+  .btn-hover:hover > span[aria-hidden],
+  .img-zoom:hover img,
+  .card-hover:hover .img-zoom img,
+  .site-header.is-scrolled .brand { transform: none; }
+}

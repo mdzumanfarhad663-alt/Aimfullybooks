@@ -1,0 +1,246 @@
+/* ==========================================================================
+   Boundless Backer: home page polish (round 2)
+   --------------------------------------------------------------------------
+   Loaded after styles.css / mobile.css / refinements.css on index.html only,
+   so other pages are untouched. Brand source of truth: Brand Board PDF.
+   Font set: SECONDARY (Norwester titles / Glacial Indifference headings /
+   DM Sans body), self-hosted in /fonts.
+   ========================================================================== */
+
+/* --- Brand fonts (self-hosted, all SIL OFL 1.1) --------------------------
+   WordPress: upload the woff2 files and paste these @font-face rules into
+   Elementor > Custom Fonts (or the theme stylesheet).                      */
+@font-face {
+  font-family: "Norwester";
+  src: url("./fonts/norwester-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Glacial Indifference";
+  src: url("./fonts/glacial-indifference-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Glacial Indifference";
+  src: url("./fonts/glacial-indifference-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DM Sans";
+  src: url("./fonts/dm-sans-variable.woff2") format("woff2-variations"), url("./fonts/dm-sans-variable.woff2") format("woff2");
+  font-weight: 100 1000;
+  font-style: normal;
+  font-display: swap;
+}
+/* Metric-matched fallbacks keep text from jumping while web fonts load. */
+@font-face {
+  font-family: "Norwester Fallback";
+  src: local("Arial Narrow"), local("Impact"), local("Arial");
+  size-adjust: 92%;
+}
+
+/* --- Design tokens ------------------------------------------------------- */
+:root {
+  /* Brand palette (exact hex from the brand board) */
+  --gold: #FFC301;       /* Golden Sun */
+  --warm-gold: #FAD106;  /* Warm Gold: hover states only */
+  --charcoal: #333333;
+  --silver: #ECECED;     /* Light Silver */
+  --white: #FFFFFF;
+  --plum: #A85890;       /* Royal Plum */
+
+  --display: "Norwester", "Norwester Fallback", "Arial Narrow", sans-serif;
+  --heading: "Glacial Indifference", "DM Sans", Arial, sans-serif;
+  --body: "DM Sans", Arial, sans-serif;
+
+  --radius: 6px;
+  --container: 1240px;
+  --gutter: clamp(16px, 5vw, 72px);
+  --section-y: clamp(72px, 9vw, 128px);
+  --focus: 0 0 0 2px var(--white), 0 0 0 4px var(--charcoal);
+}
+
+.hero, .hero-copy { background: var(--white); }
+body { background: var(--white); font-family: var(--body); font-synthesis: none; -webkit-font-smoothing: antialiased; }
+html { scroll-padding-top: 96px; }
+
+/* Norwester ships one weight: stop browsers faking bold on headings. */
+.hero h1, .section h2, .impact h2, .review-intro h2, .quote blockquote,
+.steps h3, .route h3, .footer-top p, .intro-band p, .impact-number, .steps span {
+  font-family: var(--display);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+/* --- Focus states (keyboard only) ---------------------------------------- */
+a:focus-visible, button:focus-visible, input:focus-visible, .route:focus-visible {
+  outline: none;
+  box-shadow: var(--focus);
+  border-radius: 2px;
+}
+.process a:focus-visible, .impact a:focus-visible, .site-footer a:focus-visible, .route-dark:focus-visible, .route-plum:focus-visible {
+  box-shadow: 0 0 0 2px var(--charcoal), 0 0 0 4px var(--gold);
+}
+
+/* --- Retire previous motion (replaced by animations.css) ----------------- */
+.section, .impact, .quote, .hero-copy { animation: none; }
+.button:hover, .route:hover { transform: none; box-shadow: none; }
+.button:active { transform: none; }
+
+/* --- Shared layout ------------------------------------------------------- */
+/* Content width caps at --container; padding grows on wide screens so every section shares one edge. */
+.section {
+  padding: var(--section-y) max(var(--gutter), calc((100% - var(--container)) / 2));
+}
+.eyebrow { font-family: var(--heading); font-weight: 700; font-size: 12px; letter-spacing: .22em; margin-bottom: 18px; }
+
+/* --- Buttons --------------------------------------------------------------- */
+.button {
+  min-height: 52px;
+  padding: 0 26px;
+  gap: 14px;
+  border-radius: var(--radius);
+  font-family: var(--body);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: .12em;
+}
+.button-gold:hover { background: var(--warm-gold); border-color: var(--warm-gold); }
+.button-outline:hover { background: var(--charcoal); color: var(--white); }
+.button-light:hover { background: var(--silver); border-color: var(--silver); }
+.text-link { font-family: var(--body); font-weight: 600; letter-spacing: .1em; }
+
+/* --- Logo swap hook --------------------------------------------------------
+   When the SVGs arrive, replace the CSS bookstack markup with:
+     <img class="brand-logo" src="./assets/logo-primary-black.svg" alt="Boundless Backer" width="160" height="48">
+   (footer: logo-primary-white.svg). Sizing is already defined here.       */
+.brand-logo { display: block; height: 44px; width: auto; min-width: 72px; }
+.site-footer .brand-logo { height: 52px; }
+
+/* --- Header ---------------------------------------------------------------- */
+.site-header nav a:not(.active) {
+  background-image: linear-gradient(var(--gold), var(--gold));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0 2px;
+  padding-bottom: 5px;
+  transition: background-size 240ms cubic-bezier(.2, .7, .2, 1);
+}
+.site-header nav a:not(.active):hover { background-size: 100% 2px; }
+
+/* --- Hero ------------------------------------------------------------------ */
+.hero h1 { font-size: clamp(52px, 5.6vw, 88px); line-height: .96; max-width: none; }
+.lede { font-size: clamp(17px, 1.3vw, 19px); line-height: 1.6; max-width: 46ch; color: #444; }
+.actions { gap: 14px; }
+.hero-values { font-family: var(--heading); font-size: 12px; letter-spacing: .1em; }
+.hero-values li:before { width: 8px; height: 8px; border: 0; border-radius: 50%; background: var(--gold); margin-right: 10px; vertical-align: 1px; }
+.hero-art { border-radius: 0 0 0 var(--radius); }
+
+/* --- Intro band ------------------------------------------------------------ */
+.intro-band { padding: 22px var(--gutter); }
+.intro-band span { font-family: var(--heading); font-weight: 700; letter-spacing: .14em; }
+
+/* --- Books ----------------------------------------------------------------- */
+.books { background: var(--white); }
+.section-heading .text-link { bottom: 8px; }
+.book-card { border-radius: var(--radius); }
+.book-card:hover, .book-card:hover img { transform: none; } /* old hover, replaced by .card-hover */
+.book-image { background: var(--silver); border-radius: var(--radius); }
+.book-image img { filter: drop-shadow(0 14px 18px rgba(0, 0, 0, .18)); }
+.book-card.card-hover:hover .book-image img { transform: scale(1.04); }
+.book-info { padding: 18px 4px 6px; display: flex; flex-direction: column; gap: 6px; }
+.book-info h3 { font-family: var(--heading); font-weight: 700; font-size: 18px; line-height: 1.25; margin: 0; }
+.book-info p { font-size: 14px; font-weight: 600; color: #555; }
+.book-link { color: inherit; text-decoration: none; display: block; border-radius: var(--radius); }
+.book-cta {
+  font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; margin-top: 4px;
+  opacity: 0; transform: translateY(4px);
+  transition: opacity 240ms ease, transform 240ms cubic-bezier(.2, .7, .2, 1);
+}
+.book-card:hover .book-cta, .book-link:focus-visible .book-cta { opacity: 1; transform: none; }
+@media (hover: none) { .book-cta { opacity: 1; transform: none; } } /* always visible on touch */
+
+/* --- Reviews --------------------------------------------------------------- */
+.review-intro h2 { font-size: clamp(46px, 4.8vw, 72px); }
+.review-intro > p:not(.eyebrow) { font-size: 17px; color: #444; }
+.review-grid { gap: 20px; }
+.review-card { border: 0; border-radius: var(--radius); padding: 32px; box-shadow: 0 1px 0 rgba(51, 51, 51, .06); }
+.review-card-plum footer span { opacity: 1; } /* keep AA contrast on plum */
+.review-stars { color: var(--charcoal); font-size: 15px; letter-spacing: 3px; margin: 0; }
+.review-card-plum .review-stars { color: var(--white); }
+.review-mark { display: none; }
+.review-placeholder { font-family: var(--heading); font-weight: 400; font-size: 21px; line-height: 1.4; margin-top: 20px; }
+.review-card footer { padding-top: 24px; }
+.review-card footer strong { font-family: var(--body); font-weight: 700; }
+
+/* --- Process --------------------------------------------------------------- */
+.process { column-gap: clamp(40px, 6vw, 96px); }
+.steps li { padding: 34px 0; align-items: baseline; }
+.steps span { font-size: 28px; }
+.steps h3 { font-size: clamp(28px, 2.6vw, 36px); }
+.steps p { font-size: 16px; line-height: 1.65; color: #E6E6E6; }
+
+/* --- Impact ---------------------------------------------------------------- */
+.impact-number { color: var(--white); font-variant-numeric: tabular-nums; } /* white: gold on plum fails contrast */
+.impact-number .count { font-size: 1em; }
+.impact h2 { font-family: var(--heading); font-weight: 400; letter-spacing: 0; line-height: 1.2; max-width: 22ch; }
+.impact-photo.img-zoom:hover img { transform: scale(1.03); }
+
+/* --- Participate ----------------------------------------------------------- */
+.route { border-radius: var(--radius); position: relative; }
+.route-arrow {
+  position: absolute; top: 28px; right: 28px; font-size: 22px; line-height: 1;
+  transition: transform 240ms cubic-bezier(.2, .7, .2, 1);
+}
+.route:hover .route-arrow, .route:focus-visible .route-arrow { transform: translateX(5px); }
+.route p { font-size: 15px; }
+
+/* --- Quote ----------------------------------------------------------------- */
+.quote blockquote { max-width: 18ch; margin: 0 auto; line-height: 1.02; }
+.quote p { font-family: var(--heading); font-weight: 700; letter-spacing: .22em; }
+
+/* --- Newsletter ------------------------------------------------------------ */
+.email-row { gap: 10px; }
+.email-row input {
+  height: 56px; border: 1px solid #8A8A8A; border-radius: var(--radius); padding: 0 18px;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+.email-row input:focus-visible { border-color: var(--charcoal); box-shadow: 0 0 0 3px var(--gold); border-radius: var(--radius); }
+.email-row .button { min-height: 56px; white-space: nowrap; }
+.form-note { color: #595959; } /* AA on white */
+.form-success { margin: 14px 0 0; font-weight: 600; }
+
+/* --- Footer ---------------------------------------------------------------- */
+.footer-top p { font-size: 30px; }
+.footer-links { padding: 56px 0 64px; }
+.footer-links p { font-family: var(--heading); }
+.footer-links a { width: fit-content; }
+
+/* --- Tablet / mobile ------------------------------------------------------- */
+@media (max-width: 850px) {
+  html { scroll-padding-top: 84px; }
+  .hero h1 { font-size: clamp(46px, 12vw, 72px); }
+  .hero-copy { padding: 56px var(--gutter) 44px; }
+  .hero-art { border-radius: 0; }
+  .section, .reviews { padding: 72px var(--gutter); }
+  .review-intro h2 { font-size: clamp(40px, 11vw, 60px); }
+  .steps li { padding: 26px 0; }
+  .impact-copy { padding: 64px var(--gutter); }
+  .impact { grid-template-columns: minmax(0, 1fr); }
+  .impact-number { font-size: clamp(76px, 22vw, 120px); } /* Norwester is wider than the old Oswald */
+  .route { min-height: 190px; padding: 22px; }
+  .route-arrow { top: 22px; right: 22px; }
+  .book-card.wide { grid-column: auto; } /* even 2x2 grid instead of one oversized card */
+  .email-row .button { margin-top: 0; }
+}
+@media (max-width: 440px) {
+  .participate-grid { grid-template-columns: 1fr; }
+  .route { min-height: 150px; }
+  .header-actions .button { min-height: 40px; padding: 0 12px; }
+}
