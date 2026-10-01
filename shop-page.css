@@ -1,0 +1,150 @@
+/* ==========================================================================
+   Boundless Backer: Shop layout (round 6)
+   --------------------------------------------------------------------------
+   Loaded after home.css (shared tokens, fonts, type scale, buttons, focus,
+   footer) and animations.css. shop.css, shop-refinements.css and shop-v2.css
+   stay loaded underneath and are overridden here.
+   WordPress: WooCommerce Shop archive via an Elementor Pro Products Archive
+   template. Class names below note the WooCommerce element each one maps to.
+   ========================================================================== */
+
+[hidden] { display: none !important; } /* filtered-out cards, hidden notices */
+
+/* --- Shared heading treatment -------------------------------------------- */
+.shop-hero h1, .catalog-toolbar h2, .creator-cta h2 {
+  font-family: var(--display);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.catalog-toolbar h2, .creator-cta h2 { font-size: clamp(40px, 3.9vw, 56px); line-height: 1; }
+
+/* --- Compact hero -------------------------------------------------------- */
+.shop-hero { min-height: 0; height: min(480px, calc(100dvh - 80px)); grid-template-columns: 1fr 1fr; background: var(--white); overflow: hidden; }
+.shop-hero-copy { padding: 56px var(--gutter); max-width: calc(var(--container) / 2 + var(--gutter)); margin-left: auto; width: 100%; display: flex; flex-direction: column; justify-content: center; }
+.shop-hero h1 { font-size: clamp(64px, 5.6vw, 80px); line-height: .98; }
+.shop-hero-copy > p:not(.eyebrow) { font-size: clamp(17px, 1.3vw, 19px); line-height: 1.6; max-width: 44ch; color: #444; margin-top: 24px; }
+/* Gold panel with a straight row of covers (replaces the diagonal collage). */
+.shop-hero-art { min-height: 0; background: var(--gold); border-radius: 0 0 0 var(--radius); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; padding: 32px; }
+.shop-hero-art::before { content: none; }
+.hero-covers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(12px, 2vw, 28px); width: min(100%, 680px); }
+.hero-covers img { width: 100%; height: auto; aspect-ratio: 1; object-fit: contain; filter: drop-shadow(0 16px 18px rgba(0, 0, 0, .22)); }
+.shop-hero-art p { position: static; color: var(--charcoal); font-family: var(--heading); font-weight: 700; font-size: 14px; letter-spacing: .18em; text-transform: uppercase; }
+
+/* --- Toolbar: heading + WooCommerce ordering ---------------------------- */
+.catalog-toolbar { align-items: end; gap: 24px; }
+.sort-control { display: flex; align-items: center; gap: 12px; font-family: var(--body); font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.sort-control select {
+  min-height: 48px;
+  padding: 0 40px 0 16px;
+  border: 1px solid #8A8A8A;
+  border-radius: var(--radius);
+  background: var(--white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23333' stroke-width='1.8'/%3E%3C/svg%3E") no-repeat right 16px center;
+  appearance: none;
+  font: 500 15px var(--body);
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--charcoal);
+  cursor: pointer;
+}
+.sort-control select:focus-visible { outline: none; border-color: var(--charcoal); box-shadow: 0 0 0 3px var(--gold); }
+
+/* --- Category filter bar (WooCommerce product category links) ---------- */
+.filter-row { gap: 10px; padding: 32px 0 20px; border-bottom: 1px solid #DDD; }
+.filter {
+  min-height: 44px;
+  padding: 0 20px;
+  border-radius: 999px;
+  background: var(--silver);
+  font: 600 14px var(--body);
+  transition: background-color 200ms ease;
+}
+.filter:hover { transform: none; background: #DEDEDF; }
+.filter[aria-pressed="true"] { background: var(--gold); }
+.filter:focus-visible { outline: none; box-shadow: var(--focus); }
+
+/* --- WooCommerce result count ------------------------------------------- */
+.woocommerce-result-count { font-size: 14px; color: #595959; margin: 20px 0 32px; }
+
+/* --- Product grid: 4 / 3 / 2 columns ------------------------------------ */
+.shop-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 48px 24px; }
+/* Cap the stagger: cards after the 6th share the 6th card's delay. */
+.js .shop-grid.is-visible > :nth-child(n+6) { animation-delay: calc(5 * var(--stagger-step)); }
+
+/* --- Product card (matches the home "Books worth backing" card) --------- */
+.shop-product { display: flex; flex-direction: column; border-radius: var(--radius); }
+.shop-product-image { aspect-ratio: 3 / 4; border-radius: var(--radius); background: var(--silver); }
+.silver-tile { background: var(--silver); }
+.gold-tile { background: var(--gold); }
+.plum-tile { background: var(--plum); }
+.shop-product-image img { width: 78%; height: 78%; object-fit: contain; filter: drop-shadow(0 14px 18px rgba(0, 0, 0, .18)); }
+.shop-product:hover .shop-product-image img { transform: none; } /* old hover; .img-zoom handles it */
+.shop-product.card-hover:hover .shop-product-image img { transform: scale(1.04); }
+.product-body { display: flex; flex-direction: column; flex: 1; padding: 18px 4px 4px; }
+.product-type { margin: 0 0 8px; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #444; }
+.shop-product h3 { min-height: 0; margin: 0; font-family: var(--heading); font-weight: 700; font-size: 18px; line-height: 1.25; }
+.product-title { color: inherit; }
+/* Ratings and status labels: content unchanged, contrast fixed (stars were gold on white). */
+.rating { margin: 10px 0 0; color: var(--charcoal); font-size: 14px; letter-spacing: 0; }
+.rating span:first-child { letter-spacing: 2px; }
+.product-status { margin: 10px 0 0; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #595959; }
+.price { margin: 8px 0 16px; font-size: 16px; font-weight: 600; }
+/* WooCommerce sale price (prepared, not used yet): <del> old price, <ins> new price. */
+.price del { color: #595959; font-weight: 400; margin-right: 6px; }
+.price ins { text-decoration: none; }
+.product-button { margin-top: auto; width: 100%; min-height: 48px; padding: 0 16px; font-size: 12px; }
+
+/* --- WooCommerce badges and states (prepared, not applied to any product) */
+.onsale, .out-of-stock-badge {
+  position: absolute; top: 12px; left: 12px; z-index: 1;
+  padding: 6px 10px; border-radius: 999px;
+  font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+}
+.onsale { background: var(--charcoal); color: var(--white); }
+.out-of-stock-badge { background: var(--white); color: var(--charcoal); }
+.shop-product-image { position: relative; }
+.shop-product.outofstock .shop-product-image img { opacity: .6; }
+
+/* --- WooCommerce empty state and pagination (prepared, hidden) ---------- */
+.woocommerce-info { margin: 0; padding: 24px; border-radius: var(--radius); background: var(--silver); font-size: 16px; }
+.woocommerce-pagination { margin-top: 56px; }
+.woocommerce-pagination ul { display: flex; justify-content: center; gap: 8px; list-style: none; padding: 0; margin: 0; }
+.woocommerce-pagination .page-numbers {
+  min-width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center;
+  border-radius: var(--radius); background: var(--silver); color: var(--charcoal); text-decoration: none; font-weight: 600;
+}
+.woocommerce-pagination .page-numbers.current { background: var(--gold); }
+
+/* --- Creator CTA (gold) ------------------------------------------------- */
+.creator-cta { padding: var(--section-y) max(var(--gutter), calc((100% - var(--container)) / 2)); }
+.creator-cta h2 { max-width: 18ch; }
+.button-charcoal, .creator-cta .button-charcoal { background: var(--charcoal); border-color: var(--charcoal); color: var(--white); }
+.button-charcoal:hover { background: #1F1F1F; border-color: #1F1F1F; }
+.creator-cta a:focus-visible { box-shadow: 0 0 0 2px var(--gold), 0 0 0 4px var(--charcoal); }
+
+/* --- Tablet: 3 columns -------------------------------------------------- */
+@media (max-width: 1100px) {
+  .shop-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* --- Mobile: 2 columns -------------------------------------------------- */
+@media (max-width: 850px) {
+  .shop-hero { height: auto; grid-template-columns: 1fr; }
+  .shop-hero-copy { padding: 56px var(--gutter) 44px; max-width: none; }
+  .shop-hero h1 { font-size: clamp(44px, 12vw, 52px); }
+  .shop-hero-art { min-height: 0; border-radius: 0; padding: 32px var(--gutter); }
+  .catalog-toolbar h2, .creator-cta h2 { font-size: clamp(32px, 9vw, 38px); }
+  .catalog { padding: 72px var(--gutter); }
+  .sort-control { margin-top: 24px; }
+  .sort-control select { flex: 1; }
+  .filter-row { padding-top: 24px; }
+  .shop-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 14px; }
+  .shop-product h3 { font-size: 16px; }
+  .product-type, .product-status { font-size: 11px; }
+  .product-button { font-size: 11px; letter-spacing: .08em; padding: 0 8px; }
+  .creator-cta { padding: 72px var(--gutter); }
+  .creator-cta .button { margin-top: 28px; width: 100%; }
+}
+@media (max-width: 440px) {
+  .shop-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .shop-product-image { max-width: none; }
+}

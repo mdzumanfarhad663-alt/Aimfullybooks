@@ -5,46 +5,150 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Discover art books worth backing with Boundless Backer." />
     <title>Shop | Boundless Backer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
+    <!-- Brand fonts are self-hosted (see home.css @font-face). -->
+    <link rel="preload" href="./fonts/norwester-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="./fonts/dm-sans-variable.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="./styles.css" />
     <link rel="stylesheet" href="./mobile.css" />
     <link rel="stylesheet" href="./refinements.css" />
     <link rel="stylesheet" href="./shop.css" />
     <link rel="stylesheet" href="./shop-refinements.css" />
     <link rel="stylesheet" href="./shop-v2.css" />
-  <script src="./global-header.js" defer></script></head>
+    <!-- Shared design system (tokens, type scale, buttons, motion), then page layout. -->
+    <link rel="stylesheet" href="./animations.css" />
+    <link rel="stylesheet" href="./home.css" />
+    <link rel="stylesheet" href="./shop-page.css" />
+    <script src="./global-header.js" defer></script>
+    <script src="./animations.js" defer></script>
+  </head>
   <body>
-    <a class="skip-link" href="#catalog">Skip to the catalog</a>
+    <a class="skip-link" href="#main">Skip to content</a>
     <global-site-header class="site-header"></global-site-header>
 
-    <main>
+    <!-- WordPress: this page is the WooCommerce Shop archive (Elementor Pro Products Archive template). -->
+    <main id="main">
       <section class="shop-hero">
-        <div class="shop-hero-copy"><p class="eyebrow">Independent art books</p><h1>Find the next<br />story worth backing.</h1><p>Discover books created by independent artists, shared by communities, and carried further by readers like you.</p></div>
-        <div class="shop-hero-art" aria-label="A selection of colorful Boundless Backer books"><img class="cover cover-one" src="https://www.aimfullybooks.com/wp-content/uploads/2023/10/A-Blooming-Earth_FRNT-Transparent-1024x1024.webp" alt="A Blooming Earth book cover" /><img class="cover cover-two" src="https://www.aimfullybooks.com/wp-content/uploads/2023/08/The-Ultimate-Street-Art-Coloring-Book-2-1-1024x1024.webp" alt="The Ultimate Street Art Coloring Book cover" /><img class="cover cover-three" src="https://www.aimfullybooks.com/wp-content/uploads/2025/07/Exploring-Sanatana-Dharma_FRNT-Transparent-1024x1024.webp" alt="Exploring Sanatana Dharma book cover" /><p>Books move culture.</p></div>
+        <div class="shop-hero-copy reveal"><h1>Find the next <br />story worth backing.</h1><p>Discover books created by independent artists, shared by communities, and carried further by readers like you.</p></div>
+        <div class="shop-hero-art" aria-label="A selection of colorful Boundless Backer books"><div class="hero-covers"><img src="https://www.aimfullybooks.com/wp-content/uploads/2023/10/A-Blooming-Earth_FRNT-Transparent-1024x1024.webp" alt="A Blooming Earth book cover" width="800" height="800" /><img src="https://www.aimfullybooks.com/wp-content/uploads/2023/08/The-Ultimate-Street-Art-Coloring-Book-2-1-1024x1024.webp" alt="The Ultimate Street Art Coloring Book cover" width="800" height="800" /><img src="https://www.aimfullybooks.com/wp-content/uploads/2025/07/Exploring-Sanatana-Dharma_FRNT-Transparent-1024x1024.webp" alt="Exploring Sanatana Dharma book cover" width="800" height="800" /></div><p>Books move culture.</p></div>
       </section>
 
       <section class="catalog section" id="catalog">
-        <div class="catalog-toolbar"><div><p class="eyebrow">The collection</p><h2>All titles</h2></div><label class="sort-control">Sort <select aria-label="Sort products"><option>Most recent</option><option>Price: low to high</option><option>Price: high to low</option></select></label></div>
-        <div class="filter-row" aria-label="Shop filters"><button class="filter active" type="button">All</button><button class="filter" type="button">Active</button><button class="filter" type="button">Pre-order</button><button class="filter" type="button">Coloring Books</button><button class="filter" type="button">Street Art</button><button class="filter" type="button">World Books</button><button class="filter more-filter" type="button">More filters</button></div>
-        <p class="result-count">Showing 9 current titles</p>
-        <div class="shop-grid">
-          <article class="shop-product"><a class="shop-product-image" href="#"><img src="https://www.aimfullybooks.com/wp-content/uploads/2023/08/The-Ultimate-Street-Art-Coloring-Book-2-1-1024x1024.webp" alt="The Ultimate Street Art Coloring Book" /></a><p class="product-type">Street art book</p><h3>The Ultimate Street Art Coloring Book</h3><p class="rating">★★★★★ <span>5.0</span></p><p class="price">$25 - $50</p><a href="#" class="product-link">View project <span aria-hidden="true">→</span></a></article>
-          <article class="shop-product"><a class="shop-product-image yellow-frame" href="#"><img src="https://www.aimfullybooks.com/wp-content/uploads/2023/10/The-Wynwood-Coloring-Book_FRNT-Transparent-1024x1024.png" alt="The Wynwood Coloring Book" /></a><p class="product-type">Coloring book</p><h3>The Wynwood Coloring Book</h3><p class="rating">★★★★★ <span>5.0</span></p><p class="price">$25</p><a href="#" class="product-link">View project <span aria-hidden="true">→</span></a></article>
-          <article class="shop-product"><a class="shop-product-image plum-frame" href="#"><img src="https://www.aimfullybooks.com/wp-content/uploads/2023/10/A-Blooming-Earth_FRNT-Transparent-1024x1024.webp" alt="A Blooming Earth" /></a><p class="product-type">World book</p><h3>A Blooming Earth</h3><p class="rating muted-rating">New release</p><p class="price">$25 - $40</p><a href="#" class="product-link">View project <span aria-hidden="true">→</span></a></article>
-          <article class="shop-product"><a class="shop-product-image silver-frame" href="#"><img src="https://www.aimfullybooks.com/wp-content/uploads/2025/07/Exploring-Sanatana-Dharma_FRNT-Transparent-1024x1024.webp" alt="Exploring Sanatana Dharma" /></a><p class="product-type">World book</p><h3>Exploring Sanatana Dharma</h3><p class="rating muted-rating">Available now</p><p class="price">$25 - $40</p><a href="#" class="product-link">View project <span aria-hidden="true">→</span></a></article>
-          <article class="shop-product"><a class="shop-product-image silver-frame" href="#"><img src="https://www.aimfullybooks.com/wp-content/uploads/2025/07/Urpi-Means-Paloma_FRNT-Transparent-800x800.webp" alt="Urpi Means Paloma" /></a><p class="product-type">Art book</p><h3>Urpi Means Paloma</h3><p class="rating muted-rating">Available now</p><p class="price">$25 - $40</p><a href="#" class="product-link">View project <span aria-hidden="true">→</span></a></article>
-          <article class="shop-product"><a class="shop-product-image yellow-frame" href="#"><img src="https://www.aimfullybooks.com/wp-content/uploads/2025/07/Chaos-Diamond-Comic-Book_FRNT-Transparent-800x800.webp" alt="Chaos Diamond Comic Book" /></a><p class="product-type">Comic book</p><h3>Chaos Diamond Comic Book</h3><p class="rating muted-rating">Available now</p><p class="price">$25 - $40</p><a href="#" class="product-link">View project <span aria-hidden="true">→</span></a></article>
-          <article class="shop-product"><a class="shop-product-image plum-frame" href="#"><img src="https://www.aimfullybooks.com/wp-content/uploads/2025/07/Dual-Coloring-Pencils-Baby_Hand-Painted-Box_FRNT-Transparent1-800x800.webp" alt="Dual Coloring Pencils Baby" /></a><p class="product-type">Art supply</p><h3>Dual Coloring Pencils, Baby!</h3><p class="rating muted-rating">Available now</p><p class="price">$10</p><a href="#" class="product-link">View project <span aria-hidden="true">→</span></a></article>
-          <article class="shop-product"><a class="shop-product-image silver-frame" href="#"><img src="https://www.aimfullybooks.com/wp-content/uploads/2024/08/The-Ultimate-Street-Art-Coloring-Book-Printables_IND01-800x800.webp" alt="The Ultimate Street Art Coloring Book Printables" /></a><p class="product-type">Printable</p><h3>Street Art Coloring Book Printables</h3><p class="rating">★★★★★ <span>5.0</span></p><p class="price">$5</p><a href="#" class="product-link">View project <span aria-hidden="true">→</span></a></article>
-          <article class="shop-product"><a class="shop-product-image yellow-frame" href="#"><img src="https://www.aimfullybooks.com/wp-content/uploads/2023/11/aimfullybooks-product-image1-1.webp" alt="Featured art book" /></a><p class="product-type">Coloring book</p><h3>The Brooklyn Coloring Book</h3><p class="rating">★★★★★ <span>5.0</span></p><p class="price">$25</p><a href="#" class="product-link">View project <span aria-hidden="true">→</span></a></article>
+        <div class="catalog-toolbar reveal">
+          <div><p class="eyebrow">The collection</p><h2>All titles</h2></div>
+          <!-- WooCommerce: catalog ordering dropdown with its default labels. -->
+          <div class="sort-control"><label for="orderby">Sort</label><select id="orderby" name="orderby"><option value="menu_order" selected>Default sorting</option><option value="popularity">Sort by popularity</option><option value="rating">Sort by average rating</option><option value="date">Sort by latest</option><option value="price">Sort by price: low to high</option><option value="price-desc">Sort by price: high to low</option></select></div>
         </div>
+        <!-- WooCommerce: product category links. Prototype JS filters in place; without JS all products stay visible. -->
+        <div class="filter-row reveal" role="group" aria-label="Filter by category"><button class="filter" type="button" data-filter="all" aria-pressed="true">All</button><button class="filter" type="button" data-filter="coloring-books" aria-pressed="false">Coloring Books</button><button class="filter" type="button" data-filter="street-art" aria-pressed="false">Street Art</button><button class="filter" type="button" data-filter="world-books" aria-pressed="false">World Books</button></div>
+        <!-- WooCommerce: result count. -->
+        <p class="woocommerce-result-count" aria-live="polite">Showing all 9 results</p>
+
+        <!-- WooCommerce product loop. Variable products show "Select options", simple products "Add to cart".
+             [PLACEHOLDER: product page URLs, client to supply. All product links are #.] -->
+        <div class="shop-grid reveal-stagger">
+          <article class="shop-product card-hover" data-category="street-art" data-price="25" data-order="0">
+            <a class="shop-product-image silver-tile img-zoom" href="#" tabindex="-1" aria-hidden="true"><img src="https://www.aimfullybooks.com/wp-content/uploads/2023/08/The-Ultimate-Street-Art-Coloring-Book-2-1-1024x1024.webp" alt="The Ultimate Street Art Coloring Book" width="800" height="800" loading="lazy" /></a>
+            <div class="product-body"><p class="product-type">Street art book</p><h3><a class="product-title link-underline" href="#">The Ultimate Street Art Coloring Book</a></h3><p class="rating"><span aria-hidden="true">★★★★★</span> <span>5.0</span></p><p class="price">$25 - $50</p><a class="button button-gold btn-hover product-button" href="#">Select options</a></div>
+          </article>
+          <article class="shop-product card-hover" data-category="coloring-books" data-price="25" data-order="1">
+            <a class="shop-product-image gold-tile img-zoom" href="#" tabindex="-1" aria-hidden="true"><img src="https://www.aimfullybooks.com/wp-content/uploads/2023/10/The-Wynwood-Coloring-Book_FRNT-Transparent-1024x1024.png" alt="The Wynwood Coloring Book" width="800" height="800" loading="lazy" /></a>
+            <div class="product-body"><p class="product-type">Coloring book</p><h3><a class="product-title link-underline" href="#">The Wynwood Coloring Book</a></h3><p class="rating"><span aria-hidden="true">★★★★★</span> <span>5.0</span></p><p class="price">$25</p><button class="button button-gold btn-hover product-button add-to-cart" type="button">Add to cart</button></div>
+          </article>
+          <article class="shop-product card-hover" data-category="world-books" data-price="25" data-order="2">
+            <a class="shop-product-image plum-tile img-zoom" href="#" tabindex="-1" aria-hidden="true"><img src="https://www.aimfullybooks.com/wp-content/uploads/2023/10/A-Blooming-Earth_FRNT-Transparent-1024x1024.webp" alt="A Blooming Earth" width="800" height="800" loading="lazy" /></a>
+            <div class="product-body"><p class="product-type">World book</p><h3><a class="product-title link-underline" href="#">A Blooming Earth</a></h3><p class="product-status">New release</p><p class="price">$25 - $40</p><a class="button button-gold btn-hover product-button" href="#">Select options</a></div>
+          </article>
+          <article class="shop-product card-hover" data-category="world-books" data-price="25" data-order="3">
+            <a class="shop-product-image silver-tile img-zoom" href="#" tabindex="-1" aria-hidden="true"><img src="https://www.aimfullybooks.com/wp-content/uploads/2025/07/Exploring-Sanatana-Dharma_FRNT-Transparent-1024x1024.webp" alt="Exploring Sanatana Dharma" width="800" height="800" loading="lazy" /></a>
+            <div class="product-body"><p class="product-type">World book</p><h3><a class="product-title link-underline" href="#">Exploring Sanatana Dharma</a></h3><p class="product-status">Available now</p><p class="price">$25 - $40</p><a class="button button-gold btn-hover product-button" href="#">Select options</a></div>
+          </article>
+          <article class="shop-product card-hover" data-category="" data-price="25" data-order="4">
+            <a class="shop-product-image silver-tile img-zoom" href="#" tabindex="-1" aria-hidden="true"><img src="https://www.aimfullybooks.com/wp-content/uploads/2025/07/Urpi-Means-Paloma_FRNT-Transparent-800x800.webp" alt="Urpi Means Paloma" width="800" height="800" loading="lazy" /></a>
+            <div class="product-body"><p class="product-type">Art book</p><h3><a class="product-title link-underline" href="#">Urpi Means Paloma</a></h3><p class="product-status">Available now</p><p class="price">$25 - $40</p><a class="button button-gold btn-hover product-button" href="#">Select options</a></div>
+          </article>
+          <article class="shop-product card-hover" data-category="" data-price="25" data-order="5">
+            <a class="shop-product-image gold-tile img-zoom" href="#" tabindex="-1" aria-hidden="true"><img src="https://www.aimfullybooks.com/wp-content/uploads/2025/07/Chaos-Diamond-Comic-Book_FRNT-Transparent-800x800.webp" alt="Chaos Diamond Comic Book" width="800" height="800" loading="lazy" /></a>
+            <div class="product-body"><p class="product-type">Comic book</p><h3><a class="product-title link-underline" href="#">Chaos Diamond Comic Book</a></h3><p class="product-status">Available now</p><p class="price">$25 - $40</p><a class="button button-gold btn-hover product-button" href="#">Select options</a></div>
+          </article>
+          <article class="shop-product card-hover" data-category="" data-price="10" data-order="6">
+            <a class="shop-product-image plum-tile img-zoom" href="#" tabindex="-1" aria-hidden="true"><img src="https://www.aimfullybooks.com/wp-content/uploads/2025/07/Dual-Coloring-Pencils-Baby_Hand-Painted-Box_FRNT-Transparent1-800x800.webp" alt="Dual Coloring Pencils Baby" width="800" height="800" loading="lazy" /></a>
+            <div class="product-body"><p class="product-type">Art supply</p><h3><a class="product-title link-underline" href="#">Dual Coloring Pencils, Baby!</a></h3><p class="product-status">Available now</p><p class="price">$10</p><button class="button button-gold btn-hover product-button add-to-cart" type="button">Add to cart</button></div>
+          </article>
+          <article class="shop-product card-hover" data-category="street-art" data-price="5" data-order="7">
+            <a class="shop-product-image silver-tile img-zoom" href="#" tabindex="-1" aria-hidden="true"><img src="https://www.aimfullybooks.com/wp-content/uploads/2024/08/The-Ultimate-Street-Art-Coloring-Book-Printables_IND01-800x800.webp" alt="The Ultimate Street Art Coloring Book Printables" width="800" height="800" loading="lazy" /></a>
+            <div class="product-body"><p class="product-type">Printable</p><h3><a class="product-title link-underline" href="#">Street Art Coloring Book Printables</a></h3><p class="rating"><span aria-hidden="true">★★★★★</span> <span>5.0</span></p><p class="price">$5</p><button class="button button-gold btn-hover product-button add-to-cart" type="button">Add to cart</button></div>
+          </article>
+          <article class="shop-product card-hover" data-category="coloring-books" data-price="25" data-order="8">
+            <a class="shop-product-image gold-tile img-zoom" href="#" tabindex="-1" aria-hidden="true"><img src="https://www.aimfullybooks.com/wp-content/uploads/2023/11/aimfullybooks-product-image1-1.webp" alt="The Brooklyn Coloring Book" width="800" height="800" loading="lazy" /></a>
+            <div class="product-body"><p class="product-type">Coloring book</p><h3><a class="product-title link-underline" href="#">The Brooklyn Coloring Book</a></h3><p class="rating"><span aria-hidden="true">★★★★★</span> <span>5.0</span></p><p class="price">$25</p><button class="button button-gold btn-hover product-button add-to-cart" type="button">Add to cart</button></div>
+          </article>
+        </div>
+
+        <!-- WooCommerce empty state (prepared, hidden). -->
+        <p class="woocommerce-info" hidden>No products were found matching your selection.</p>
+        <!-- WooCommerce pagination (styles prepared in shop-page.css; not shown because 9 products fit on one page of 12):
+        <nav class="woocommerce-pagination" aria-label="Product pagination"><ul class="page-numbers"><li><span aria-current="page" class="page-numbers current">1</span></li><li><a class="page-numbers" href="#">2</a></li><li><a class="next page-numbers" href="#">→</a></li></ul></nav> -->
       </section>
 
-      <section class="creator-cta" id="about"><div><p class="eyebrow">For independent creators</p><h2>Have a book the world should see?</h2></div><a class="button button-outline" href="#">Crowdfund your book <span aria-hidden="true">→</span></a></section>
+      <section class="creator-cta"><div class="reveal"><p class="eyebrow">For independent creators</p><h2>Have a book the world should see?</h2></div>
+        <!-- [PLACEHOLDER: "Crowdfund your book" destination, no crowdfund page exists yet.] -->
+        <a class="button button-charcoal btn-hover" href="#">Crowdfund your book <span aria-hidden="true">→</span></a></section>
     </main>
 
-    <footer class="site-footer"><div class="footer-top"><a class="brand brand-light" href="./index.html"><span class="bookstack" aria-hidden="true"><i></i><i></i><i></i></span><span>Boundless<br />Backer<span class="period">.</span></span></a><p>Fund the art you want to see in the world.</p></div><div class="footer-links"><div><p>Explore</p><a href="./shop.html">Shop</a><a href="#how-it-works">How it works</a><a href="#resources">Resources</a></div><div><p>Participate</p><a href="#">Crowdfund your book</a><a href="#">Become a guest</a><a href="#">Become a host</a></div><div><p>Connect</p><a href="#">Instagram</a><a href="#">TikTok</a><a href="mailto:hello@boundlessbacker.com">Email us</a></div></div><div class="footer-bottom"><span>© 2026 Boundless Backer</span><span>Client approval prototype. Links are illustrative.</span></div></footer>
+    <footer class="site-footer"><div class="footer-top"><div class="footer-brand"><a class="brand brand-light" href="./index.html" aria-label="Boundless Backer home">
+      <!-- Logo swap: replace the two spans below with
+           <img class="brand-logo" src="./assets/logo-primary-white.svg" alt="Boundless Backer" width="160" height="48" /> -->
+      <span class="bookstack" aria-hidden="true"><i></i><i></i><i></i></span><span>Boundless <br/>Backer<span class="period">.</span></span></a><p class="footer-tagline">Curated with intention. Published for impact. Chosen by you.</p></div><p>Fund the art you want to see in the world.</p></div><div class="footer-links reveal-stagger"><div><p>Explore</p><a class="link-underline" href="./shop.html">Shop</a><a class="link-underline" href="./how-it-works.html">How it works</a><a class="link-underline" href="./resources.html">Resources</a></div><div><p>Participate</p><a class="link-underline" href="#">Crowdfund your book</a><a class="link-underline" href="#">Become a guest</a><a class="link-underline" href="#">Become a host</a></div><div><p>Connect</p><a class="link-underline" href="#">Instagram</a><a class="link-underline" href="#">TikTok</a><a class="link-underline" href="mailto:hello@boundlessbacker.com">Email us</a></div></div><div class="footer-bottom"><span>© 2026 Boundless Backer</span><span>Client approval prototype. Links are illustrative.</span></div></footer>
+
+    <script>
+      /* Prototype only. In WordPress, WooCommerce handles category filtering (category pages),
+         sorting (?orderby=) and the cart (AJAX add to cart). */
+      (() => {
+        const grid = document.querySelector('.shop-grid');
+        const cards = [...grid.children];
+        const count = document.querySelector('.woocommerce-result-count');
+        const empty = document.querySelector('.woocommerce-info');
+
+        // Result count in WooCommerce's wording.
+        const setCount = (n) => {
+          count.textContent = n === 1 ? 'Showing the single result' : `Showing all ${n} results`;
+          count.hidden = n === 0;
+          empty.hidden = n !== 0;
+        };
+
+        document.querySelectorAll('.filter').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            document.querySelectorAll('.filter').forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+            const f = btn.dataset.filter;
+            let shown = 0;
+            cards.forEach((c) => {
+              const match = f === 'all' || c.dataset.category === f;
+              c.hidden = !match;
+              if (match) shown++;
+            });
+            setCount(shown);
+          });
+        });
+
+        // Price options reorder the demo cards; the others keep the default order (no sales or rating data in the prototype).
+        document.getElementById('orderby').addEventListener('change', (e) => {
+          const v = e.target.value;
+          const byOrder = (a, b) => a.dataset.order - b.dataset.order;
+          const sorted = [...cards].sort((a, b) =>
+            v === 'price' ? (a.dataset.price - b.dataset.price) || byOrder(a, b) :
+            v === 'price-desc' ? (b.dataset.price - a.dataset.price) || byOrder(a, b) :
+            byOrder(a, b));
+          sorted.forEach((c) => grid.appendChild(c));
+        });
+
+        // Add to cart: brief confirmation, like WooCommerce's AJAX "added" state.
+        document.querySelectorAll('.add-to-cart').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            btn.textContent = 'Added to cart';
+            setTimeout(() => { btn.textContent = 'Add to cart'; }, 2000);
+          });
+        });
+      })();
+    </script>
   </body>
 </html>

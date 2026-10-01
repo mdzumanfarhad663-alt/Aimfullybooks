@@ -147,3 +147,44 @@ The old Resources page footer used these live aimfullybooks.com links. The proto
 | Connect | Patreon | https://www.aimfullybooks.com/about/# (no real Patreon URL; client to supply) |
 | Connect | Instagram | https://www.instagram.com/aimfullybooks/ (old handle; client to confirm the new one) |
 | Connect | Email us | mailto:hello@boundlessbacker.com |
+
+---
+
+# Shop
+
+Recommendations for the Shop page (WooCommerce Shop archive). Nothing here has been built.
+
+## Questions for the client: removed filters
+
+The prototype filter bar now shows only real product categories: All, Coloring Books, Street Art, World Books. These three chips were removed and need a decision:
+
+1. **"Active"**: what should it mean? WooCommerce has no "active" category. It could mean in-stock titles, or titles currently open for backing.
+2. **"Pre-order"**: the live site already has a pre-order feature with a progress bar (a custom snippet). A "Pre-order" filter can be added later once pre-order products are tagged with a category or tag.
+3. **"More filters"**: if wanted, this can become a panel using WooCommerce's native filter widgets (price, format), with no custom development.
+
+## Category mapping used in the prototype (please confirm)
+
+| Category | Products |
+|---|---|
+| Coloring Books | The Wynwood Coloring Book, The Brooklyn Coloring Book |
+| Street Art | The Ultimate Street Art Coloring Book, Street Art Coloring Book Printables |
+| World Books | A Blooming Earth, Exploring Sanatana Dharma |
+| No category chip yet | Urpi Means Paloma (Art book), Chaos Diamond Comic Book (Comic book), Dual Coloring Pencils, Baby! (Art supply) |
+
+## Suggestions
+
+1. **"From $25" price format** instead of ranges like "$25 - $50" (needs a small WooCommerce code snippet).
+2. **Crowdfunding progress bars** on pre-order titles in the shop grid, reusing the live site's pre-order snippet or a crowdfunding plugin.
+3. **Quick view and live search**: these need extra plugins or custom development, so they are not in the prototype.
+4. **Category landing banners** for Coloring Books, Street Art and World Books.
+5. **Local product images** instead of hotlinking from aimfullybooks.com, and convert the Wynwood cover from PNG to WebP.
+
+## Needs from client
+
+- Product page URLs (all product links are placeholders).
+- Which products are variable ("Select options") and which are simple ("Add to cart"). The prototype infers this from the price ranges.
+- Category assignments for every product.
+- Whether "New release" and "Available now" labels should appear in WordPress (they need product tags or a badge plugin; WooCommerce does not output them by default).
+- Confirmation that the 5.0 ratings come from real reviews (WooCommerce calculates ratings from customer reviews).
+- **Image check:** the image used for "The Brooklyn Coloring Book" appears to show The Ultimate Street Art Coloring Book cover. Please supply the correct Brooklyn cover.
+- The "Crowdfund your book" destination.
