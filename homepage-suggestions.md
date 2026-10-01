@@ -188,3 +188,27 @@ The prototype filter bar now shows only real product categories: All, Coloring B
 - Confirmation that the 5.0 ratings come from real reviews (WooCommerce calculates ratings from customer reviews).
 - **Image check:** the image used for "The Brooklyn Coloring Book" appears to show The Ultimate Street Art Coloring Book cover. Please supply the correct Brooklyn cover.
 - The "Crowdfund your book" destination.
+
+---
+
+# Crowdfund Your Book
+
+New page built from the staging copy (staging10.aimfullybooks.com/crowdfund-your-book/), word for word. Nothing below has been built.
+
+## Suggestions
+
+1. **Short headings for each block**, for example "Going alone is hard", "Let the community back you" and "Who we're looking for". The staging page has no headings, so the copy reads as walls of text. Needs approved wording.
+2. **"How it works for creators" steps**, possibly the **5D Launch Framework** from the pitch deck (Discover, Decide, Develop, Deliver, Do Good), in the same timeline style as the How It Works page.
+3. **What creators provide vs. what Boundless Backer provides**, plus selection criteria. Needs the client's real terms.
+4. **Creator FAQ** covering fees, revenue split, timeline, and what happens if a campaign is not funded. Only with the client's real answers.
+5. **Artist stories or testimonials**, for example the 140+ muralist collaboration from the pitch deck, or past titles such as the Wynwood and Brooklyn coloring books.
+6. **Remove the repetition**: "we'll handle publishing and distribution" appears in both block 2 and block 3.
+7. **Normalise the button label**: staging uses both "Publish Your Book" and "publish your book". The prototype keeps both as written.
+
+## Needs from client
+
+- **The artist submission form fields** (the Contact Form 7 "Submit Your Work" form on the live site): labels, field types, required fields, any file upload, and the submit button text. Until then the page shows a placeholder card and a "Email your submission" fallback.
+- **Confirm hello@boundlessbacker.com is live**; the fallback button and footer use it.
+- **Confirm these promises from the staging copy**: "We'll handle publishing and distribution", "contributing to our social impact mission", "Accepted creators receive access to our storytelling workshops and entrepreneurship program", and "you'll find more success".
+- **The class link** for "Take our class" (the prototype links to the Resources page classes).
+- **The new Instagram handle** ("Follow @AimfullyBooks" still points to the old account).

@@ -1,0 +1,68 @@
+/* ==========================================================================
+   Boundless Backer: Crowdfund Your Book layout (round 7)
+   --------------------------------------------------------------------------
+   Loaded after home.css (shared tokens, fonts, type scale, buttons, focus,
+   footer) and animations.css. New page, no legacy stylesheet.
+   WordPress: Elementor sections with Image/Icon Box, Text Editor and Button
+   widgets; the #submit section will hold the Contact Form 7 form.
+   ========================================================================== */
+
+.cf-hero h1, .cf-artists h2 { font-family: var(--display); font-weight: 400; letter-spacing: 0; text-transform: uppercase; margin: 0; }
+.cf-intro p, .cf-card p { font-size: 17px; line-height: 1.65; color: #444; margin: 0 0 16px; max-width: 60ch; }
+.button-charcoal { background: var(--charcoal); border-color: var(--charcoal); color: var(--white); }
+.button-charcoal:hover { background: #1F1F1F; border-color: #1F1F1F; }
+
+/* --- Hero (same pattern as About / How It Works) ------------------------ */
+.cf-hero { display: grid; grid-template-columns: 1fr 1fr; height: min(560px, calc(100dvh - 80px)); background: var(--white); }
+.cf-hero-copy { padding: 56px var(--gutter); max-width: calc(var(--container) / 2 + var(--gutter)); margin-left: auto; width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+.cf-hero h1 { font-size: clamp(64px, 5.6vw, 80px); line-height: .98; }
+.cf-subline { font-family: var(--heading); font-size: clamp(22px, 2vw, 30px); line-height: 1.25; margin: 16px 0 32px; color: #444; }
+.cf-hero-art { min-height: 0; overflow: hidden; background: var(--gold); border-radius: 0 0 0 var(--radius); display: flex; align-items: center; justify-content: center; padding: 48px; }
+.cf-hero-art img { width: auto; height: 340px; max-height: 100%; aspect-ratio: 499 / 578; }
+
+/* --- Block 1: icon + text ---------------------------------------------- */
+/* The lightbulb already sits in the hero, so block 1 is text only (icon kept in markup for the WordPress Icon Box). */
+.cf-intro { display: block; }
+.cf-intro-icon { display: none; }
+.cf-intro-copy { max-width: 760px; }
+.cf-intro-copy p { font-size: clamp(17px, 1.4vw, 19px); }
+.cf-intro-copy .button { margin-top: 16px; }
+
+/* --- Blocks 2 + 3: cards ------------------------------------------------ */
+.cf-cards { background: var(--silver); }
+.cf-card-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.cf-card { display: flex; flex-direction: column; align-items: flex-start; padding: clamp(28px, 3vw, 40px); border-radius: var(--radius); }
+.cf-card-silver { background: var(--white); }
+.cf-card-white { background: var(--white); border-top: 4px solid var(--gold); }
+.cf-card-icon { height: 96px; margin-bottom: 24px; }
+.cf-card-icon img { height: 100%; width: auto; }
+.cf-card .button { margin-top: auto; }
+.cf-card p:last-of-type { margin-bottom: 28px; }
+.cf-inline-link { color: var(--charcoal); font-weight: 600; background-size: 100% 1px; } /* underlined by default inside body text */
+.cf-inline-link:hover { background-size: 0 1px; background-position: 100% 100%; }
+
+/* --- Independent artists band (charcoal) -------------------------------- */
+.cf-artists { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(32px, 6vw, 96px); background: var(--charcoal); color: var(--white); padding: var(--section-y) max(var(--gutter), calc((100% - var(--container)) / 2)); }
+.cf-artists-art { background: var(--white); border-radius: var(--radius); padding: 24px; display: flex; justify-content: center; }
+.cf-artists-art img { width: 100%; max-width: 468px; height: auto; aspect-ratio: 468 / 344; }
+.cf-artists h2 { font-size: clamp(40px, 3.9vw, 56px); line-height: 1; max-width: 14ch; }
+.cf-instagram { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin-top: 24px; color: var(--white); font-weight: 600; letter-spacing: .1em; text-transform: uppercase; font-size: 13px; }
+.cf-artists a:focus-visible { box-shadow: 0 0 0 2px var(--charcoal), 0 0 0 4px var(--gold); }
+
+/* --- Submission (placeholder until the CF7 fields arrive) --------------- */
+.cf-submit-card { display: flex; flex-direction: column; align-items: center; gap: 24px; text-align: center; padding: clamp(40px, 5vw, 64px) 24px; border: 2px dashed #8A8A8A; border-radius: var(--radius); background: var(--silver); }
+.cf-placeholder-tag { margin: 0; font-family: var(--heading); font-weight: 700; font-size: 18px; color: #444; }
+
+/* --- Tablet / mobile ---------------------------------------------------- */
+@media (max-width: 850px) {
+  .cf-hero { grid-template-columns: 1fr; height: auto; }
+  .cf-hero-copy { padding: 56px var(--gutter) 44px; max-width: none; }
+  .cf-hero h1 { font-size: clamp(44px, 12vw, 52px); }
+  .cf-hero-art { border-radius: 0; padding: 32px; }
+  .cf-hero-art img { height: 200px; }
+  .cf-card-grid { grid-template-columns: 1fr; gap: 18px; }
+  .cf-card-icon { height: 80px; }
+  .cf-artists { grid-template-columns: 1fr; padding: 64px var(--gutter); }
+  .cf-artists h2 { font-size: clamp(32px, 9vw, 38px); }
+  .cf-submit-card .button { width: 100%; }
+}
