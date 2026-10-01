@@ -289,3 +289,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, .route:focus-visible
 @media (max-width: 850px) {
   .hero-art img { top: -52px; height: calc((100% + 52px) * 1.06); }
 }
+
+/* Footer: brand tagline sits under the logo (brand board "Primary Logo + Tagline"). */
+.footer-brand { display: flex; flex-direction: column; gap: 16px; }
+.site-footer .footer-tagline { font-family: var(--heading); font-size: 14px; letter-spacing: .02em; text-transform: none; max-width: none; margin: 0; color: #D9D9D9; }
