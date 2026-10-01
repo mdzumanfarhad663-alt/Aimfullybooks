@@ -48,18 +48,77 @@
     </section>
 
     <section class="cf-submit section" id="submit">
-      <div class="cf-submit-card reveal">
-        <!-- [PLACEHOLDER: artist submission form. The real form is the Contact Form 7 "Submit Your Work" form on the live site;
-             fields to be supplied and built exactly. In WordPress this stays the CF7 / Elementor form.] -->
-        <p class="cf-placeholder-tag">[PLACEHOLDER: artist submission form — fields to be supplied]</p>
-        <!-- Fallback until the form is built. NOTE: hello@boundlessbacker.com is not confirmed live yet. -->
-        <a class="button button-charcoal btn-hover" href="mailto:hello@boundlessbacker.com?subject=Boundless%20Backer%20%E2%80%94%20Artist%20Submission">Email your submission <span aria-hidden="true">→</span></a>
-      </div>
+      <div class="cf-submit-intro reveal"><h2>Submit your work</h2><p>Ready to submit? Upload your concept, images, description, and intro video to create your crowdfunding campaign.</p></div>
+      <!-- Artist submission form. Fields are PROPOSED from the page copy (concept, images, description, intro video);
+           confirm against the live Contact Form 7 "Submit Your Work" form before launch.
+           WordPress: Contact Form 7 (or Elementor Form). Mail subject: "Boundless Backer — Artist Submission".
+           CF7 tags: [text* your-name] [email* your-email] [url your-portfolio] [text* book-title] [select* book-type]
+           [textarea* book-description] [file* book-images limit:10mb filetypes:jpg|jpeg|png|pdf] [url* intro-video] [acceptance consent]
+           Front-end only in this prototype: nothing is sent. -->
+      <form class="cf-form reveal" novalidate>
+        <div class="cf-field"><label for="cf-name">Your name <span class="req" aria-hidden="true">*</span></label><input id="cf-name" name="your-name" type="text" autocomplete="name" required/><p class="cf-error" id="cf-name-error">Please enter your name.</p></div>
+        <div class="cf-field"><label for="cf-email">Email <span class="req" aria-hidden="true">*</span></label><input id="cf-email" name="your-email" type="email" autocomplete="email" required/><p class="cf-error" id="cf-email-error">Please enter a valid email address.</p></div>
+        <div class="cf-field cf-field-full"><label for="cf-portfolio">Website or portfolio <span class="cf-optional">(optional)</span></label><input id="cf-portfolio" name="your-portfolio" type="url" placeholder="https://" inputmode="url"/><p class="cf-error" id="cf-portfolio-error">Please enter a full link starting with https://</p></div>
+        <div class="cf-field"><label for="cf-title">Book title or working title <span class="req" aria-hidden="true">*</span></label><input id="cf-title" name="book-title" type="text" required/><p class="cf-error" id="cf-title-error">Please enter a title.</p></div>
+        <div class="cf-field"><label for="cf-type">Type of book <span class="req" aria-hidden="true">*</span></label><select id="cf-type" name="book-type" required><option value="">Choose one</option><option>Coloring book</option><option>Art book</option><option>Comic book</option><option>Children’s book</option><option>Other</option></select><p class="cf-error" id="cf-type-error">Please choose a type of book.</p></div>
+        <div class="cf-field cf-field-full"><label for="cf-description">Concept and description <span class="req" aria-hidden="true">*</span></label><textarea id="cf-description" name="book-description" rows="6" required aria-describedby="cf-description-hint"></textarea><p class="cf-hint" id="cf-description-hint">Tell us about your book: the idea, who it is for, and where you are in the process.</p><p class="cf-error" id="cf-description-error">Please describe your book.</p></div>
+        <div class="cf-field"><label for="cf-images">Sample images <span class="req" aria-hidden="true">*</span></label><input id="cf-images" name="book-images" type="file" accept=".jpg,.jpeg,.png,.pdf" required aria-describedby="cf-images-hint"/><p class="cf-hint" id="cf-images-hint">JPG, PNG or PDF, up to 10 MB. Combine several images into one PDF.</p><p class="cf-error" id="cf-images-error">Please add a sample file.</p></div>
+        <div class="cf-field"><label for="cf-video">Intro video link <span class="req" aria-hidden="true">*</span></label><input id="cf-video" name="intro-video" type="url" placeholder="https://" inputmode="url" required aria-describedby="cf-video-hint"/><p class="cf-hint" id="cf-video-hint">A YouTube, Vimeo or Google Drive link. Video files are too large to upload.</p><p class="cf-error" id="cf-video-error">Please enter a full link starting with https://</p></div>
+        <div class="cf-field cf-field-full cf-check"><input id="cf-consent" name="consent" type="checkbox" required/><label for="cf-consent">I agree to be contacted by Boundless Backer about my submission. <span class="req" aria-hidden="true">*</span></label><p class="cf-error" id="cf-consent-error">Please confirm so we can reply to you.</p></div>
+        <div class="cf-actions cf-field-full"><button class="button button-gold btn-hover" type="submit">Submit your work <span aria-hidden="true">→</span></button><p class="cf-required-note"><span aria-hidden="true">*</span> Required</p></div>
+        <p class="cf-status cf-field-full" role="status" aria-live="polite"></p>
+        <!-- NOTE: hello@boundlessbacker.com is not confirmed live yet. -->
+        <p class="cf-alt cf-field-full">Prefer email? <a class="link-underline" href="mailto:hello@boundlessbacker.com?subject=Boundless%20Backer%20%E2%80%94%20Artist%20Submission">Send your submission to hello@boundlessbacker.com</a></p>
+      </form>
     </section>
   </main>
   <footer class="site-footer"><div class="footer-top"><div class="footer-brand"><a class="brand brand-light" href="./index.html" aria-label="Boundless Backer home">
       <!-- Logo swap: replace the two spans below with
            <img class="brand-logo" src="./assets/logo-primary-white.svg" alt="Boundless Backer" width="160" height="48" /> -->
       <span class="bookstack" aria-hidden="true"><i></i><i></i><i></i></span><span>Boundless <br/>Backer<span class="period">.</span></span></a><p class="footer-tagline">Curated with intention. Published for impact. Chosen by you.</p></div><p>Fund the art you want to see in the world.</p></div><div class="footer-links reveal-stagger"><div><p>Explore</p><a class="link-underline" href="./shop.html">Shop</a><a class="link-underline" href="./how-it-works.html">How it works</a><a class="link-underline" href="./resources.html">Resources</a></div><div><p>Participate</p><a class="link-underline" href="./crowdfund-your-book.html" aria-current="page">Crowdfund your book</a><a class="link-underline" href="#">Become a guest</a><a class="link-underline" href="#">Become a host</a></div><div><p>Connect</p><a class="link-underline" href="#">Instagram</a><a class="link-underline" href="#">TikTok</a><a class="link-underline" href="mailto:hello@boundlessbacker.com">Email us</a></div></div><div class="footer-bottom"><span>© 2026 Boundless Backer</span><span>Client approval prototype. Links are illustrative.</span></div></footer>
+  <script>
+    /* Prototype only: front-end validation and a success message. Contact Form 7 handles this in WordPress. */
+    (() => {
+      const form = document.querySelector('.cf-form');
+      const status = form.querySelector('.cf-status');
+      const fields = [...form.querySelectorAll('input, select, textarea')];
+
+      const check = (el) => {
+        const ok = el.checkValidity();
+        const err = document.getElementById(el.id + '-error');
+        el.setAttribute('aria-invalid', String(!ok));
+        if (err) {
+          err.hidden = ok;
+          const ids = (el.getAttribute('aria-describedby') || '').split(' ').filter((id) => id && id !== err.id);
+          if (!ok) ids.push(err.id);
+          ids.length ? el.setAttribute('aria-describedby', ids.join(' ')) : el.removeAttribute('aria-describedby');
+        }
+        return ok;
+      };
+
+      form.querySelectorAll('.cf-error').forEach((e) => (e.hidden = true));
+      // Validate a field once the visitor leaves it, then live while they fix it.
+      fields.forEach((el) => {
+        el.addEventListener('blur', () => { if (el.value || el.type === 'checkbox') check(el); });
+        el.addEventListener('input', () => { if (el.getAttribute('aria-invalid') === 'true') check(el); });
+        el.addEventListener('change', () => { if (el.getAttribute('aria-invalid') === 'true') check(el); });
+      });
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const invalid = fields.filter((el) => !check(el));
+        if (invalid.length) {
+          status.textContent = 'Please check the highlighted fields.';
+          status.className = 'cf-status cf-field-full is-error';
+          invalid[0].focus();
+          return;
+        }
+        status.textContent = 'Thank you. Your submission has been received. We will be in touch by email.';
+        status.className = 'cf-status cf-field-full is-success';
+        form.reset();
+        fields.forEach((el) => el.removeAttribute('aria-invalid'));
+      });
+    })();
+  </script>
 </body>
 </html>

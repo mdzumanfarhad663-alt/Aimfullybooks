@@ -207,7 +207,14 @@ New page built from the staging copy (staging10.aimfullybooks.com/crowdfund-your
 
 ## Needs from client
 
-- **The artist submission form fields** (the Contact Form 7 "Submit Your Work" form on the live site): labels, field types, required fields, any file upload, and the submit button text. Until then the page shows a placeholder card and a "Email your submission" fallback.
+- **Confirm the artist submission form fields.** The prototype form uses PROPOSED fields based on the page copy ("Upload your concept, images, description, and intro video"), not the live Contact Form 7 "Submit Your Work" form:
+  - Your name (required), Email (required), Website or portfolio (optional)
+  - Book title or working title (required), Type of book (required: Coloring book, Art book, Comic book, Children's book, Other)
+  - Concept and description (required)
+  - Sample images (required file upload: JPG, PNG or PDF, up to 10 MB)
+  - Intro video link (required URL; video files are too large to upload)
+  - Consent to be contacted (required checkbox)
+  - Please compare with the live CF7 form and confirm the field list, the book types, and the file size limit.
 - **Confirm hello@boundlessbacker.com is live**; the fallback button and footer use it.
 - **Confirm these promises from the staging copy**: "We'll handle publishing and distribution", "contributing to our social impact mission", "Accepted creators receive access to our storytelling workshops and entrepreneurship program", and "you'll find more success".
 - **The class link** for "Take our class" (the prototype links to the Resources page classes).
