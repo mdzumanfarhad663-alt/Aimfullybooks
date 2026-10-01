@@ -3,50 +3,81 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Boundless Backer brings artists, readers, and communities together through books made with intention and chosen with care."/>
   <title>About | Boundless Backer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet"/>
+  <!-- Brand fonts are self-hosted (see home.css @font-face). -->
+  <link rel="preload" href="./fonts/norwester-400.woff2" as="font" type="font/woff2" crossorigin/>
+  <link rel="preload" href="./fonts/dm-sans-variable.woff2" as="font" type="font/woff2" crossorigin/>
   <link rel="stylesheet" href="./styles.css"/>
   <link rel="stylesheet" href="./mobile.css"/>
   <link rel="stylesheet" href="./refinements.css"/>
   <link rel="stylesheet" href="./about.css"/>
-<script src="./global-header.js" defer></script></head>
+  <!-- Shared design system (tokens, type scale, buttons, motion), then About layout. -->
+  <link rel="stylesheet" href="./animations.css"/>
+  <link rel="stylesheet" href="./home.css"/>
+  <link rel="stylesheet" href="./about-v2.css"/>
+  <script src="./global-header.js" defer></script>
+  <script src="./animations.js" defer></script>
+</head>
 <body>
-  <a class="skip-link" href="#story">Skip to content</a>
+  <a class="skip-link" href="#main">Skip to content</a>
   <global-site-header class="site-header"></global-site-header>
-  <main>
+  <main id="main">
     <section class="about-hero">
-      <div class="about-hero-copy"><p class="eyebrow">Hello</p><h1>We are<br/>Boundless Backer.</h1><p>We bring artists, readers, and communities together through books made with intention and chosen with care.</p><a class="button button-gold" href="#story">Our story <span aria-hidden="true">→</span></a></div>
+      <div class="about-hero-copy reveal"><h1>We are <br/>Boundless Backer.</h1><p>We bring artists, readers, and communities together through books made with intention and chosen with care.</p><a class="button button-gold btn-hover" href="#story">Our story <span aria-hidden="true">→</span></a></div>
       <div class="about-hero-media"><img src="https://www.aimfullybooks.com/wp-content/uploads/2023/08/Home-2-1.webp" alt="Colorful independent art books and creative materials"/></div>
     </section>
 
     <section class="about-story section" id="story">
-      <div class="story-photo"><img src="https://www.aimfullybooks.com/wp-content/uploads/2023/11/aimfullybooks-about-image1.webp" alt="Creative community gathered around books and art"/></div>
-      <div class="story-copy"><p class="eyebrow">Why we started</p><h2>Make friends around the world through creativity.</h2><p>Tio Diego created Boundless Backer so we could make friends from around the world and express our creativity together through independent art books.</p><p>We believe books bring people closer. They hold singular perspectives, start conversations, and give artists a way to share their gifts and stories.</p><a class="text-action" href="#press">Our full story &amp; press kit <span aria-hidden="true">→</span></a></div>
+      <div class="story-photo img-zoom"><img src="https://www.aimfullybooks.com/wp-content/uploads/2023/11/aimfullybooks-about-image1.webp" alt="Creative community gathered around books and art" loading="lazy"/></div>
+      <div class="story-copy reveal"><p class="eyebrow">Why we started</p><h2>Make friends around the world through creativity.</h2><p>Tio Diego created Boundless Backer so we could make friends from around the world and express our creativity together through independent art books.</p><p>We believe books bring people closer. They hold singular perspectives, start conversations, and give artists a way to share their gifts and stories.</p>
+        <!-- [PLACEHOLDER: press kit destination, to be supplied by client. Using the contact email for now.] -->
+        <a class="text-action link-underline" href="mailto:hello@boundlessbacker.com?subject=Press%20kit">Our full story &amp; press kit <span aria-hidden="true">→</span></a></div>
     </section>
 
     <section class="about-impact">
-      <div class="about-impact-media"><img src="https://www.aimfullybooks.com/wp-content/uploads/2023/08/Home-4.webp" alt="Artist working with colorful book artwork"/></div>
-      <div class="about-impact-copy"><p class="eyebrow">Art that gives back</p><h2>Books can move more than pages.</h2><p>The proceeds from our books help support artists, creative learning, cultural exchange, and the community projects that keep art moving forward.</p><ul><li><strong>Artists</strong><span>Support for creative work.</span></li><li><strong>Art education</strong><span>More access and brighter futures.</span></li><li><strong>Communities</strong><span>Stories shared across borders.</span></li></ul><a class="button button-gold" href="./shop.html">Explore the books <span aria-hidden="true">→</span></a></div>
+      <div class="about-impact-media img-zoom"><img src="https://www.aimfullybooks.com/wp-content/uploads/2023/08/Home-4.webp" alt="Artist working with colorful book artwork" loading="lazy"/></div>
+      <div class="about-impact-copy reveal"><p class="eyebrow">Art that gives back</p><h2>Books can move more than pages.</h2><p>The proceeds from our books help support artists, creative learning, cultural exchange, and the community projects that keep art moving forward.</p><ul class="reveal-stagger"><li><strong>Artists</strong><span>Support for creative work.</span></li><li><strong>Art education</strong><span>More access and brighter futures.</span></li><li><strong>Communities</strong><span>Stories shared across borders.</span></li></ul><a class="button button-gold btn-hover" href="./shop.html">Explore the books <span aria-hidden="true">→</span></a></div>
     </section>
 
     <section class="about-manifesto">
-      <div class="manifesto-media"><img src="https://www.aimfullybooks.com/wp-content/uploads/2023/08/About-4.gif" alt="Animated artwork from Boundless Backer"/></div>
-      <div class="manifesto-copy"><h2>Art.<br/>Mindfulness.<br/>Community.<br/>Giving back.</h2><p>Connecting art, mindfulness, distant communities, and giving back is at the heart of our mission.</p><a class="button button-gold" href="#press">Help tell our story <span aria-hidden="true">→</span></a></div>
+      <!-- Was a 46.6 MB GIF; now a 1.9 MB muted loop. WordPress: Elementor Video widget (self-hosted, autoplay, mute, loop, poster). -->
+      <div class="manifesto-media"><video class="manifesto-video" autoplay muted loop playsinline preload="metadata" poster="./assets/about-manifesto-poster.jpg" width="668" height="668" aria-label="Children and volunteers holding up Boundless Backer books in front of a mural"><source src="./assets/about-manifesto.mp4" type="video/mp4"/></video></div>
+      <div class="manifesto-copy reveal"><h2>Art. <br/>Mindfulness. <br/>Community. <br/>Giving back.</h2><p>Connecting art, mindfulness, distant communities, and giving back is at the heart of our mission.</p>
+        <!-- [PLACEHOLDER: press kit destination, to be supplied by client.] -->
+        <a class="button button-gold btn-hover" href="mailto:hello@boundlessbacker.com?subject=Press%20kit">Help tell our story <span aria-hidden="true">→</span></a></div>
     </section>
 
     <section class="about-community section" id="community">
-      <div class="community-heading"><p class="eyebrow">Our community</p><h2>A world of stories, made together.</h2><p>We support artists around the world and invite readers, makers, hosts, and partners to be part of the journey.</p></div>
-      <div class="community-gallery"><img src="https://www.aimfullybooks.com/wp-content/uploads/2023/08/Home-3-1024x536.webp" alt="Illustrated art book"/><img src="https://www.aimfullybooks.com/wp-content/uploads/2023/08/Home-2-1.webp" alt="Colorful independent books"/><img src="https://www.aimfullybooks.com/wp-content/uploads/2023/08/Home-006.webp" alt="Creative community"/></div>
-      <a class="text-action community-action" href="https://www.instagram.com/aimfullybooks/">Follow our journey <span aria-hidden="true">→</span></a>
+      <div class="community-heading reveal"><p class="eyebrow">Our community</p><h2>A world of stories, made together.</h2><p>We support artists around the world and invite readers, makers, hosts, and partners to be part of the journey.</p></div>
+      <div class="community-gallery reveal-stagger"><div class="img-zoom"><img src="https://www.aimfullybooks.com/wp-content/uploads/2023/08/Home-3-1024x536.webp" alt="Illustrated art book" loading="lazy"/></div><div class="img-zoom"><img src="https://www.aimfullybooks.com/wp-content/uploads/2023/08/Home-2-1.webp" alt="Colorful independent books" loading="lazy"/></div><div class="img-zoom"><img src="https://www.aimfullybooks.com/wp-content/uploads/2023/08/Home-006.webp" alt="Creative community" loading="lazy"/></div></div>
+      <!-- [PLACEHOLDER: new Instagram handle, to be supplied by client. Still the old aimfullybooks account.] -->
+      <a class="text-action community-action link-underline" href="https://www.instagram.com/aimfullybooks/">Follow our journey <span aria-hidden="true">→</span></a>
     </section>
 
-    <section class="about-newsletter section" id="press">
-      <div><p class="eyebrow">A creative practice, in your inbox</p><h2>Discover your inner artist.</h2><p>One coloring lesson a month to help you make more room for creativity.</p></div>
-      <form><label for="about-email">Your email</label><div class="about-email-row"><input id="about-email" type="email" placeholder="your@email.com"/><button class="button button-dark" type="submit">Become an artist</button></div><p>You are safe with us. Unsubscribe anytime.</p></form>
+    <section class="about-newsletter section">
+      <div class="reveal"><p class="eyebrow">A creative practice, in your inbox</p><h2>Discover your inner artist.</h2><p>One coloring lesson a month to help you make more room for creativity.</p></div>
+      <form class="reveal"><label for="about-email">Your email</label><div class="email-row"><input id="about-email" type="email" placeholder="your@email.com" required/><button class="button button-gold btn-hover" type="submit">Become an artist</button></div><p class="form-note">You are safe with us. Unsubscribe anytime.</p></form>
     </section>
   </main>
-  <footer class="site-footer"><div class="footer-top"><a class="brand brand-light" href="./index.html"><span class="bookstack" aria-hidden="true"><i></i><i></i><i></i></span><span>Boundless<br/>Backer<span class="period">.</span></span></a><p>Fund the art you want to see in the world.</p></div><div class="footer-links"><div><p>Explore</p><a href="./shop.html">Shop</a><a href="./how-it-works.html">How it works</a><a href="#community">Resources</a></div><div><p>Participate</p><a href="#">Crowdfund your book</a><a href="#">Become a guest</a><a href="#">Become a host</a></div><div><p>Connect</p><a href="#">Instagram</a><a href="#">TikTok</a><a href="mailto:hello@boundlessbacker.com">Email us</a></div></div><div class="footer-bottom"><span>© 2026 Boundless Backer</span><span>Client approval prototype. Links are illustrative.</span></div></footer>
+  <footer class="site-footer"><div class="footer-top"><div class="footer-brand"><a class="brand brand-light" href="./index.html" aria-label="Boundless Backer home">
+      <!-- Logo swap: replace the two spans below with
+           <img class="brand-logo" src="./assets/logo-primary-white.svg" alt="Boundless Backer" width="160" height="48" /> -->
+      <span class="bookstack" aria-hidden="true"><i></i><i></i><i></i></span><span>Boundless <br/>Backer<span class="period">.</span></span></a><p class="footer-tagline">Curated with intention. Published for impact. Chosen by you.</p></div><p>Fund the art you want to see in the world.</p></div><div class="footer-links reveal-stagger"><div><p>Explore</p><a class="link-underline" href="./shop.html">Shop</a><a class="link-underline" href="./how-it-works.html">How it works</a><a class="link-underline" href="./resources.html">Resources</a></div><div><p>Participate</p><a class="link-underline" href="#">Crowdfund your book</a><a class="link-underline" href="#">Become a guest</a><a class="link-underline" href="#">Become a host</a></div><div><p>Connect</p><a class="link-underline" href="#">Instagram</a><a class="link-underline" href="#">TikTok</a><a class="link-underline" href="mailto:hello@boundlessbacker.com">Email us</a></div></div><div class="footer-bottom"><span>© 2026 Boundless Backer</span><span>Client approval prototype. Links are illustrative.</span></div></footer>
+  <script>
+    /* Prototype only: friendly confirmation instead of a real submit. WordPress form plugin replaces this. */
+    document.querySelector('.about-newsletter form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const note = e.target.querySelector('.form-note');
+      note.textContent = 'Thank you. Your first lesson is on its way.';
+      note.classList.add('form-success');
+      note.setAttribute('role', 'status');
+    });
+    /* Reduced motion: keep the manifesto video on its still poster frame. */
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const v = document.querySelector('.manifesto-video');
+      v.removeAttribute('autoplay'); v.pause();
+    }
+  </script>
 </body>
 </html>

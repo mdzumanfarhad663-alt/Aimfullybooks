@@ -1,0 +1,98 @@
+/* ==========================================================================
+   Boundless Backer: About page layout (round 3)
+   --------------------------------------------------------------------------
+   Loaded after home.css, which supplies the shared tokens, fonts, type scale,
+   buttons, focus states, newsletter field and footer. This file only lays out
+   the About sections and maps them onto that system. about.css stays loaded
+   underneath and is overridden here.
+   ========================================================================== */
+
+/* --- Shared heading treatment (Norwester, one weight, no fake bold) ------ */
+.about-hero h1, .about-impact h2, .about-manifesto h2,
+.about-story h2, .about-community h2, .about-newsletter h2, .about-impact li strong {
+  font-family: var(--display);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+/* Section titles: same scale as the home page (40-56px desktop). */
+.about-story h2, .about-community h2, .about-newsletter h2, .about-impact h2 {
+  font-size: clamp(40px, 3.9vw, 56px);
+  line-height: 1;
+}
+.about-story p, .about-impact p, .about-community p, .about-newsletter p:not(.form-note), .manifesto-copy p { font-size: 17px; line-height: 1.65; }
+
+/* --- Hero --------------------------------------------------------------- */
+.about-hero { min-height: 0; height: min(640px, calc(100dvh - 80px)); grid-template-columns: 1fr 1fr; background: var(--white); }
+.about-hero-copy { padding: 56px var(--gutter); max-width: calc(var(--container) / 2 + var(--gutter)); margin-left: auto; width: 100%; }
+.about-hero h1 { font-size: clamp(64px, 5.6vw, 80px); line-height: .98; }
+.about-hero-copy > p:not(.eyebrow) { font-size: clamp(17px, 1.3vw, 19px); line-height: 1.6; max-width: 44ch; color: #444; margin: 24px 0 32px; }
+.about-hero-media { min-height: 0; border-radius: 0 0 0 var(--radius); position: relative; }
+.about-hero-media img { position: absolute; inset: 0; } /* fill the grid cell exactly */
+
+/* --- Story -------------------------------------------------------------- */
+.about-story { grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 96px); }
+.story-photo { aspect-ratio: 5 / 4; border-radius: var(--radius); }
+.story-copy h2 { margin-bottom: 24px; max-width: 22ch; }
+.story-copy > p:not(.eyebrow) { max-width: 60ch; margin: 0 0 16px; color: #444; }
+
+/* Text links: drop the old gold border, use .link-underline from animations.css. */
+.text-action { border-bottom: 0; padding-bottom: 3px; margin-top: 12px; font-family: var(--body); font-weight: 600; letter-spacing: .1em; min-height: 44px; display: inline-flex; align-items: center; }
+
+/* --- Impact (charcoal) -------------------------------------------------- */
+.about-impact-media { min-height: 560px; }
+.about-impact-copy { padding: clamp(56px, 7vw, 104px) clamp(24px, 6vw, 96px); }
+.about-impact h2 { color: var(--white); max-width: 14ch; }
+.about-impact-copy > p:not(.eyebrow) { color: #E6E6E6; max-width: 52ch; margin: 24px 0 32px; }
+.about-impact ul { gap: 0; margin-bottom: 40px; }
+.about-impact li { grid-template-columns: 180px 1fr; gap: 24px; padding: 20px 0; align-items: baseline; }
+.about-impact li:last-child { border-bottom: 1px solid rgba(255, 255, 255, .3); }
+.about-impact li strong { font-size: 22px; color: var(--gold); }
+.about-impact li span { font-size: 15px; color: #E6E6E6; }
+
+/* --- Manifesto ---------------------------------------------------------- */
+.about-manifesto { grid-template-columns: 1fr 1fr; }
+.manifesto-media { min-height: 0; background: var(--white); display: flex; align-items: center; justify-content: center; padding: clamp(24px, 4vw, 64px); }
+.manifesto-video { width: 100%; max-width: 620px; height: auto; aspect-ratio: 1; display: block; object-fit: cover; }
+.manifesto-copy { padding: clamp(56px, 7vw, 104px) clamp(24px, 6vw, 96px); }
+.about-manifesto h2 { font-size: clamp(48px, 4.6vw, 64px); line-height: 1; } /* the one louder title on this page */
+.manifesto-copy p { max-width: 40ch; margin: 24px 0 32px; color: #444; }
+
+/* --- Community (silver) ------------------------------------------------- */
+.community-heading { margin-bottom: 48px; }
+.community-heading h2 { max-width: 18ch; margin-left: auto; margin-right: auto; }
+.community-heading > p:not(.eyebrow) { color: #444; max-width: 56ch; }
+.community-gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; align-items: stretch; }
+.community-gallery > div { aspect-ratio: 4 / 3; border-radius: var(--radius); }
+.community-gallery img,
+.community-gallery img:first-child,
+.community-gallery img:last-child,
+.community-gallery img:nth-child(2) { height: 100%; width: 100%; object-fit: cover; }
+.community-action { display: flex; width: fit-content; margin: 32px auto 0; }
+
+/* --- Newsletter (white, matches home) ----------------------------------- */
+.about-newsletter { background: var(--white); grid-template-columns: 1fr 1fr; gap: 56px; align-items: end; }
+.about-newsletter > div > p:not(.eyebrow) { color: #444; max-width: 46ch; margin-top: 20px; }
+.about-newsletter label { display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+.about-newsletter .email-row { display: flex; }
+.about-newsletter .form-note { font-size: 12px; margin: 12px 0 0; }
+
+/* --- Tablet / mobile ---------------------------------------------------- */
+@media (max-width: 850px) {
+  .about-hero { height: auto; grid-template-columns: 1fr; }
+  .about-hero-copy { padding: 56px var(--gutter) 44px; max-width: none; }
+  .about-hero h1 { font-size: clamp(44px, 12vw, 52px); }
+  .about-hero-media { aspect-ratio: 4 / 3; border-radius: 0; }
+  .about-story, .about-impact, .about-manifesto, .about-newsletter { grid-template-columns: 1fr; }
+  .about-story h2, .about-community h2, .about-newsletter h2, .about-impact h2 { font-size: clamp(32px, 9vw, 38px); }
+  .about-impact-media { min-height: 0; aspect-ratio: 4 / 3; }
+  .about-impact-copy, .manifesto-copy { padding: 64px var(--gutter); }
+  .about-impact li { grid-template-columns: 1fr; gap: 4px; }
+  .about-manifesto h2 { font-size: clamp(40px, 11vw, 48px); }
+  .manifesto-media { padding: 24px var(--gutter) 0; }
+  .about-community { padding: 72px var(--gutter); }
+  .community-gallery { grid-template-columns: 1fr; gap: 14px; }
+  .about-newsletter { gap: 32px; }
+  .about-newsletter .email-row { display: block; }
+  .about-newsletter .email-row input { width: 100%; margin-bottom: 10px; border-right: 1px solid #8A8A8A; }
+  .about-newsletter .email-row .button { width: 100%; }
+}
