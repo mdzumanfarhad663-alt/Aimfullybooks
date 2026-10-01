@@ -107,3 +107,43 @@ One line, taken from the pitch deck, explaining that backing books before printi
 
 - Why: it gives backers a reason to back early, not just buy later.
 - Needed from the client: approval, because the pitch deck is an investor document and this is a business-model message.
+
+---
+
+# Resources
+
+Recommendations for the Resources page. Nothing here has been built.
+
+## Suggestions
+
+1. **Type labels on resource cards**, such as "Monthly lesson", "Class" or "Program", so visitors can scan the offers quickly. These would be new copy and need the client's wording.
+2. **A different headline for the hero or the newsletter.** Both currently say "Discover your inner artist." (the About page newsletter uses it too). One distinct line for each would feel more intentional.
+3. **One signup across the site.** The About and Resources newsletters are identical. Consider one shared signup component, or merging it with the home page's "Get the next big idea first."
+4. **Livestreamed workshops** (mentioned in the pitch deck) as a future resource type, if they are running.
+5. **Free resources for artists**, such as a submission guide or book-making checklist, linked from "Crowdfund your book". Needs the client's material.
+6. **Filter tabs** once the library grows to roughly 8 or more resources. Four items do not need them yet.
+
+## Needs from client
+
+- The printables download (PDF) or the form that delivers it.
+- Destinations for the coloring tutorial, storytelling class, book-making class and creative entrepreneurship program application, and confirmation of which programs are live.
+- Optional: real, documentary-style photos to replace the current generated still-life images, in line with the brand photography guide.
+
+---
+
+# Footer links for WordPress build
+
+The old Resources page footer used these live aimfullybooks.com links. The prototype footer now matches the other pages (with placeholder links), so they are recorded here for the WordPress build.
+
+| Column | Label | URL |
+|---|---|---|
+| Explore | Wholesale | https://www.aimfullybooks.com/wholesale/ |
+| Explore | FAQs | https://www.aimfullybooks.com/faq/ |
+| Participate | Crowdfund your book | https://www.aimfullybooks.com/crowdfund-your-book/ |
+| Participate | Become a guest | https://www.aimfullybooks.com/visiting/ |
+| Participate | Become a host | https://www.aimfullybooks.com/hosting/ |
+| Participate | Get involved | https://www.aimfullybooks.com/join/ |
+| Connect | Reviews | https://www.aimfullybooks.com/reviews/ |
+| Connect | Patreon | https://www.aimfullybooks.com/about/# (no real Patreon URL; client to supply) |
+| Connect | Instagram | https://www.instagram.com/aimfullybooks/ (old handle; client to confirm the new one) |
+| Connect | Email us | mailto:hello@boundlessbacker.com |

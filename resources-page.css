@@ -1,0 +1,101 @@
+/* ==========================================================================
+   Boundless Backer: Resources layout (round 5)
+   --------------------------------------------------------------------------
+   Loaded after home.css (shared tokens, fonts, type scale, buttons, focus,
+   email field, footer) and animations.css. resources.css stays loaded
+   underneath and is overridden here.
+   ========================================================================== */
+
+/* --- Shared heading treatment -------------------------------------------- */
+.resources-hero h1, .featured-printables h2, .library-heading h2,
+.resources-newsletter h2, .resource-card h3 {
+  font-family: var(--display);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+/* Section titles: same scale as the other pages (40-56px desktop). */
+.featured-printables h2, .library-heading h2, .resources-newsletter h2 {
+  font-size: clamp(40px, 3.9vw, 56px);
+  line-height: 1;
+}
+
+/* --- Hero (matches About / How It Works) -------------------------------- */
+.resources-hero { min-height: 0; height: min(640px, calc(100dvh - 80px)); grid-template-columns: 1fr 1fr; background: var(--white); }
+.resources-hero-copy { padding: 56px var(--gutter); max-width: calc(var(--container) / 2 + var(--gutter)); margin-left: auto; width: 100%; }
+.resources-hero h1 { font-size: clamp(64px, 5.6vw, 80px); line-height: .98; }
+.resources-hero-copy > p:not(.eyebrow) { font-size: clamp(17px, 1.3vw, 19px); line-height: 1.6; max-width: 44ch; color: #444; margin: 24px 0 32px; }
+.resources-hero-media { position: relative; min-height: 0; border-radius: 0 0 0 var(--radius); }
+.resources-hero-media img { position: absolute; inset: 0; }
+
+/* --- Featured printables (gold) ----------------------------------------- */
+.featured-printables { min-height: 0; grid-template-columns: 1fr 1fr; align-items: center; padding: clamp(40px, 5vw, 72px) max(var(--gutter), calc((100% - var(--container)) / 2)); gap: clamp(32px, 5vw, 80px); }
+.printables-media { min-height: 0; aspect-ratio: 4 / 3; border-radius: var(--radius); }
+.printables-copy { padding: 0; }
+.printables-copy > p:not(.eyebrow) { font-size: 17px; line-height: 1.65; max-width: 44ch; margin: 24px 0 32px; }
+/* Charcoal button: .button-dark is not defined on this page. */
+.button-charcoal { background: var(--charcoal); border-color: var(--charcoal); color: var(--white); }
+.button-charcoal:hover { background: #1F1F1F; border-color: #1F1F1F; }
+.featured-printables a:focus-visible { box-shadow: 0 0 0 2px var(--gold), 0 0 0 4px var(--charcoal); }
+
+/* --- Resource library: even 2x2 grid ------------------------------------ */
+.library-heading { max-width: none; margin-bottom: 48px; }
+.library-heading h2 { max-width: 18ch; }
+.library-heading > p:not(.eyebrow) { font-size: 17px; color: #444; }
+.resource-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; gap: 24px; }
+.resource-card,
+.resource-card:first-child,
+.resource-card:last-child {
+  grid-row: auto;
+  grid-column: auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.resource-card > .resource-image { aspect-ratio: 16 / 10; padding: 0; display: block; } /* old CSS pads every inner div */
+.resource-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.resource-body { padding: 28px 28px 24px; display: flex; flex-direction: column; flex: 1; }
+.resource-card h3 { font-size: clamp(26px, 2.2vw, 30px); line-height: 1; color: inherit; }
+.resource-card p { font-size: 15px; line-height: 1.6; margin: 14px 0 20px; max-width: 52ch; }
+.resource-card.silver p, .resource-card.gold p { color: #333; }
+.resource-action {
+  margin-top: auto;
+  width: fit-content;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: inherit;
+  font-family: var(--body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+/* Focus ring readable on every card color. */
+.resource-card .resource-action:focus-visible { box-shadow: 0 0 0 2px currentColor; border-radius: 2px; }
+
+/* --- Newsletter (white, matches home and About) ------------------------- */
+.resources-newsletter { background: var(--white); grid-template-columns: 1fr 1fr; gap: 56px; align-items: end; }
+.resources-newsletter > div > p:not(.eyebrow) { font-size: 17px; line-height: 1.65; color: #444; max-width: 46ch; margin-top: 20px; }
+.resources-newsletter label { display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+.resources-newsletter .email-row { display: flex; }
+.resources-newsletter .form-note { font-size: 12px; margin: 12px 0 0; }
+
+/* --- Tablet / mobile ---------------------------------------------------- */
+@media (max-width: 850px) {
+  .resources-hero { height: auto; grid-template-columns: 1fr; }
+  .resources-hero-copy { padding: 56px var(--gutter) 44px; max-width: none; }
+  .resources-hero h1 { font-size: clamp(44px, 12vw, 52px); }
+  .resources-hero-media { aspect-ratio: 16 / 9; border-radius: 0; }
+  .featured-printables h2, .library-heading h2, .resources-newsletter h2 { font-size: clamp(32px, 9vw, 38px); }
+  .featured-printables { grid-template-columns: 1fr; padding: 56px var(--gutter) 64px; }
+  .resource-library { padding: 72px var(--gutter); }
+  .resource-grid { grid-template-columns: 1fr; gap: 18px; }
+  .resource-body { padding: 24px 22px 20px; }
+  .resources-newsletter { grid-template-columns: 1fr; gap: 32px; }
+  .resources-newsletter .email-row { display: block; }
+  .resources-newsletter .email-row input { width: 100%; margin-bottom: 10px; border-right: 1px solid #8A8A8A; }
+  .resources-newsletter .email-row .button { width: 100%; }
+}
