@@ -243,3 +243,25 @@ New page built from the staging copy (staging10.aimfullybooks.com/join/), word f
 - **Patreon URL** (the staging button was a dead link).
 - **Faire**: confirm the storefront (faire.com/direct/aimfullybooks) and whether it will be rebranded.
 - **Workshop popup**: staging includes a "tell a story / make a book" email popup (Elementor Form, one email field, "Access Now") that is not triggered anywhere on the page. Confirm whether it is still needed.
+
+---
+
+# Visiting
+
+New "Become a Guest" page built from the staging copy (staging10.aimfullybooks.com/visiting/), word for word. Approved edits: hero title "Become a guest." with the subline "Become a traveling artist. Teach & get inspired.", one stray space removed, both "Apply to Teach" buttons email hello@boundlessbacker.com (subject "Become a guest"), and plain alt text added to the four photos. Nothing below has been built.
+
+## Suggestions
+
+1. **A real guest application form** (Elementor Form) to replace the "Apply to Teach" email link.
+2. **Guest FAQ**: visit length, locations, travel costs, requirements and safety. Only with the client's real answers.
+3. **Where guests go**: a map or list of host communities.
+4. **Stories from past guests**, or a photo diary from recent visits.
+5. **Rebrand the band text**: "Aimfully Books wants you to have an experience of a lifetime…" still uses the old name.
+6. **Split the five paragraphs into steps** (Apply, Train, Visit, Share) using the How It Works timeline style. This restructures the content, so it needs approval.
+
+## Needs from client
+
+- **Confirm these promises from the staging copy**: "we want to sponsor your journey", "We'll train you in our storytelling and book-making workshops", "Host families provide accommodation, meals, and local guidance", "temporarily manage our social media platforms", and "gaining exposure through our platform".
+- **The guest application process** (form fields or the right contact), so "Apply to Teach" can stop being an email link.
+- **The new Instagram handle** ("Follow @AimfullyBooks" still points to the old account).
+- **Photo details and permissions**: confirm the four photos can be used, including the children, and whether captions or locations should be added (the prototype uses plain descriptions only).
