@@ -311,3 +311,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, .route:focus-visible
   .footer-legal a { min-height: 44px; }
   .footer-bottom { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
 }
+/* Fix: styles.css sets .footer-bottom span{display:block} on mobile, which
+   collapsed the gap between the legal links. Keep them as a spaced row. */
+@media (max-width: 850px) {
+  .footer-bottom .footer-legal { display: flex; gap: 20px; }
+}
