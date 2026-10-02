@@ -265,3 +265,28 @@ New "Become a Guest" page built from the staging copy (staging10.aimfullybooks.c
 - **The guest application process** (form fields or the right contact), so "Apply to Teach" can stop being an email link.
 - **The new Instagram handle** ("Follow @AimfullyBooks" still points to the old account).
 - **Photo details and permissions**: confirm the four photos can be used, including the children, and whether captions or locations should be added (the prototype uses plain descriptions only).
+
+---
+
+# Hosting
+
+New "Become a Host" page built from the staging copy (staging10.aimfullybooks.com/hosting/), word for word, mirroring the Visiting page. Approved edits: hero title "Become a host." with the subline "Bring art & cultural exchange to your school.", only the longer "cultural exchange" line kept, two typos fixed ("follow-through", "gap years—share"), both apply buttons email hello@boundlessbacker.com (subject "Become a host"), and cross-links between Visiting and Hosting. Nothing below has been built.
+
+## Suggestions
+
+1. **A host application form** (Elementor Form), with a separate "Self-host materials" request.
+2. **Rename "Fill Up Form"** to "Apply to host" or "Tell us about your school".
+3. **Turn the programme into steps** (Train, Visit, Workshop, Contest, Publish) in the How It Works timeline style.
+4. **Host FAQ**: costs, safety, timing and age groups. Only with the client's real answers.
+5. **Testimonials or photos from past host schools.**
+6. **Rebrand the three "Aimfully Books" mentions** (intro, contest line, band text).
+7. **Move the Tio Diego story to the About page** and link to it from here.
+
+## Needs from client
+
+- **Confirm these promises from the staging copy**: "a powerful 3-5 day workshop", "We sponsor our published artists", "winners have the chance to have their books published with Aimfully Books", "Winners will have their book concept published through our platform", "Our vetted artists", "basic accommodations: a safe space, lodging, and transportation", "we'll help connect and iron out the details", "at any age over 13", "We document this creative journey", and "You can still apply for our workshop materials".
+- **Confirm the history**: "In 2012, our uncle was a backpacker…" and "By 2016, Tio Diego started building micro-libraries…".
+- **Permission to show children's photos** (the same three classroom photos as the Visiting page).
+- **The host application process** (form fields or the right contact).
+- **Workshop materials**: whether they are available to download for self-hosting schools.
+- **The new Instagram handle** ("Follow @AimfullyBooks" still points to the old account).

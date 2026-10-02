@@ -1,0 +1,47 @@
+/* ==========================================================================
+   Boundless Backer: Hosting / Become a Host layout (round 10)
+   --------------------------------------------------------------------------
+   Loaded after visiting-page.css, which this page reuses (hero, text +
+   gallery, gold apply band, charcoal band) so Visiting and Hosting stay a
+   matching pair. This file only adds the intro, story and apply variations.
+   ========================================================================== */
+
+.host-intro h2, .host-apply h2 { font-family: var(--display); font-weight: 400; letter-spacing: 0; text-transform: uppercase; margin: 0; }
+.host-callout { font-family: var(--heading); font-weight: 700; font-size: clamp(19px, 1.6vw, 22px) !important; line-height: 1.4 !important; color: var(--charcoal) !important; }
+
+/* --- Hero: illustration on the gold panel, uncropped -------------------- */
+.host-hero-media img { inset: 32px; width: calc(100% - 64px); height: calc(100% - 64px); object-position: center; }
+
+/* --- Intro + How does it work? ----------------------------------------- */
+.host-intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 96px); align-items: start; }
+.host-intro-lead p { font-size: clamp(18px, 1.5vw, 21px); line-height: 1.55; color: #333; margin: 0 0 18px; max-width: 46ch; }
+.host-how h2 { font-size: clamp(40px, 3.9vw, 56px); line-height: 1; margin-bottom: 20px; }
+.host-how p { font-size: 17px; line-height: 1.65; color: #444; margin: 0 0 18px; max-width: 60ch; }
+.host-how .button { margin-top: 8px; }
+
+/* --- Story (silver): illustration + Tio Diego text ---------------------- */
+.host-story { display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); gap: clamp(32px, 6vw, 96px); align-items: center; background: var(--silver); padding: var(--section-y) max(var(--gutter), calc((100% - var(--container)) / 2)); }
+.host-story-art { background: var(--white); border-radius: var(--radius); padding: clamp(20px, 3vw, 40px); }
+.host-story-art img { width: 100%; height: auto; aspect-ratio: 1; display: block; }
+.host-story-copy p { font-size: 17px; line-height: 1.65; color: #333; margin: 0 0 18px; max-width: 62ch; }
+
+/* --- Apply band (gold) with title, copy and actions -------------------- */
+.host-apply-inner { display: grid; grid-template-columns: minmax(0, 1.4fr) auto; gap: 32px 64px; align-items: end; }
+.host-apply h2 { font-size: clamp(40px, 3.9vw, 56px); line-height: 1; margin-bottom: 16px; }
+.host-apply-inner p { font-size: 17px; line-height: 1.6; margin: 0 0 12px; max-width: 58ch; }
+.host-apply-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+
+/* Cross-link between Visiting and Hosting (also used on visiting.html). */
+.cross-link { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; color: var(--charcoal); font-size: 14px; font-weight: 600; }
+
+/* --- Tablet / mobile ----------------------------------------------------- */
+@media (max-width: 850px) {
+  .host-hero-media img { inset: 24px; width: calc(100% - 48px); height: calc(100% - 48px); }
+  .host-intro { grid-template-columns: 1fr; gap: 32px; padding: 72px var(--gutter); }
+  .host-how h2, .host-apply h2 { font-size: clamp(32px, 9vw, 38px); }
+  .host-story { grid-template-columns: 1fr; padding: 64px var(--gutter); }
+  .host-story-art { max-width: 280px; }
+  .host-apply-inner { grid-template-columns: 1fr; }
+  .host-apply-actions { align-items: stretch; }
+  .host-apply-actions .button { width: 100%; }
+}
