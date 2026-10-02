@@ -293,3 +293,21 @@ a:focus-visible, button:focus-visible, input:focus-visible, .route:focus-visible
 /* Footer: brand tagline sits under the logo (brand board "Primary Logo + Tagline"). */
 .footer-brand { display: flex; flex-direction: column; gap: 16px; }
 .site-footer .footer-tagline { font-family: var(--heading); font-size: 14px; letter-spacing: .02em; text-transform: none; max-width: none; margin: 0; color: #D9D9D9; }
+
+/* ==========================================================================
+   Footer: 4 columns (Explore / Participate / Support / Connect) + legal links.
+   Shared by every page (all pages load home.css).
+   ========================================================================== */
+.footer-links { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; }
+.footer-links a { min-height: 32px; display: inline-flex; align-items: center; }
+.footer-links a[aria-current="page"] { color: var(--gold); }
+.footer-bottom { align-items: center; gap: 12px 24px; flex-wrap: wrap; }
+.footer-legal { display: flex; gap: 20px; flex-wrap: wrap; }
+.footer-legal a { color: #C9C9C9; font-size: 12px; min-height: 32px; display: inline-flex; align-items: center; }
+.footer-legal a:hover { color: var(--white); }
+@media (max-width: 850px) {
+  .footer-links { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 20px; }
+  .footer-links a { min-height: 44px; } /* tap targets on touch */
+  .footer-legal a { min-height: 44px; }
+  .footer-bottom { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
+}
