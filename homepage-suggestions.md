@@ -290,3 +290,26 @@ New "Become a Host" page built from the staging copy (staging10.aimfullybooks.co
 - **The host application process** (form fields or the right contact).
 - **Workshop materials**: whether they are available to download for self-hosting schools.
 - **The new Instagram handle** ("Follow @AimfullyBooks" still points to the old account).
+
+---
+
+# Wholesale
+
+New page built from the staging copy (staging10.aimfullybooks.com/wholesale/), word for word. Approved edits: hero title "Retail with us." with the subline "We'd love to partner with you.", Faire and "Request pricing & terms" buttons in the hero, visible form labels, and "message" shown as a placeholder. The form keeps the Contact Form 7 "Wholesale" field names, order and required states 1:1. Nothing below has been built.
+
+## Suggestions
+
+1. **Show headline terms on the page** (minimum order, discount, lead time) once confirmed, so buyers don't have to ask.
+2. **"Where to find us"**: logos or a list of current stockists (museum shops, airports, hotels, bookstores), if the client can share them.
+3. **A downloadable line sheet or catalogue PDF.**
+4. **Replace the hero photo**: the cut-out of a woman holding the Street Art book looks like studio stock photography, which the brand photography guide says to avoid. Real product or in-store photography would fit better.
+5. **Explain "data-ready"**, or drop it.
+6. **Use a phone field type** (`tel`) in CF7 for better mobile keyboards (the prototype keeps `text` to match CF7 1:1).
+
+## Needs from client
+
+- **Confirm these claims from the staging copy**: "Our books are best-sellers at museum gift shops, high-end gift stores, airport and hotel shops, and bookstores", "We are registered, insured, and data-ready", and "We'll send you our package with pricing & terms".
+- **The wholesale package**: pricing, minimums and terms. None are on the page.
+- **Faire**: confirm the storefront (faire.com/direct/aimfullybooks) and whether it will be rebranded.
+- **CF7 "Wholesale" form (ID 10404)**: confirm the field names stay as they are (CompanyName, yname, phone, Email, Instagram, message); add visible labels; change the textarea from a default value of "message" to the placeholder option; and update the notification email subject to Boundless Backer.
+- **Hero photo**: permission and source, or a replacement.

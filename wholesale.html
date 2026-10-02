@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Our books are best-sellers at museum gift shops, high-end gift stores, airport and hotel shops, and bookstores. Retail with us."/>
+  <title>Wholesale | Boundless Backer</title>
+  <!-- Brand fonts are self-hosted (see home.css @font-face). -->
+  <link rel="preload" href="./fonts/norwester-400.woff2" as="font" type="font/woff2" crossorigin/>
+  <link rel="preload" href="./fonts/dm-sans-variable.woff2" as="font" type="font/woff2" crossorigin/>
+  <link rel="stylesheet" href="./styles.css"/>
+  <link rel="stylesheet" href="./mobile.css"/>
+  <link rel="stylesheet" href="./refinements.css"/>
+  <!-- Shared design system (tokens, type scale, buttons, motion), then page layout. -->
+  <link rel="stylesheet" href="./animations.css"/>
+  <link rel="stylesheet" href="./home.css"/>
+  <link rel="stylesheet" href="./wholesale-page.css"/>
+  <script src="./global-header.js" defer></script>
+  <script src="./animations.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <global-site-header class="site-header"></global-site-header>
+  <!-- Content source: staging10.aimfullybooks.com/wholesale/ (copy kept word for word). -->
+  <main id="main">
+    <section class="ws-hero">
+      <div class="ws-hero-copy reveal"><h1>Retail with us.</h1><p class="ws-subline">We’d love to partner with you.</p>
+        <div class="ws-hero-actions">
+          <!-- [PLACEHOLDER: old Faire storefront name "aimfullybooks", kept until the client confirms a rebrand.] -->
+          <a class="button button-gold btn-hover" href="https://faire.com/direct/aimfullybooks">Find us at Faire <span aria-hidden="true">→</span></a>
+          <a class="button button-outline btn-hover" href="#wholesale-form">Request pricing &amp; terms <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <div class="ws-hero-media"><img src="./assets/wholesale-hero.webp" alt="Woman holding up The Ultimate Street Art Coloring Book" width="1024" height="1024"/></div>
+    </section>
+
+    <section class="ws-main section" id="wholesale-form">
+      <div class="ws-offer reveal">
+        <p>Our books are best-sellers at museum gift shops, high-end gift stores, airport and hotel shops, and bookstores.</p>
+        <p>We are registered, insured, and data-ready and looking forward to partnering with you.</p>
+        <p>To order wholesale, <a class="link-underline ws-inline-link" href="https://faire.com/direct/aimfullybooks">find us at Faire</a> or reach out directly below.</p>
+        <p>We’ll send you our package with pricing &amp; terms and everything else you need:</p>
+        <div class="ws-faire-card"><p class="ws-faire-title">Order on Faire</p><a class="link-underline ws-faire-link" href="https://faire.com/direct/aimfullybooks">find us at Faire <span aria-hidden="true">→</span></a></div>
+      </div>
+
+      <!-- Contact Form 7 "Wholesale" form (form ID 10404). Field names map 1:1:
+           CompanyName (text) · yname (text, required) · phone (text) · Email (email, required) · Instagram (text) · message (textarea).
+           Visible labels are added in this prototype only; CF7 field names, order and required states are unchanged.
+           In CF7 the textarea tag needs the placeholder option, e.g. [textarea message placeholder "message"],
+           instead of the current default value "message". Submit text: "SUBMIT".
+           Front-end only in this prototype: nothing is sent. -->
+      <form class="ws-form reveal" novalidate>
+        <div class="ws-field"><label for="ws-company">Company Name</label><input id="ws-company" name="CompanyName" type="text" maxlength="400" placeholder="Company Name" autocomplete="organization"/></div>
+        <div class="ws-field"><label for="ws-name">Your Name <span class="req" aria-hidden="true">*</span></label><input id="ws-name" name="yname" type="text" maxlength="400" placeholder="Your Name*" autocomplete="name" required/><p class="ws-error" id="ws-name-error">Please enter your name.</p></div>
+        <div class="ws-field"><label for="ws-phone">Phone</label><input id="ws-phone" name="phone" type="text" maxlength="400" placeholder="Phone" autocomplete="tel"/></div>
+        <div class="ws-field"><label for="ws-email">Email <span class="req" aria-hidden="true">*</span></label><input id="ws-email" name="Email" type="email" maxlength="400" placeholder="Email*" autocomplete="email" required/><p class="ws-error" id="ws-email-error">Please enter a valid email address.</p></div>
+        <div class="ws-field ws-field-full"><label for="ws-instagram">Instagram</label><input id="ws-instagram" name="Instagram" type="text" maxlength="400" placeholder="Instagram"/></div>
+        <div class="ws-field ws-field-full"><label for="ws-message">Message</label><textarea id="ws-message" name="message" rows="6" maxlength="2000" placeholder="message"></textarea></div>
+        <div class="ws-actions ws-field-full"><button class="button button-gold btn-hover" type="submit">SUBMIT</button><p class="ws-required-note"><span aria-hidden="true">*</span> Required</p></div>
+        <p class="ws-status ws-field-full" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="footer-top"><div class="footer-brand"><a class="brand brand-light" href="./index.html" aria-label="Boundless Backer home">
+      <!-- Logo swap: replace the two spans below with
+           <img class="brand-logo" src="./assets/logo-primary-white.svg" alt="Boundless Backer" width="160" height="48" /> -->
+      <span class="bookstack" aria-hidden="true"><i></i><i></i><i></i></span><span>Boundless <br/>Backer<span class="period">.</span></span></a><p class="footer-tagline">Curated with intention. Published for impact. Chosen by you.</p></div><p>Fund the art you want to see in the world.</p></div><div class="footer-links reveal-stagger"><div><p>Explore</p><a class="link-underline" href="./shop.html">Shop</a><a class="link-underline" href="./how-it-works.html">How it works</a><a class="link-underline" href="./resources.html">Resources</a><a class="link-underline" href="./about.html">About</a></div><div><p>Participate</p><a class="link-underline" href="./crowdfund-your-book.html">Crowdfund your book</a><a class="link-underline" href="./join.html">Join us</a><a class="link-underline" href="./visiting.html">Become a guest</a><a class="link-underline" href="./hosting.html">Become a host</a></div><div><p>Support</p><a class="link-underline" href="./how-it-works.html">FAQ</a><!-- [PLACEHOLDER: Reviews page] --><a class="link-underline" href="#">Reviews</a><a class="link-underline" href="./join.html#retail">Wholesale</a><a class="link-underline" href="mailto:hello@boundlessbacker.com">Email us</a></div><div><p>Connect</p><!-- [PLACEHOLDER: new social URLs, client to supply] --><a class="link-underline" href="#">Instagram</a><a class="link-underline" href="#">TikTok</a><a class="link-underline" href="#">Patreon</a></div></div><div class="footer-bottom"><span>© 2026 Boundless Backer</span><span class="footer-legal"><!-- [PLACEHOLDER: legal pages] --><a class="link-underline" href="#">Privacy Policy</a><a class="link-underline" href="#">Terms of Service</a></span><span>Client approval prototype. Links are illustrative.</span></div></footer>
+  <script>
+    /* Prototype only: front-end validation and a success message. Contact Form 7 handles this in WordPress. */
+    (() => {
+      const form = document.querySelector('.ws-form');
+      const status = form.querySelector('.ws-status');
+      const required = [...form.querySelectorAll('[required]')];
+      form.querySelectorAll('.ws-error').forEach((e) => (e.hidden = true));
+
+      const check = (el) => {
+        const ok = el.checkValidity();
+        const err = document.getElementById(el.id + '-error');
+        el.setAttribute('aria-invalid', String(!ok));
+        if (err) { err.hidden = ok; ok ? el.removeAttribute('aria-describedby') : el.setAttribute('aria-describedby', err.id); }
+        return ok;
+      };
+      required.forEach((el) => {
+        el.addEventListener('blur', () => { if (el.value) check(el); });
+        el.addEventListener('input', () => { if (el.getAttribute('aria-invalid') === 'true') check(el); });
+      });
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const invalid = required.filter((el) => !check(el));
+        if (invalid.length) {
+          status.textContent = 'Please check the highlighted fields.';
+          status.className = 'ws-status ws-field-full is-error';
+          invalid[0].focus();
+          return;
+        }
+        status.textContent = 'Thank you. We will send you our package with pricing & terms.';
+        status.className = 'ws-status ws-field-full is-success';
+        form.reset();
+        required.forEach((el) => el.removeAttribute('aria-invalid'));
+      });
+    })();
+  </script>
+</body>
+</html>
