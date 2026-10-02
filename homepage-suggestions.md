@@ -313,3 +313,28 @@ New page built from the staging copy (staging10.aimfullybooks.com/wholesale/), w
 - **Faire**: confirm the storefront (faire.com/direct/aimfullybooks) and whether it will be rebranded.
 - **CF7 "Wholesale" form (ID 10404)**: confirm the field names stay as they are (CompanyName, yname, phone, Email, Instagram, message); add visible labels; change the textarea from a default value of "message" to the placeholder option; and update the notification email subject to Boundless Backer.
 - **Hero photo**: permission and source, or a replacement.
+
+---
+
+# Reviews
+
+New page built from staging (staging10.aimfullybooks.com/reviews/). On staging every testimonial is hard-coded in Elementor (a Text Editor widget plus a five-stars-purple.svg Image widget); there is no CusRev or WooCommerce review output on this page. All 15 testimonials are copied verbatim in staging order. Stars are accessible SVGs ("Rated 5 out of 5") mirroring the 5-star image each testimonial shows on staging; no average or count is calculated or shown. The home "Loved by readers" cards were restored to the verbatim staging text ("…purchased from Aimfully Books…") and the unverified "Verified reader review" labels were removed. Nothing below has been built.
+
+## Suggestions
+
+1. **Separate press quotes from customer reviews**: NBC News, Miami New Times and Curbed Magazine are mixed in with customers. An "As seen in" section with the press logos would be clearer.
+2. **Use real product reviews** (CusRev shortcode or WooCommerce reviews), so ratings, counts and dates are real and update automatically.
+3. **Link press quotes to the original articles**, if URLs exist.
+4. **"Leave a review" call to action**, using CusRev review reminders.
+5. **Replace the low-resolution Slate logo** (200×62 px).
+6. **Fix the Comic Sans star snippet** wherever it is used (it is not on this page; likely the product pages).
+7. Review voting, custom sorting or AI summaries would need extra plugins or custom development. Not recommended for now.
+
+## Needs from client
+
+- **Confirm these claims**: "hundreds of 5-star reviews" and the giveaway "Post to your socials and DM us! We'll mail you a set of coloring pencils!". Several testimonials also mention donations to schools in Cambodia and micro-libraries.
+- **Confirm the 15 testimonials can be published** with these names, and that NBC News, Miami New Times and Curbed Magazine actually said these words.
+- **Permission to show reviewer and community photos** (41 photos of identifiable people), including **permission to show children's photos** (photos 23, 32 and 36).
+- **Permission to use the NPR, Slate and NBC logos**, and a higher-resolution Slate logo.
+- **Source and permission for the reel video** (it was hosted on the live aimfullybooks.com site).
+- **Review system decision**: stay with hard-coded testimonials, or move to WooCommerce / CusRev reviews.
