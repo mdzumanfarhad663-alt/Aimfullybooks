@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Explore how to join us: back a book, crowdfund your art book, host an artist, become an ambassador and more."/>
+  <title>Join | Boundless Backer</title>
+  <!-- Brand fonts are self-hosted (see home.css @font-face). -->
+  <link rel="preload" href="./fonts/norwester-400.woff2" as="font" type="font/woff2" crossorigin/>
+  <link rel="preload" href="./fonts/dm-sans-variable.woff2" as="font" type="font/woff2" crossorigin/>
+  <link rel="stylesheet" href="./styles.css"/>
+  <link rel="stylesheet" href="./mobile.css"/>
+  <link rel="stylesheet" href="./refinements.css"/>
+  <!-- Shared design system (tokens, type scale, buttons, motion), then page layout. -->
+  <link rel="stylesheet" href="./animations.css"/>
+  <link rel="stylesheet" href="./home.css"/>
+  <link rel="stylesheet" href="./join-page.css"/>
+  <script src="./global-header.js" defer></script>
+  <script src="./animations.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <global-site-header class="site-header"></global-site-header>
+  <!-- Content source: staging10.aimfullybooks.com/join/ (copy kept word for word; two heading typos fixed as approved). -->
+  <main id="main">
+    <section class="join-hero">
+      <div class="join-hero-copy reveal"><h1>Let’s do this together.</h1><p>Aimfully Books is a crowdfunding book publisher aiming to generate social impact through art.</p><p>We publish fiercely independent, unique, artistic, and exciting books that are world-inspired and created by artists worldwide, often in hard-to-reach places with singular perspectives.</p><p>We connect communities and elevate artists to share their gifts and stories. That’s why we offer access to premium lightning-fast education, sponsor life-transforming journeys, and help bring programs to advance creative development in underprivileged areas of the world and at home.</p><a class="button button-gold btn-hover" href="#ways">Explore how to join us <span aria-hidden="true">→</span></a></div>
+      <div class="join-hero-art"><img src="./assets/join-handshake.webp" alt="" width="162" height="169"/></div>
+    </section>
+
+    <section class="join-how section" id="how">
+      <div class="join-how-heading reveal"><h2>How it works</h2></div>
+      <div class="join-how-body reveal">
+        <div class="join-state">
+          <!-- Rebuilt in HTML/CSS (was a screenshot). Matches the Shop badge styles. -->
+          <p>An active title has been funded, and the book is in stock. Your purchase will be processed immediately, and we will ship the book to you within our standard times. You’ll see a tag like this one:</p>
+          <span class="join-badge join-badge-active">Active</span>
+        </div>
+        <div class="join-state">
+          <!-- Static example of the live site's pre-order progress bar (custom snippet in WordPress). -->
+<p>If you see the title is in progress, it means you have a chance to fund it and save! Become a backer! You will see a bar that look like this:</p>
+          <div class="join-preorder" role="img" aria-label="Pre-order tag with a progress bar at 50 percent"><span class="join-badge join-badge-preorder">Pre-order</span><span class="join-progress-value">50%</span><span class="join-progress"><span style="width:50%"></span></span></div>
+        </div>
+        <p>Our books are funded by you, our community. Initial production costs are covered when a book is funded, including the artist’s pay. Once a title is fully funded, we contact you to confirm your address and ship your order.</p>
+        <p>Your purchase is safe with us. If the book does not reach the threshold, we will notify you and refund you, or you can choose to support another title. Visit <a class="link-underline join-inline-link" href="./how-it-works.html">your order</a> to read the FAQs.</p>
+      </div>
+    </section>
+
+    <section class="join-ways section" id="ways">
+      <div class="join-grid reveal-stagger">
+        <article class="join-card card-hover"><img class="join-card-icon" src="./assets/crowdfund-icon-3.svg" alt="" width="715" height="538" loading="lazy"/><h3>Crowdfund your art book</h3><p>Get your book idea funded by the community. When a book is funded, initial production costs are covered including the artist pay. We look for unique, artistic, illustrated, exciting book ideas for all ages and from all over the world.</p><a class="join-action link-underline" href="./crowdfund-your-book.html">publish with us <span aria-hidden="true">→</span></a></article>
+        <article class="join-card card-hover" id="journeys"><img class="join-card-icon" src="./assets/crowdfund-artwork.webp" alt="" width="468" height="344" loading="lazy"/><h3>Sponsored journeys</h3><p>Are you a traveling artist, or do you want to be one? We want to sponsor your journey. You’ll document your experience, meet interesting cultures and have the opportunity to share yourself with our community.</p>
+          <!-- [PLACEHOLDER: "Apply to teach" destination, client to supply.] -->
+          <a class="join-action link-underline" href="#">Apply to teach <span aria-hidden="true">→</span></a></article>
+        <article class="join-card card-hover"><h3>Artist scholarships</h3><p>We offer scholarships to the Creative Entrepreneurship program. It’d help you make a living from your creative work</p>
+          <!-- [PLACEHOLDER: "Apply to learn" destination, client to supply.] -->
+          <a class="join-action link-underline" href="#">Apply to learn <span aria-hidden="true">→</span></a></article>
+        <article class="join-card card-hover" id="host"><h3>Host an artist</h3><p>Can your community host an artist and help organize workshops and cultural exchanges? If so, we’d love to sponsor a visit.</p>
+          <!-- [PLACEHOLDER: "Apply to host" destination, client to supply.] -->
+          <a class="join-action link-underline" href="#">Apply to host <span aria-hidden="true">→</span></a></article>
+        <article class="join-card card-hover"><h3>Host a workshop</h3><p>Host a wonderful storytelling and book-making workshop for your students with a chance to run a contest to publish your students’ books.</p>
+          <!-- [PLACEHOLDER: "Apply to self-host" destination, client to supply.] -->
+          <a class="join-action link-underline" href="#">Apply to self-host <span aria-hidden="true">→</span></a></article>
+        <article class="join-card card-hover"><h3>Become an ambassador</h3><p>Help your tribe discover their inner artists. Share Aimfully Books. Apply to our revenue-sharing program.</p><a class="join-action link-underline" href="mailto:hello@boundlessbacker.com?subject=%20I%20want%20to%20become%20an%20Aimfully%20Books%20ambassador!">Sign up <span aria-hidden="true">→</span></a></article>
+        <article class="join-card card-hover" id="retail"><h3>Retail with us</h3><p>We partner with selected outlets and offer favorable terms. Carry our books at your store.</p><a class="join-action link-underline" href="https://www.faire.com/direct/aimfullybooks">Shop at Faire <span aria-hidden="true">→</span></a></article>
+        <article class="join-card card-hover"><h3>Become a patron</h3><p>Support our sponsored journeys and scholarships and get BTS access and publisher credits.</p>
+          <!-- [PLACEHOLDER: Patreon URL, client to supply.] -->
+          <a class="join-action link-underline" href="#">Join Patreon <span aria-hidden="true">→</span></a></article>
+        <article class="join-card card-hover"><h3>Join our sales force</h3><p>Interested in representing us and help us reach larger markets? Apply to our revenue-sharing program.</p><a class="join-action link-underline" href="mailto:hello@boundlessbacker.com?subject=%20Interested%20in%20representing%20Aimfully%20Books">Reach out <span aria-hidden="true">→</span></a></article>
+      </div>
+    </section>
+
+    <section class="join-school">
+      <div class="join-school-card reveal">
+        <div class="join-school-icon"><img src="./assets/join-person.webp" alt="" width="147" height="152" loading="lazy"/></div>
+        <div class="join-school-copy"><h2>Join Tio Diego’s school for creatives</h2><p>Enroll in our transformative program designed to align your creative, financial, and spiritual goals through diverse artistic expressions—from visual arts and writing to painting and filmmaking. Find your purposeful path in a community that nurtures authentic creative development.</p><a class="button button-gold btn-hover" href="mailto:hello@boundlessbacker.com?subject=Interested%20in%20Tio%20Diego%E2%80%99s%20school%20for%20creatives">Enroll <span aria-hidden="true">→</span></a></div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="footer-top"><div class="footer-brand"><a class="brand brand-light" href="./index.html" aria-label="Boundless Backer home">
+      <!-- Logo swap: replace the two spans below with
+           <img class="brand-logo" src="./assets/logo-primary-white.svg" alt="Boundless Backer" width="160" height="48" /> -->
+      <span class="bookstack" aria-hidden="true"><i></i><i></i><i></i></span><span>Boundless <br/>Backer<span class="period">.</span></span></a><p class="footer-tagline">Curated with intention. Published for impact. Chosen by you.</p></div><p>Fund the art you want to see in the world.</p></div><div class="footer-links reveal-stagger"><div><p>Explore</p><a class="link-underline" href="./shop.html">Shop</a><a class="link-underline" href="./how-it-works.html">How it works</a><a class="link-underline" href="./resources.html">Resources</a></div><div><p>Participate</p><a class="link-underline" href="./crowdfund-your-book.html">Crowdfund your book</a><a class="link-underline" href="#">Become a guest</a><a class="link-underline" href="#">Become a host</a></div><div><p>Connect</p><a class="link-underline" href="#">Instagram</a><a class="link-underline" href="#">TikTok</a><a class="link-underline" href="mailto:hello@boundlessbacker.com">Email us</a></div></div><div class="footer-bottom"><span>© 2026 Boundless Backer</span><span>Client approval prototype. Links are illustrative.</span></div></footer>
+</body>
+</html>

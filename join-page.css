@@ -1,0 +1,79 @@
+/* ==========================================================================
+   Boundless Backer: Join layout (round 8)
+   --------------------------------------------------------------------------
+   Loaded after home.css (shared tokens, fonts, type scale, buttons, focus,
+   footer) and animations.css. New page, no legacy stylesheet.
+   WordPress: Elementor sections; ways-to-join cards as Icon Box / Text +
+   Button widgets in a 3-column container.
+   ========================================================================== */
+
+.join-hero h1, .join-how h2, .join-card h3, .join-school h2 { font-family: var(--display); font-weight: 400; letter-spacing: 0; text-transform: uppercase; margin: 0; }
+.join-how h2, .join-school h2 { font-size: clamp(40px, 3.9vw, 56px); line-height: 1; }
+
+/* --- Hero ---------------------------------------------------------------- */
+.join-hero { display: grid; grid-template-columns: 1fr 1fr; min-height: min(640px, calc(100dvh - 80px)); background: var(--white); }
+.join-hero-copy { padding: 64px var(--gutter); max-width: calc(var(--container) / 2 + var(--gutter)); margin-left: auto; width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+.join-hero h1 { font-size: clamp(64px, 5.6vw, 80px); line-height: .98; max-width: 11ch; margin-bottom: 24px; }
+.join-hero-copy p { font-size: clamp(17px, 1.3vw, 19px); line-height: 1.6; color: #444; max-width: 52ch; margin: 0 0 14px; }
+.join-hero-copy .button { margin-top: 18px; }
+.join-hero-art { min-height: 0; background: var(--gold); border-radius: 0 0 0 var(--radius); display: flex; align-items: center; justify-content: center; padding: 48px; }
+.join-hero-art img { width: 180px; height: auto; aspect-ratio: 162 / 169; mix-blend-mode: multiply; } /* drops the icon's white box on gold */
+
+/* --- How it works (silver) ----------------------------------------------- */
+.join-how { background: var(--silver); display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.6fr); gap: clamp(32px, 6vw, 96px); align-items: start; }
+.join-how-body > p, .join-state p { font-size: 17px; line-height: 1.65; color: #333; margin: 0 0 18px; max-width: 64ch; }
+.join-state { padding: 22px 24px; margin-bottom: 18px; background: var(--white); border-radius: var(--radius); }
+.join-state p { margin-bottom: 14px; }
+.join-inline-link { color: var(--charcoal); font-weight: 600; background-size: 100% 1px; }
+.join-inline-link:hover { background-size: 0 1px; background-position: 100% 100%; }
+
+/* Badges: same pill style as the Shop's prepared WooCommerce badges. */
+.join-badge { display: inline-block; padding: 6px 12px; border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.join-badge-active { background: var(--plum); color: var(--white); }
+.join-badge-preorder { background: var(--gold); color: var(--charcoal); }
+.join-preorder { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.join-progress-value { font-weight: 700; font-size: 14px; }
+.join-progress { flex: 1; min-width: 140px; max-width: 280px; height: 10px; border-radius: 999px; background: #E4E4E4; overflow: hidden; }
+.join-progress span { display: block; height: 100%; background: var(--gold); border-radius: inherit; } /* static, no animation */
+
+/* --- Ways to join: 3-column cards ---------------------------------------- */
+.join-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.js .join-grid.is-visible > :nth-child(n+6) { animation-delay: calc(5 * var(--stagger-step)); } /* cap the stagger */
+.join-card { display: flex; flex-direction: column; align-items: flex-start; padding: 28px 26px 22px; background: var(--white); border: 1px solid #E4E4E4; border-radius: 10px; scroll-margin-top: 110px; }
+.join-card-icon { height: 72px; width: auto; margin-bottom: 20px; }
+.join-card h3 { font-size: clamp(24px, 2vw, 28px); line-height: 1.05; }
+.join-card p { font-size: 15px; line-height: 1.6; color: #444; margin: 12px 0 18px; }
+.join-action { margin-top: auto; min-height: 44px; display: inline-flex; align-items: center; gap: 8px; color: var(--charcoal); font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
+
+/* --- Tio Diego's school (charcoal featured card) ------------------------ */
+.join-school { padding: 0 max(var(--gutter), calc((100% - var(--container)) / 2)) var(--section-y); }
+.join-school-card { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: clamp(28px, 4vw, 56px); align-items: center; padding: clamp(32px, 4vw, 56px); background: var(--charcoal); color: var(--white); border-radius: 10px; }
+.join-school-icon { width: 140px; height: 140px; border-radius: 50%; background: var(--white); display: flex; align-items: center; justify-content: center; }
+.join-school-icon img { width: 96px; height: auto; aspect-ratio: 147 / 152; }
+.join-school h2 { max-width: 20ch; }
+.join-school p { font-size: 17px; line-height: 1.65; color: #E6E6E6; max-width: 62ch; margin: 18px 0 28px; }
+.join-school a:focus-visible { box-shadow: 0 0 0 2px var(--charcoal), 0 0 0 4px var(--gold); }
+
+/* --- Tablet / mobile ----------------------------------------------------- */
+@media (max-width: 1100px) {
+  .join-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 850px) {
+  .join-hero { grid-template-columns: 1fr; min-height: 0; }
+  .join-hero-copy { padding: 56px var(--gutter) 44px; max-width: none; }
+  .join-hero h1 { font-size: clamp(44px, 12vw, 52px); }
+  .join-hero-art { border-radius: 0; padding: 32px; }
+  .join-hero-art img { width: 120px; }
+  .join-how h2, .join-school h2 { font-size: clamp(32px, 9vw, 38px); }
+  .join-how { grid-template-columns: 1fr; gap: 24px; padding: 72px var(--gutter); }
+  .join-ways { padding: 72px var(--gutter) 48px; }
+  .join-school { padding: 0 var(--gutter) 72px; }
+  .join-school-card { grid-template-columns: 1fr; }
+  .join-school-icon { width: 104px; height: 104px; }
+  .join-school-icon img { width: 70px; }
+  .join-school .button { width: 100%; }
+}
+@media (max-width: 600px) {
+  .join-grid { grid-template-columns: 1fr; gap: 14px; }
+  .join-card { padding: 24px 20px 18px; }
+}

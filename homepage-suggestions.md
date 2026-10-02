@@ -215,7 +215,31 @@ New page built from the staging copy (staging10.aimfullybooks.com/crowdfund-your
   - Intro video link (required URL; video files are too large to upload)
   - Consent to be contacted (required checkbox)
   - Please compare with the live CF7 form and confirm the field list, the book types, and the file size limit.
-- **Confirm hello@boundlessbacker.com is live**; the fallback button and footer use it.
+- ~~Confirm hello@boundlessbacker.com is live~~ Confirmed live (October 2026).
 - **Confirm these promises from the staging copy**: "We'll handle publishing and distribution", "contributing to our social impact mission", "Accepted creators receive access to our storytelling workshops and entrepreneurship program", and "you'll find more success".
 - **The class link** for "Take our class" (the prototype links to the Resources page classes).
 - **The new Instagram handle** ("Follow @AimfullyBooks" still points to the old account).
+
+---
+
+# Join
+
+New page built from the staging copy (staging10.aimfullybooks.com/join/), word for word. Approved edits: hero title "Let's do this together.", heading typos fixed ("Crowdfund your art book", "Host a workshop"), the ACTIVE and PRE-ORDER tags rebuilt in HTML/CSS, mailto links moved to hello@boundlessbacker.com, and the ENROLL email subject fixed. Nothing below has been built.
+
+## Suggestions
+
+1. **Rebrand the copy**: "Aimfully Books" still appears in the intro, the Ambassador card, both mailto subject lines, and the Faire storefront name.
+2. **Group the ten options** under three headings: For artists (crowdfund, sponsored journeys, scholarships, Tio Diego's school), For communities (host an artist, host a workshop), and For supporters and partners (ambassador, patron, sales force, retail).
+3. **Real application forms** for the "Apply to…" buttons, using the Elementor Form like the rest of the site.
+4. **Add "Join" to the header navigation** (needs a change to the shared global-header.js).
+5. **Reduce duplication**: the backer "How it works" text repeats the How It Works page's support section. It could become a short summary with a link.
+6. **Grammar fix**: "a bar that look like this" should read "a bar that looks like this".
+7. **FAQ link text**: "Visit your order to read the FAQs" reads oddly. Suggested: "Visit our FAQ to read more."
+
+## Needs from client
+
+- **Confirm these promises from the staging copy**: "we will ship the book to you within our standard times", "Initial production costs are covered when a book is funded, including the artist's pay", "we will notify you and refund you, or you can choose to support another title", "Apply to our revenue-sharing program" (Ambassador and Sales force), "We offer scholarships to the Creative Entrepreneurship program", "get BTS access and publisher credits" (Patreon), and "offer favorable terms" (Retail).
+- **Destinations** for Apply to teach, Apply to learn, Apply to host and Apply to self-host (all pointed to the shop page on staging, now placeholders).
+- **Patreon URL** (the staging button was a dead link).
+- **Faire**: confirm the storefront (faire.com/direct/aimfullybooks) and whether it will be rebranded.
+- **Workshop popup**: staging includes a "tell a story / make a book" email popup (Elementor Form, one email field, "Access Now") that is not triggered anywhere on the page. Confirm whether it is still needed.
