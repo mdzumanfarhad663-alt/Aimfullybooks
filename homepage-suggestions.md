@@ -338,3 +338,46 @@ New page built from staging (staging10.aimfullybooks.com/reviews/). On staging e
 - **Permission to use the NPR, Slate and NBC logos**, and a higher-resolution Slate logo.
 - **Source and permission for the reel video** (it was hosted on the live aimfullybooks.com site).
 - **Review system decision**: stay with hard-coded testimonials, or move to WooCommerce / CusRev reviews.
+
+---
+
+# Single Product
+
+New single product template (`product.html`), using The Brooklyn Coloring Book from staging as the sample. Copy, variation, meta and all 10 reviews are verbatim. As requested, only one product page is built, with a reduced image set (5 gallery images, 2 tab images); the client adds the full galleries in WordPress.
+
+## How staging builds this page (all products share one Elementor Pro Single Product template, ID 9811)
+
+- Gallery: a custom shortcode slider (classes gallery-main-image / gallery-thumbs, main image alt "Imagen principal"), not the WooCommerce gallery. The new design uses the WooCommerce Product Images widget.
+- Title, price, add to cart: WooCommerce widgets. Brooklyn is a variable product with one variation (Version: Premium Paperback, $25, SKU WCB1SC), preselected.
+- Quantity +/-: Plus Minus Button plugin (classes qib-button / wqpmb_input_text).
+- "Active" + "100 % FUNDED" + bar: the custom pre-order snippet (Heading widgets + an Elementor Progress widget).
+- Tabs THE BOOK / THE ARTIST / HOW IT WORKS / REVIEWS: Elementor Nested Tabs, with per-product content embedded via shortcodes of Elementor page templates. "See More" reveals extra images.
+- Reviews: CusRev (Customer Reviews for WooCommerce) all-reviews shortcode: 5.0 average, "Based on 10 reviews", histogram, search, sort, voting and an "Add a review" form with reCAPTCHA.
+- Related: an Elementor Loop Grid ("You May Be Interested In..."). It renders empty on staging.
+
+## Where the Comic Sans "Reviews snippet" lives
+
+It is not on staging. On the live site (aimfullybooks.com/shop/the-brooklyn-coloring-book/) the single product template has a Shortcode widget with inline CSS `.custom-stars { font-family: 'Comic Sans MS', cursive; }`, ★ characters and a custom "10 reviews for The Brooklyn Coloring Book" form. Replace that widget with the CusRev shortcode `[cusrev_all_reviews]` (which staging already uses), so every product gets the accessible SVG stars.
+
+## Suggestions
+
+1. Switch the gallery to the WooCommerce Product Images widget (zoom, lightbox, keyboard thumbnails, correct alt text).
+2. Add WooCommerce Breadcrumbs (Home › Shop › Product) in place of the back arrow.
+3. Attach the real product video to the video thumbnail, or remove the thumbnail.
+4. Fix the empty "You May Be Interested In…" loop grid (use WooCommerce Related Products, same categories, excluding the current product).
+5. Show the crowdfunding heading once (staging duplicates it for desktop and mobile).
+6. Shorten long tab content or add sub-headings (artist bios are one long paragraph block).
+7. Consider hiding CusRev review voting if it is rarely used (plugin setting).
+8. Use "Choose an option" only on products with more than one variation; single-variation products could use a simple product type.
+
+## Needs from client
+
+- Confirm the status values ("Active", "100 % FUNDED") come live from the pre-order snippet for each product.
+- Confirm these promises from the HOW IT WORKS tab: "You may ask for a refund at any time before the book is fully funded", "we will ship the book to you within our standard times", "Only limited quantities are available", and "Every purchase supports art education in underserved communities".
+- The product video for the thumbnail.
+- A real FAQ page (staging links to /faq, which does not exist; the prototype links to the How It Works FAQ).
+- The new Instagram handle ("Follow @AimfullyBooks").
+- Fix the empty related products loop grid.
+- Remove the live site's Comic Sans review shortcode and use `[cusrev_all_reviews]`.
+- Confirm the CusRev role labels ("Verified owner", "Store manager", "Reviewer") can stay as shown.
+- Full gallery images and alt text for every product (the template sample uses 5).
