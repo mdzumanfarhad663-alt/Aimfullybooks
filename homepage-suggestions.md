@@ -722,3 +722,13 @@ Privacy Policy:
 - One Elementor single-page template for legal pages (Theme Builder > Single Page, condition: the Terms and Privacy pages): title area, Table of Contents widget (anchors from H2, sticky, "collapse on mobile"), Post Content in a 720px column.
 - Write each document in the block editor with real H2 headings (not bold paragraphs) so the TOC and anchors work; keep the "–" lists as real lists.
 - Settings > Privacy: set the Privacy Policy page. WooCommerce > Settings > Advanced > Page setup: set "Terms and conditions" to the Terms page (this links the checkout checkbox). WooCommerce > Settings > Accounts & Privacy: the privacy text links to the Privacy page.
+
+# Home: reviews slider
+
+The Home reviews section is now a carousel (reviews-slider.js) with 10 verbatim customer reviews taken from reviews.html. Press quotes (NBC News, Miami New Times, Curbed) stay on the Reviews page only. The source data has no product names, so cards show reviewer name only. All reviews are 5 stars.
+
+## Reviews: brand name updated (client request)
+
+- Anne Krutko Reffitt: "purchased from Aimfully Books" → "purchased from Boundless Backer" (Home slider and reviews.html)
+
+No other review mentioned the old brand or domain.
