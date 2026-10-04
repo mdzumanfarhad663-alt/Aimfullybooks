@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="robots" content="noindex"/>
+  <title>My Account | Boundless Backer</title>
+  <!-- DESIGN ONLY: visual reference for the WooCommerce My Account pages (Elementor Pro "My Account" widget). No login, demo data only.
+       Each endpoint is a panel, linkable by hash: #dashboard #orders #downloads #addresses #payment-methods #account-details #login -->
+  <link rel="preload" href="./fonts/norwester-400.woff2" as="font" type="font/woff2" crossorigin/>
+  <link rel="preload" href="./fonts/dm-sans-variable.woff2" as="font" type="font/woff2" crossorigin/>
+  <link rel="stylesheet" href="./styles.css"/>
+  <link rel="stylesheet" href="./mobile.css"/>
+  <link rel="stylesheet" href="./refinements.css"/>
+  <link rel="stylesheet" href="./animations.css"/>
+  <link rel="stylesheet" href="./home.css"/>
+  <link rel="stylesheet" href="./checkout-page.css"/>
+  <link rel="stylesheet" href="./my-account-page.css"/>
+  <script src="./global-header.js" defer></script>
+  <script src="./animations.js" defer></script>
+  <script src="./my-account.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <global-site-header class="site-header"></global-site-header>
+  <main id="main" class="acc-main">
+    <header class="acc-title">
+      <p class="eyebrow">Account</p>
+      <h1>My Account</h1>
+    </header>
+
+    <!-- Logged-in view -->
+    <div class="acc-layout" data-state="in">
+      <nav class="acc-nav" aria-label="Account pages">
+        <ul><li><a class="acc-nav-link is-active" href="#dashboard" data-view="dashboard" aria-current="page"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg><span>Dashboard</span></a></li><li><a class="acc-nav-link" href="#orders" data-view="orders"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h12l2 4v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6z"/><path d="M4 6h16M16 10a4 4 0 0 1-8 0"/></svg><span>Orders</span></a></li><li><a class="acc-nav-link" href="#downloads" data-view="downloads"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 17v3h16v-3"/></svg><span>Downloads</span></a></li><li><a class="acc-nav-link" href="#addresses" data-view="addresses"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Addresses</span></a></li><li><a class="acc-nav-link" href="#payment-methods" data-view="payment-methods"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></svg><span>Payment methods</span></a></li><li><a class="acc-nav-link" href="#account-details" data-view="account-details"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><span>Account Details</span></a></li><li class="acc-nav-logout"><a class="acc-nav-link" href="#login" data-view="login"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l-5-5 5-5M5 12h11"/></svg><span>Logout</span></a></li></ul>
+      </nav>
+
+      <div class="acc-content">
+        <!-- a. Dashboard -->
+        <section class="co-card acc-panel" id="dashboard" data-panel="dashboard" aria-labelledby="dashboard-title">
+          <h2 id="dashboard-title">Dashboard</h2>
+          <!-- WooCommerce dashboard text, verbatim. Demo name (not a real customer). -->
+          <p>Hello <strong>Alex Morgan</strong> (not <strong>Alex Morgan</strong>? <a class="link-underline" href="#login" data-view="login">Log out</a>)</p>
+          <p>From your account dashboard you can view your <a class="link-underline" href="#orders" data-view="orders">recent orders</a>, manage your <a class="link-underline" href="#addresses" data-view="addresses">shipping and billing addresses</a>, and <a class="link-underline" href="#account-details" data-view="account-details">edit your password and account details</a>.</p>
+          <div class="acc-quick">
+            <a class="acc-quick-card card-hover" href="#orders" data-view="orders"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h12l2 4v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6z"/><path d="M4 6h16M16 10a4 4 0 0 1-8 0"/></svg><strong>Recent orders</strong><span>View order status and details</span></a>
+            <a class="acc-quick-card card-hover" href="#addresses" data-view="addresses"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><strong>Addresses</strong><span>Billing and shipping</span></a>
+            <a class="acc-quick-card card-hover" href="#account-details" data-view="account-details"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><strong>Account details</strong><span>Name, email and password</span></a>
+          </div>
+        </section>
+
+        <!-- b. Orders -->
+        <section class="co-card acc-panel" id="orders" data-panel="orders" aria-labelledby="orders-title" hidden>
+          <h2 id="orders-title">Orders</h2>
+          <table class="acc-table">
+            <thead><tr><th scope="col">Order</th><th scope="col">Date</th><th scope="col">Status</th><th scope="col">Total</th><th scope="col"><span class="sr-only">Actions</span></th></tr></thead>
+            <tbody>
+              <tr><!-- demo -->
+                <td data-title="Order"><a class="link-underline" href="#orders">#10234</a></td>
+                <td data-title="Date">[Order date]</td>
+                <td data-title="Status"><span class="acc-status acc-status-processing">Processing</span></td>
+                <td data-title="Total">$50.00 for 2 items</td>
+                <td data-title="Actions"><a class="button button-outline btn-hover acc-btn-sm" href="#orders">View</a></td>
+              </tr>
+              <tr><!-- demo -->
+                <td data-title="Order"><a class="link-underline" href="#orders">#10198</a></td>
+                <td data-title="Date">[Order date]</td>
+                <td data-title="Status"><span class="acc-status acc-status-completed">Completed</span></td>
+                <td data-title="Total">$25.00 for 1 item</td>
+                <td data-title="Actions"><a class="button button-outline btn-hover acc-btn-sm" href="#orders">View</a></td>
+              </tr>
+              <tr><!-- demo -->
+                <td data-title="Order"><a class="link-underline" href="#orders">#10112</a></td>
+                <td data-title="Date">[Order date]</td>
+                <td data-title="Status"><span class="acc-status acc-status-on-hold">On hold</span></td>
+                <td data-title="Total">$10.00 for 1 item</td>
+                <td data-title="Actions"><a class="button button-outline btn-hover acc-btn-sm" href="#orders">View</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <h3 class="acc-state-label">Empty state</h3>
+          <div class="acc-empty"><p>No order has been made yet.</p><a class="button button-gold btn-hover" href="./shop.html">Browse products <span aria-hidden="true">→</span></a></div>
+        </section>
+
+        <!-- c. Downloads -->
+        <section class="co-card acc-panel" id="downloads" data-panel="downloads" aria-labelledby="downloads-title" hidden>
+          <h2 id="downloads-title">Downloads</h2>
+          <table class="acc-table">
+            <thead><tr><th scope="col">Product</th><th scope="col">Downloads remaining</th><th scope="col">Expires</th><th scope="col">Download</th></tr></thead>
+            <tbody>
+              <tr><!-- demo: The Ultimate Street Art Coloring Book (Printables), Digital Printable, $5 -->
+                <td data-title="Product"><a class="link-underline" href="./shop.html">The Ultimate Street Art Coloring Book (Printables) - Digital Printable</a></td>
+                <td data-title="Downloads remaining">∞</td>
+                <td data-title="Expires">Never</td>
+                <td data-title="Download"><a class="button button-outline btn-hover acc-btn-sm" href="#downloads">Download</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <h3 class="acc-state-label">Empty state</h3>
+          <div class="acc-empty"><p>No downloads available yet.</p><a class="button button-gold btn-hover" href="./shop.html">Browse products <span aria-hidden="true">→</span></a></div>
+        </section>
+
+        <!-- d. Addresses -->
+        <section class="co-card acc-panel" id="addresses" data-panel="addresses" aria-labelledby="addresses-title" hidden>
+          <h2 id="addresses-title">Addresses</h2>
+          <p>The following addresses will be used on the checkout page by default.</p>
+          <div class="acc-addresses">
+            <div class="acc-address"><div class="acc-address-head"><h3>Billing address</h3><a class="link-underline" href="#addresses">Edit</a></div><!-- demo address --><address>[Alex Morgan]<br/>[Street address]<br/>[Town / City], [State] [ZIP]<br/>United States (US)</address></div>
+            <div class="acc-address"><div class="acc-address-head"><h3>Shipping address</h3><a class="link-underline" href="#addresses">Edit</a></div><!-- demo address --><address>[Alex Morgan]<br/>[Street address]<br/>[Town / City], [State] [ZIP]<br/>United States (US)</address></div>
+          </div>
+        </section>
+
+        <!-- e. Payment methods. WooPayments saved cards; this endpoint should only show when WooPayments live is on. -->
+        <section class="co-card acc-panel" id="payment-methods" data-panel="payment-methods" aria-labelledby="pm-title" hidden>
+          <h2 id="pm-title">Payment methods</h2>
+          <table class="acc-table">
+            <thead><tr><th scope="col">Method</th><th scope="col">Expires</th><th scope="col"><span class="sr-only">Actions</span></th></tr></thead>
+            <tbody>
+              <tr><!-- demo -->
+                <td data-title="Method"><span class="acc-card-method"><span class="acc-card-icon"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></svg></span>Visa •••• 4242</span></td>
+                <td data-title="Expires">[MM/YY]</td>
+                <td data-title="Actions"><a class="link-underline acc-delete" href="#payment-methods">Delete</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <a class="button button-gold btn-hover acc-add" href="#payment-methods">Add payment method</a>
+        </section>
+
+        <!-- f. Account details -->
+        <section class="co-card acc-panel" id="account-details" data-panel="account-details" aria-labelledby="ad-title" hidden>
+          <h2 id="ad-title">Account Details</h2>
+          <form class="acc-form" action="#" onsubmit="return false" novalidate>
+            <div class="co-row-2"><p class="co-field"><label for="account_first_name">First name <abbr class="co-req" title="required">*</abbr></label><input id="account_first_name" type="text" autocomplete="given-name" value="Alex"/></p><p class="co-field"><label for="account_last_name">Last name <abbr class="co-req" title="required">*</abbr></label><input id="account_last_name" type="text" autocomplete="family-name" value="Morgan"/></p></div>
+            <p class="co-field"><label for="account_display_name">Display name <abbr class="co-req" title="required">*</abbr></label><input id="account_display_name" type="text" autocomplete="nickname" value="Alex Morgan" aria-describedby="account_display_name-help"/><span class="acc-help" id="account_display_name-help">This will be how your name will be displayed in the account section and in reviews</span></p>
+            <p class="co-field"><label for="account_email">Email address <abbr class="co-req" title="required">*</abbr></label><input id="account_email" type="email" autocomplete="email"/></p>
+            <fieldset class="acc-fieldset">
+              <legend>Password change</legend>
+              <p class="co-field"><label for="password_current">Current password (leave blank to leave unchanged)</label><input id="password_current" type="password" autocomplete="current-password"/></p>
+              <p class="co-field"><label for="password_1">New password (leave blank to leave unchanged)</label><input id="password_1" type="password" autocomplete="new-password"/></p>
+              <p class="co-field"><label for="password_2">Confirm new password</label><input id="password_2" type="password" autocomplete="new-password"/></p>
+            </fieldset>
+            <button class="button button-gold btn-hover" type="button">Save changes</button>
+          </form>
+        </section>
+      </div>
+    </div>
+
+    <!-- g. Logged-out view (#login): WooCommerce Login + Register, default labels. -->
+    <div class="acc-auth" id="login" data-state="out" hidden>
+      <section class="co-card" aria-labelledby="login-title">
+        <h2 id="login-title">Login</h2>
+        <form action="#" onsubmit="return false" novalidate>
+          <p class="co-field"><label for="username">Username or email address <abbr class="co-req" title="required">*</abbr></label><input id="username" type="text" autocomplete="username"/></p>
+          <p class="co-field"><label for="password">Password <abbr class="co-req" title="required">*</abbr></label><input id="password" type="password" autocomplete="current-password"/></p>
+          <p class="co-check"><input id="rememberme" type="checkbox"/><label for="rememberme">Remember me</label></p>
+          <button class="button button-gold btn-hover acc-auth-btn" type="button">Log in</button>
+          <!-- [PLACEHOLDER: lost-password endpoint.] -->
+          <p class="acc-lost"><a class="link-underline" href="#login">Lost your password?</a></p>
+        </form>
+      </section>
+      <section class="co-card" aria-labelledby="register-title">
+        <h2 id="register-title">Register</h2>
+        <form action="#" onsubmit="return false" novalidate>
+          <p class="co-field"><label for="reg_email">Email address <abbr class="co-req" title="required">*</abbr></label><input id="reg_email" type="email" autocomplete="email"/></p>
+          <p class="acc-small">A link to set a new password will be sent to your email address.</p>
+          <!-- [PLACEHOLDER: privacy policy page link.] -->
+          <p class="acc-small">Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our <a class="link-underline" href="#">privacy policy</a>.</p>
+          <button class="button button-outline btn-hover acc-auth-btn" type="button">Register</button>
+        </form>
+      </section>
+      <p class="acc-demo-back"><a class="link-underline" href="#dashboard" data-view="dashboard">← Demo: back to the logged-in view</a></p>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="footer-top"><div class="footer-brand"><a class="brand brand-light" href="./index.html" aria-label="Boundless Backer home">
+      <!-- Logo swap: replace the two spans below with
+           <img class="brand-logo" src="./assets/logo-primary-white.svg" alt="Boundless Backer" width="160" height="48" /> -->
+      <span class="bookstack" aria-hidden="true"><i></i><i></i><i></i></span><span>Boundless <br/>Backer<span class="period">.</span></span></a><p class="footer-tagline">Curated with intention. Published for impact. Chosen by you.</p></div><p>Fund the art you want to see in the world.</p></div><div class="footer-links reveal-stagger"><div><p>Explore</p><a class="link-underline" href="./shop.html">Shop</a><a class="link-underline" href="./how-it-works.html">How it works</a><a class="link-underline" href="./resources.html">Resources</a><a class="link-underline" href="./blog.html">Blog</a><a class="link-underline" href="./coloring-tutorial.html">Coloring tutorial</a><a class="link-underline" href="./about.html">About</a></div><div><p>Participate</p><a class="link-underline" href="./crowdfund-your-book.html">Crowdfund your book</a><a class="link-underline" href="./join.html">Join us</a><a class="link-underline" href="./visiting.html">Become a guest</a><a class="link-underline" href="./hosting.html">Become a host</a></div><div><p>Support</p><a class="link-underline" href="./faq.html">FAQ</a><a class="link-underline" href="./reviews.html">Reviews</a><a class="link-underline" href="./wholesale.html">Wholesale</a><a class="link-underline" href="mailto:hello@boundlessbacker.com">Email us</a></div><div><p>Connect</p><!-- [PLACEHOLDER: new social URLs, client to supply] --><a class="link-underline" href="#">Instagram</a><a class="link-underline" href="#">TikTok</a><a class="link-underline" href="#">Patreon</a></div></div><div class="footer-bottom"><span>© 2026 Boundless Backer</span><span class="footer-legal"><!-- [PLACEHOLDER: legal pages] --><a class="link-underline" href="#">Privacy Policy</a><a class="link-underline" href="#">Terms of Service</a></span><span>Client approval prototype. Links are illustrative.</span></div></footer>
+</body>
+</html>

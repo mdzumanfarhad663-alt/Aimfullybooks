@@ -652,3 +652,34 @@ Prototype: `faq.html` (+ `faq-page.css`, `faq.js`). Text-only centered title, st
 - Old brand mentions to rename: intro "Aimfully Books is a crowdfunding book publisher…", "How can I be a part of the Aimfully Movement?", "Can I donate to Aimfully Books?".
 - "visit our Join and Resources pages" is plain text on staging; should it link to Join and Resources?
 - Donations: "When the time comes, we will open up donations…" still current?
+
+---
+
+# My Account (my-account.html), design only
+
+Prototype: `my-account.html` (+ `my-account-page.css`, `my-account.js`). No login, demo data only (demo name "Alex Morgan"). Text-only centered title (no wood banner / ribbon). Desktop: sidebar nav card (280px, line icons, plum active state with a left accent bar, Logout separated at the bottom) + content card. Each endpoint is a panel linked by hash: `#dashboard`, `#orders`, `#downloads`, `#addresses`, `#payment-methods`, `#account-details`, and `#login` for the logged-out Login / Register view. Below 960px the sidebar becomes a horizontal scrollable tab bar (chosen over a select: every section stays one tap away and the active tab stays visible); below 640px tables become stacked cards. The Thank You page's "View my account" links to `my-account.html#orders`. The header has no account icon, so nothing was linked there.
+
+## Content (WooCommerce defaults; menu and dashboard text verbatim from staging)
+
+- Menu: Dashboard · Orders · Downloads · Addresses · Payment methods · Account Details · Logout.
+- Dashboard: "Hello {name} (not {name}? Log out)" and "From your account dashboard you can view your recent orders, manage your shipping and billing addresses, and edit your password and account details." with the three links, plus quick-link cards (Recent orders / Addresses / Account details, prototype addition).
+- Orders: Order · Date · Status · Total · Actions, 3 demo rows ($50.00 for 2 items / $25.00 / $10.00) with Processing / Completed / On hold pills; empty state "No order has been made yet." + Browse products.
+- Downloads: demo row for The Ultimate Street Art Coloring Book (Printables) ($5); empty state "No downloads available yet." + Browse products.
+- Addresses: "The following addresses will be used on the checkout page by default." + Billing / Shipping cards with Edit.
+- Payment methods: Visa •••• 4242 (neutral card icon, no logos), expiry, Delete; Add payment method.
+- Account details: First name, Last name, Display name (+ "This will be how your name will be displayed in the account section and in reviews"), Email address, Password change (Current / New / Confirm new password), Save changes.
+- Logged out: Login (Username or email address, Password, Remember me, Log in, Lost your password?) and Register (Email address, password-link note, privacy text, Register).
+
+## How to build it in WordPress
+
+- Elementor Pro **My Account** widget on the WooCommerce My Account page. Tabs: Layout vertical on desktop, horizontal on tablet/mobile (widget responsive setting); set "Tabs" typography, icons per tab, active colour plum with the left border; Sections: card border 1px #E4E4E4, 10px radius, 28px padding.
+- Per-endpoint content: the widget has "Customize Dashboard content" (template) and per-endpoint styling; use it for the quick-link cards. Rename menu labels in the widget (keep endpoint slugs).
+- Tables (`.woocommerce-orders-table`, `.woocommerce-table--order-downloads`, `.woocommerce-MyAccount-paymentMethods`): add the prototype CSS to the site (header 12px uppercase, 2px charcoal bottom border, row borders #E4E4E4, status pills by `.woocommerce-orders-table__row--status-processing` etc.). They already carry `shop_table_responsive` + `data-title`, so the stacked-card CSS works on mobile.
+- Login / Register: WooCommerce > Settings > Accounts & Privacy: "Allow customers to create an account on the My account page" and "When creating an account, send the new user a link to set their password" (matches the prototype Register form).
+- "Payment methods" endpoint: only show it when WooPayments live mode (saved cards) is on; otherwise remove it (WooCommerce > Settings > Advanced > Account endpoints, clear the slug) so customers do not see an empty page.
+
+## Needs from client
+
+- Keep "Downloads" in the menu? It is only needed for the digital Printables. If printables are delivered by email instead, remove the endpoint.
+- Should customers be able to register on the My Account page, or only at checkout?
+- Lost-password and privacy policy pages (placeholders in the prototype).
