@@ -621,3 +621,34 @@ Prototype: `thank-you.html` (+ `thank-you-page.css`, reusing the checkout card/t
 - Share block: keep "SHARE IT WITH YOURS"? Which networks, and what should be shared (product link)?
 - The thank-you video: keep YouTube `APpZO-jWZe0` here?
 - My Account page (the "View my account" button is a placeholder).
+
+---
+
+# FAQ (faq.html)
+
+Prototype: `faq.html` (+ `faq-page.css`, `faq.js`). Text-only centered title, staging intro, live search with a "No results" + Contact us state, topic pills (All, Your Order, Our Books, Get Involved), one-at-a-time accordion (first open, animated, keyboard accessible), staging closing line, "Still have questions?" band with a mailto button, FAQPage JSON-LD in the head. Footer "FAQ" now links to faq.html on all 18 pages (was how-it-works.html).
+
+## Staging /faq/ (Elementor page 10183), verbatim
+
+- Heading "Frequently Asked Questions" (split over two headings) + label "F.A.Q"; intro "Welcome! Aimfully Books is a crowdfunding book publisher…".
+- 8 questions in 3 groups: Your Order (Should I get insurance? / When will I receive my order? / Can I get a refund? / Can I return it? / Is my information safe?), Our Books (How is the quality?), Get Involved (How can I be a part of the Aimfully Movement? / Can I donate to Aimfully Books?).
+- Closing line "We are expanding this section. If you have questions or need to contact us, our email address is in the footer." No contact block, so the "Still have questions?" band uses the prototype wording.
+- Typos: none fixed (only staging's mid-sentence hard line breaks were joined).
+- Links inside answers: USPS Missing Mail (usps.com) and a ShipStation return-label portal (track.shipstation.com). Both kept. No spam or hidden-style links.
+
+## How to build it in WordPress
+
+- 8 questions: one Elementor Accordion (or Nested Accordion, as on staging) per group, styled like the prototype (card border #E4E4E4, 10px radius, gold +/− circle, first item open, "max one open"). Search and pills are optional at this size; add them with a small snippet if the FAQ grows.
+- If the FAQ grows past ~20 questions: a FAQ custom post type + "FAQ Topic" taxonomy, rendered with a Loop Grid / Loop Carousel or the Accordion fed by a loop, so answers are edited one by one.
+- Schema: Rank Math > Titles & Meta / the Rank Math FAQ block, or keep the JSON-LD from the prototype in the page head. Use one source only (no duplicate FAQPage schema).
+
+## Needs from client (confirm before launch)
+
+- Shipping: "USPS Media Mail", "within a day or two", "2-10 days" (US), "15 to 21 days or longer" (international), "expedited shipping and next-day delivery are no longer available".
+- Insurance and liability wording ("we are not liable for any loss or damage", "We do not provide replacements for misplaced packages").
+- Refund / return policy: pledge refunds before funding; "within 30 days of receiving the book", shipping cost deducted; is the ShipStation return-label link still valid?
+- Payments: answer says "We use Stripe and PayPal"; the checkout now uses WooPayments + PayPal.
+- Product claims: "eco-friendly materials", "embossed" covers, "sewn" pages.
+- Old brand mentions to rename: intro "Aimfully Books is a crowdfunding book publisher…", "How can I be a part of the Aimfully Movement?", "Can I donate to Aimfully Books?".
+- "visit our Join and Resources pages" is plain text on staging; should it link to Join and Resources?
+- Donations: "When the time comes, we will open up donations…" still current?
