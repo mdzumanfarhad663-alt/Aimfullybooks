@@ -536,3 +536,52 @@ Prototype: `cart.html` (+ `cart-page.css`, `cart.js`). Text-only centered title,
 - The Ultimate Street Art Coloring Book price range is $25 – $50 per the Store API and Shop; the tutorial text said "$20 -$50". Prototype tutorial updated to "$25 – $50"; please confirm and fix the post in WordPress.
 - Should the add-to-cart pop-up ("GET FREE SHIPPING… JUST ADD A SECOND BOOK") stay?
 - Real checkout page and payment setup (live keys for WooPayments / PayPal).
+
+---
+
+# Checkout (checkout.html), design only
+
+Prototype: `checkout.html` (+ `checkout-page.css`, `checkout.js`). Visual reference only: no validation, no payment logic, "Place order" does nothing. Text-only centered title with a Cart → Checkout → Done step line; express row on top; form sections as cards on the left; sticky "Your Order" + coupon + payment on the right. Below 960px: "Show order summary" bar first (opens Your Order), then the form, then coupon, payment and Place order. The cart's "Proceed to checkout" now links here.
+
+## Elements kept from the staging checkout (labels verbatim)
+
+- Express: "Buy with WooPay", "Buy with Apple Pay", "Buy with Google Pay", "— OR —" (neutral placeholders, no logos).
+- Insurance (optional): "Yes please, include Insurance. ($0.99)" + "Why Do I Need Insurance?".
+- Contact Information: Email Address *.
+- Billing Details: First Name *, Last Name *, Company Name (optional), Country / Region *, Street address * (House number and street name / Apartment, suite, unit, etc. (optional)), Town / City *, State/District *, Postcode / ZIP, Phone (optional), "Get new book announcements, coloring tips & exclusive discounts."
+- "Ship to a different address?" (same fields, collapsed), "Order notes (optional)" with "Notes about your order, e.g. special notes for delivery."
+- Your Order: Product / Subtotal, "The Ultimate Street Art Coloring Book - Premium Paperback × 2" $50.00, Subtotal, Shipment (USPS [rate] / Free Shipping), Insurance $0.99, Tax, Total. Shipping rate, tax and total are placeholders.
+- "Have a coupon? Click here to enter your coupon code".
+- Payment: Card (Card number / Expiration date / Security code), PayPal, Check payments; "Securely save my information for 1-click checkout" + phone + WooPay small print; privacy text; "I have read and agree to the website terms and conditions *"; "Place order".
+- Left out on purpose: the test-mode line "Use test card 4242…", the wood banner and the "Checkout" ribbon image.
+- The WooPay small print in the prototype is the WooPayments default wording. Staging's filled checkout could not be opened (empty cart redirects to /cart/, and add-to-cart is blocked by the SiteGround CAPTCHA), so check it once a cart can be filled.
+
+## Staging layout problems fixed
+
+- Sections grouped into cards with the same padding and gaps.
+- Shipping rates on one line each (name left, price right) in a full-width row, instead of the price wrapping one word per line.
+- First / Last Name, Town / State and ZIP / Phone in 2-column rows (stack under 600px).
+- Required fields marked with a plum *, optional ones with "(optional)".
+- Order summary stays visible on desktop. It is sticky; when it is taller than the screen it scrolls to Place order first and then sticks.
+
+## How to build it in WordPress
+
+- Elementor Pro **Checkout** widget on the WooCommerce Checkout page. Layout: Two columns, "Sticky right column" on. Style each section (Billing details, Shipping details, Additional information, Order summary, Coupon, Payment) with the card values: 1px #E4E4E4 border, 10px radius, 28px padding, 20px gap; inputs 52px high, 1px #8A8A8A border, 6px radius, gold focus ring. Section titles: Norwester 26px uppercase.
+- Field order and labels: Elementor Checkout widget "Content > Billing details" (rename labels there, keep WooCommerce field keys). Turn on "Ship to a different address" and "Order notes".
+- Newsletter checkbox: Mailchimp for WooCommerce (plugin is on staging).
+- Insurance field: not visible in the staging HTML (the checkout page redirects to the cart while the cart is empty). The active plugins found in the page source are add-to-any, cookie-law-info, customer-reviews-woocommerce, elementor, elementor-pro, mailchimp-for-woocommerce, pixelyoursite-pro, woocommerce and woocommerce-payments, so the insurance fee is probably a code snippet (theme functions.php or a Code Snippets entry adding a checkout field + `woocommerce_cart_calculate_fees`) or a checkout field plugin. Check Plugins and Snippets in wp-admin before rebuilding.
+- Express buttons and card form: WooPayments. PayPal: PayPal Payments. Keep the reserved space above the form so the layout does not jump when the buttons load.
+
+## Before launch
+
+- WooPayments and PayPal live keys: connect and test on the live site only (never copy staging test keys or accounts to live).
+- Turn off WooPayments test mode / sandbox and PayPal sandbox, and confirm the "Use test card 4242…" line is gone.
+- Fix the SiteGround CAPTCHA on add-to-cart links (see Cart).
+- Link real Terms and Privacy Policy pages (placeholders in the prototype).
+
+## Needs from client
+
+- Insurance: confirm the option, the $0.99 price, the wording "Yes please, include Insurance. ($0.99)", and where "Why Do I Need Insurance?" should link.
+- Shipping rates: USPS rates per zone, when Free Shipping applies (the cart promise "Add a second book and get free shipping now (US only)"), and international shipping.
+- Check payments: keep the "Check payments" gateway on the live site? If yes, supply the payee details and instructions shown to buyers.
+- Tax: which states / products are taxed (shown as a placeholder).

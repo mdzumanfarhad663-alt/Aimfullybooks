@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="robots" content="noindex"/>
+  <title>Checkout | Boundless Backer</title>
+  <!-- DESIGN ONLY: visual reference for the WordPress checkout. No validation, no payment, Place order does nothing.
+       WordPress: Elementor Pro Checkout widget (two columns, sticky order summary) + WooPayments + PayPal Payments. -->
+  <link rel="preload" href="./fonts/norwester-400.woff2" as="font" type="font/woff2" crossorigin/>
+  <link rel="preload" href="./fonts/dm-sans-variable.woff2" as="font" type="font/woff2" crossorigin/>
+  <link rel="stylesheet" href="./styles.css"/>
+  <link rel="stylesheet" href="./mobile.css"/>
+  <link rel="stylesheet" href="./refinements.css"/>
+  <link rel="stylesheet" href="./animations.css"/>
+  <link rel="stylesheet" href="./home.css"/>
+  <link rel="stylesheet" href="./checkout-page.css"/>
+  <script src="./global-header.js" defer></script>
+  <script src="./animations.js" defer></script>
+  <script src="./checkout.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <global-site-header class="site-header"></global-site-header>
+  <main id="main" class="co-main">
+    <header class="co-title">
+      <p class="eyebrow">Shop</p>
+      <h1>Checkout</h1>
+      <ol class="co-steps" aria-label="Checkout progress">
+        <li class="is-done"><a class="link-underline" href="./cart.html">Cart</a></li>
+        <li class="is-current" aria-current="step">Checkout</li>
+        <li>Done</li>
+      </ol>
+    </header>
+
+    <form class="co-form" action="#" novalidate onsubmit="return false">
+      <!-- WooPayments express buttons -->
+      <section class="co-express" aria-label="Express checkout">
+        <div class="co-express-btn co-express-full">Buy with WooPay</div>
+        <div class="co-express-pair"><div class="co-express-btn">Buy with Apple Pay</div><div class="co-express-btn">Buy with Google Pay</div></div>
+        <p class="co-or"><span>— OR —</span></p>
+      </section>
+
+      <div class="co-layout">
+        <!-- Mobile only: collapsible order summary bar (Your Order card moves under it below 960px). -->
+        <button class="co-summary-toggle" type="button" aria-expanded="false" aria-controls="co-order"><span class="co-summary-toggle-label">Show order summary</span><span class="co-summary-toggle-total">$50.00 <small>subtotal</small></span></button>
+
+        <div class="co-left">
+          <!-- CLAIM: client to confirm insurance option/price -->
+          <section class="co-card" aria-labelledby="co-ins-title">
+            <h2 id="co-ins-title">Insurance <span class="co-opt">(optional)</span></h2>
+            <p class="co-field co-field-full"><label class="sr-only" for="co_insurance">Insurance (optional)</label><select id="co_insurance"><option>Yes please, include Insurance. ($0.99)</option><option>No, thanks</option></select></p>
+            <!-- [PLACEHOLDER: link target for the insurance explanation, client to supply.] -->
+            <p class="co-small"><a class="link-underline" href="#">Why Do I Need Insurance?</a></p>
+          </section>
+
+          <section class="co-card" aria-labelledby="co-contact-title">
+            <h2 id="co-contact-title">Contact Information</h2>
+            <p class="co-field co-field-full"><label for="billing_email">Email Address <abbr class="co-req" title="required">*</abbr></label><input id="billing_email" type="email" autocomplete="email" required/></p>
+          </section>
+
+          <section class="co-card" aria-labelledby="co-billing-title">
+            <h2 id="co-billing-title">Billing Details</h2>
+            <div class="co-row-2"><p class="co-field"><label for="billing_first_name">First Name <abbr class="co-req" title="required">*</abbr></label><input id="billing_first_name" type="text" autocomplete="billing given-name" required/></p><p class="co-field"><label for="billing_last_name">Last Name <abbr class="co-req" title="required">*</abbr></label><input id="billing_last_name" type="text" autocomplete="billing family-name" required/></p></div>
+<p class="co-field co-field-full"><label for="billing_company">Company Name <span class="co-opt">(optional)</span></label><input id="billing_company" type="text" autocomplete="billing organization"/></p>
+<p class="co-field co-field-full"><label for="billing_country">Country / Region <abbr class="co-req" title="required">*</abbr></label><select id="billing_country" autocomplete="billing country" required><option>United States (US)</option><option>Canada</option><option>Select a country / region…</option></select></p>
+<p class="co-field co-field-full"><label for="billing_address_1">Street address <abbr class="co-req" title="required">*</abbr></label><input id="billing_address_1" type="text" autocomplete="billing address-line1" placeholder="House number and street name" required/><label class="sr-only" for="billing_address_2">Apartment, suite, unit, etc. (optional)</label><input id="billing_address_2" class="co-addr2" type="text" autocomplete="billing address-line2" placeholder="Apartment, suite, unit, etc. (optional)"/></p>
+<div class="co-row-2"><p class="co-field"><label for="billing_city">Town / City <abbr class="co-req" title="required">*</abbr></label><input id="billing_city" type="text" autocomplete="billing address-level2" required/></p><p class="co-field"><label for="billing_state">State/District <abbr class="co-req" title="required">*</abbr></label><select id="billing_state" autocomplete="billing address-level1" required><option value="">Select an option…</option><option>Florida</option><option>New York</option></select></p></div>
+<div class="co-row-2"><p class="co-field"><label for="billing_postcode">Postcode / ZIP</label><input id="billing_postcode" type="text" autocomplete="billing postal-code"/></p><p class="co-field"><label for="billing_phone">Phone <span class="co-opt">(optional)</span></label><input id="billing_phone" type="tel" autocomplete="billing tel"/></p></div>
+            <!-- WordPress: Mailchimp for WooCommerce opt-in checkbox. -->
+            <p class="co-check"><input id="mailchimp_optin" type="checkbox"/><label for="mailchimp_optin">Get new book announcements, coloring tips &amp; exclusive discounts.</label></p>
+          </section>
+
+          <section class="co-card" aria-labelledby="co-ship-title">
+            <h2 class="sr-only" id="co-ship-title">Shipping address</h2>
+            <p class="co-check co-check-lg"><input id="ship_to_different" type="checkbox" aria-controls="co-shipping-fields" aria-expanded="false"/><label for="ship_to_different">Ship to a different address?</label></p>
+            <div class="co-shipping-fields" id="co-shipping-fields" hidden>
+              <div class="co-row-2"><p class="co-field"><label for="shipping_first_name">First Name <abbr class="co-req" title="required">*</abbr></label><input id="shipping_first_name" type="text" autocomplete="shipping given-name" required/></p><p class="co-field"><label for="shipping_last_name">Last Name <abbr class="co-req" title="required">*</abbr></label><input id="shipping_last_name" type="text" autocomplete="shipping family-name" required/></p></div>
+<p class="co-field co-field-full"><label for="shipping_company">Company Name <span class="co-opt">(optional)</span></label><input id="shipping_company" type="text" autocomplete="shipping organization"/></p>
+<p class="co-field co-field-full"><label for="shipping_country">Country / Region <abbr class="co-req" title="required">*</abbr></label><select id="shipping_country" autocomplete="shipping country" required><option>United States (US)</option><option>Canada</option><option>Select a country / region…</option></select></p>
+<p class="co-field co-field-full"><label for="shipping_address_1">Street address <abbr class="co-req" title="required">*</abbr></label><input id="shipping_address_1" type="text" autocomplete="shipping address-line1" placeholder="House number and street name" required/><label class="sr-only" for="shipping_address_2">Apartment, suite, unit, etc. (optional)</label><input id="shipping_address_2" class="co-addr2" type="text" autocomplete="shipping address-line2" placeholder="Apartment, suite, unit, etc. (optional)"/></p>
+<div class="co-row-2"><p class="co-field"><label for="shipping_city">Town / City <abbr class="co-req" title="required">*</abbr></label><input id="shipping_city" type="text" autocomplete="shipping address-level2" required/></p><p class="co-field"><label for="shipping_state">State/District <abbr class="co-req" title="required">*</abbr></label><select id="shipping_state" autocomplete="shipping address-level1" required><option value="">Select an option…</option><option>Florida</option><option>New York</option></select></p></div>
+<div class="co-row-2"><p class="co-field"><label for="shipping_postcode">Postcode / ZIP</label><input id="shipping_postcode" type="text" autocomplete="shipping postal-code"/></p></div>
+            </div>
+          </section>
+
+          <section class="co-card" aria-labelledby="co-notes-title">
+            <h2 id="co-notes-title">Order notes <span class="co-opt">(optional)</span></h2>
+            <p class="co-field co-field-full"><label class="sr-only" for="order_comments">Order notes (optional)</label><textarea id="order_comments" rows="4" placeholder="Notes about your order, e.g. special notes for delivery."></textarea></p>
+          </section>
+        </div>
+
+        <div class="co-right">
+          <section class="co-card co-order" id="co-order" aria-labelledby="co-order-title">
+            <h2 id="co-order-title">Your Order</h2>
+            <table class="co-order-table">
+              <thead><tr><th scope="col">Product</th><th scope="col">Subtotal</th></tr></thead>
+              <tbody>
+                <tr class="co-order-item"><td><div class="co-item"><span class="co-thumb"><img src="./assets/cart-street-art-thumb.webp" width="400" height="400" alt="" loading="lazy"/><span class="co-thumb-qty" aria-hidden="true">2</span></span><span class="co-item-name">The Ultimate Street Art Coloring Book - Premium Paperback <strong class="co-item-qty">× 2</strong></span></div></td><td>$50.00</td></tr>
+              </tbody>
+              <tbody class="co-order-totals">
+                <tr><th scope="row">Subtotal</th><td>$50.00</td></tr>
+                <tr class="co-shipment"><td colspan="2"><p class="co-shipment-title">Shipment</p>
+                  <ul class="co-rates">
+                    <li><input type="radio" name="shipping_method" id="ship_usps" checked/><label for="ship_usps"><span>USPS</span><!-- WooCommerce shipping rate --><span class="co-ph">[rate]</span></label></li>
+                    <li><input type="radio" name="shipping_method" id="ship_free"/><label for="ship_free"><span>Free Shipping</span></label></li>
+                  </ul>
+                </td></tr>
+                <!-- CLAIM: client to confirm insurance option/price -->
+                <tr><th scope="row">Insurance</th><td>$0.99</td></tr>
+                <tr><th scope="row">Tax</th><td><!-- WooCommerce tax --><span class="co-ph">[tax]</span></td></tr>
+                <tr class="co-total"><th scope="row">Total</th><td><!-- WooCommerce order total --><span class="co-ph">[total]</span></td></tr>
+              </tbody>
+            </table>
+          </section>
+
+          <div class="co-coupon">
+            <p class="co-coupon-note">Have a coupon? <button class="co-link" type="button" aria-expanded="false" aria-controls="co-coupon-form">Click here to enter your coupon code</button></p>
+            <div class="co-coupon-form" id="co-coupon-form" hidden><label class="sr-only" for="co_coupon">Coupon code</label><input id="co_coupon" type="text" placeholder="Coupon code" autocomplete="off"/><button class="button button-outline btn-hover" type="button">Apply coupon</button></div>
+          </div>
+
+          <section class="co-card co-payment" aria-labelledby="co-pay-title">
+            <h2 class="sr-only" id="co-pay-title">Payment</h2>
+            <ul class="co-methods">
+              <li class="co-method is-selected">
+                <p class="co-method-head"><input type="radio" name="payment_method" id="pm_card" value="card" checked/><label for="pm_card">Card</label></p>
+                <!-- WooPayments card element (Stripe iframe on the live site). Mockup only. Test-mode "Use test card…" line intentionally left out. -->
+                <div class="co-method-body" data-method="card">
+                  <p class="co-field co-field-full"><label for="cc_number">Card number</label><input id="cc_number" type="text" inputmode="numeric" autocomplete="cc-number" placeholder="1234 1234 1234 1234"/></p>
+                  <div class="co-row-2">
+                    <p class="co-field"><label for="cc_exp">Expiration date</label><input id="cc_exp" type="text" inputmode="numeric" autocomplete="cc-exp" placeholder="MM / YY"/></p>
+                    <p class="co-field"><label for="cc_cvc">Security code</label><input id="cc_cvc" type="text" inputmode="numeric" autocomplete="cc-csc" placeholder="CVC"/></p>
+                  </div>
+                  <!-- WooPay "save my info" (WooPayments). Text = WooPayments default wording; verify against staging with a filled cart. -->
+                  <p class="co-check"><input id="woopay_save" type="checkbox" aria-controls="co-woopay" aria-expanded="false"/><label for="woopay_save">Securely save my information for 1-click checkout</label></p>
+                  <div class="co-woopay" id="co-woopay" hidden>
+                    <p class="co-field co-field-full"><label for="woopay_phone">Mobile phone number</label><input id="woopay_phone" type="tel" autocomplete="tel"/></p>
+                    <p class="co-fine">By submitting your phone number, you agree to create a WooPay account and to WooPay’s <a class="link-underline" href="#">Terms</a> and <a class="link-underline" href="#">Privacy Policy</a>.</p>
+                  </div>
+                </div>
+              </li>
+              <li class="co-method">
+                <p class="co-method-head"><input type="radio" name="payment_method" id="pm_paypal" value="paypal"/><label for="pm_paypal">PayPal</label></p>
+                <!-- PayPal Payments: smart button replaces Place order on the live site. -->
+                <div class="co-method-body" data-method="paypal" hidden><div class="co-express-btn">PayPal</div></div>
+              </li>
+              <li class="co-method">
+                <p class="co-method-head"><input type="radio" name="payment_method" id="pm_cheque" value="cheque"/><label for="pm_cheque">Check payments</label></p>
+                <!-- WooCommerce "Check payments" gateway description (client to confirm the gateway stays on). -->
+                <div class="co-method-body" data-method="cheque" hidden><p class="co-small"><span class="co-ph">[Check payments instructions from WooCommerce]</span></p></div>
+              </li>
+            </ul>
+
+            <!-- [PLACEHOLDER: privacy policy page link.] -->
+            <p class="co-privacy">Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our <a class="link-underline" href="#">privacy policy</a>.</p>
+            <!-- [PLACEHOLDER: terms page link.] -->
+            <p class="co-check"><input id="terms" type="checkbox" required/><label for="terms">I have read and agree to the website <a class="link-underline" href="#">terms and conditions</a> <abbr class="co-req" title="required">*</abbr></label></p>
+            <button class="button button-gold btn-hover co-place" type="button">Place order</button>
+          </section>
+        </div>
+      </div>
+    </form>
+  </main>
+  <footer class="site-footer"><div class="footer-top"><div class="footer-brand"><a class="brand brand-light" href="./index.html" aria-label="Boundless Backer home">
+      <!-- Logo swap: replace the two spans below with
+           <img class="brand-logo" src="./assets/logo-primary-white.svg" alt="Boundless Backer" width="160" height="48" /> -->
+      <span class="bookstack" aria-hidden="true"><i></i><i></i><i></i></span><span>Boundless <br/>Backer<span class="period">.</span></span></a><p class="footer-tagline">Curated with intention. Published for impact. Chosen by you.</p></div><p>Fund the art you want to see in the world.</p></div><div class="footer-links reveal-stagger"><div><p>Explore</p><a class="link-underline" href="./shop.html">Shop</a><a class="link-underline" href="./how-it-works.html">How it works</a><a class="link-underline" href="./resources.html">Resources</a><a class="link-underline" href="./blog.html">Blog</a><a class="link-underline" href="./coloring-tutorial.html">Coloring tutorial</a><a class="link-underline" href="./about.html">About</a></div><div><p>Participate</p><a class="link-underline" href="./crowdfund-your-book.html">Crowdfund your book</a><a class="link-underline" href="./join.html">Join us</a><a class="link-underline" href="./visiting.html">Become a guest</a><a class="link-underline" href="./hosting.html">Become a host</a></div><div><p>Support</p><a class="link-underline" href="./how-it-works.html">FAQ</a><a class="link-underline" href="./reviews.html">Reviews</a><a class="link-underline" href="./wholesale.html">Wholesale</a><a class="link-underline" href="mailto:hello@boundlessbacker.com">Email us</a></div><div><p>Connect</p><!-- [PLACEHOLDER: new social URLs, client to supply] --><a class="link-underline" href="#">Instagram</a><a class="link-underline" href="#">TikTok</a><a class="link-underline" href="#">Patreon</a></div></div><div class="footer-bottom"><span>© 2026 Boundless Backer</span><span class="footer-legal"><!-- [PLACEHOLDER: legal pages] --><a class="link-underline" href="#">Privacy Policy</a><a class="link-underline" href="#">Terms of Service</a></span><span>Client approval prototype. Links are illustrative.</span></div></footer>
+</body>
+</html>
