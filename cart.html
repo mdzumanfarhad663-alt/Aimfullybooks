@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="robots" content="noindex"/>
+  <title>Cart | Boundless Backer</title>
+  <!-- Cart. WordPress: Elementor Pro Cart widget on the WooCommerce Cart page (two columns, sticky summary, empty-cart template). -->
+  <link rel="preload" href="./fonts/norwester-400.woff2" as="font" type="font/woff2" crossorigin/>
+  <link rel="preload" href="./fonts/dm-sans-variable.woff2" as="font" type="font/woff2" crossorigin/>
+  <link rel="stylesheet" href="./styles.css"/>
+  <link rel="stylesheet" href="./mobile.css"/>
+  <link rel="stylesheet" href="./refinements.css"/>
+  <link rel="stylesheet" href="./animations.css"/>
+  <link rel="stylesheet" href="./home.css"/>
+  <link rel="stylesheet" href="./cart-page.css"/>
+  <script src="./global-header.js" defer></script>
+  <script src="./animations.js" defer></script>
+  <script src="./cart.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <global-site-header class="site-header"></global-site-header>
+  <main id="main" class="cart-main">
+    <header class="cart-title">
+      <p class="eyebrow">Shop</p>
+      <h1>Cart</h1>
+      <p class="cart-count-line" aria-live="polite"><span class="cart-items-count">3</span> <span class="cart-items-word">items</span></p>
+    </header>
+
+    <!-- WooCommerce notices (woocommerce-message). Demo: remove / undo / coupon. -->
+    <div class="cart-notice" role="status" hidden><p class="cart-notice-text"></p><button class="cart-notice-undo link-underline" type="button" hidden>Undo?</button></div>
+
+    <section class="cart-layout" aria-label="Your cart">
+      <div class="cart-items-col">
+        <div class="cart-items-head" aria-hidden="true"><span>Product</span><span>Quantity</span><span>Subtotal</span></div>
+        <ul class="cart-items">
+          <li class="cart-item" data-price="25" data-name="The Ultimate Street Art Coloring Book">
+            <!-- WooCommerce: cart item 9895 (variation). Price from the product; line total = price x qty. -->
+            <a class="cart-thumb" href="./shop.html" tabindex="-1" aria-hidden="true"><img src="./assets/cart-street-art-thumb.webp" width="400" height="400" alt="" loading="lazy"/></a>
+            <div class="cart-item-info">
+              <h2 class="cart-item-name"><a class="link-underline" href="./shop.html">The Ultimate Street Art Coloring Book</a></h2>
+              <p class="cart-item-variation">Version: Premium Paperback</p>
+              <p class="cart-item-unit"><span class="sr-only">Price: </span>$25.00</p>
+            </div>
+            <div class="cart-qty" role="group" aria-label="Quantity for The Ultimate Street Art Coloring Book">
+              <button class="cart-qty-btn" type="button" data-step="-1" aria-label="Decrease quantity"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+              <label class="sr-only" for="qty-1">Quantity</label>
+              <input class="cart-qty-input" id="qty-1" type="number" inputmode="numeric" min="1" max="99" value="1"/>
+              <button class="cart-qty-btn" type="button" data-step="1" aria-label="Increase quantity"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+            </div>
+            <p class="cart-line-total"><span class="sr-only">Subtotal: </span><span class="cart-line-amount">$25.00</span></p>
+            <button class="cart-remove" type="button" aria-label="Remove The Ultimate Street Art Coloring Book from cart"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+          </li>
+          <li class="cart-item" data-price="10" data-name="Dual Coloring Pencils, Baby!">
+            <!-- WooCommerce: cart item 15090 (variation). Price from the product; line total = price x qty. -->
+            <a class="cart-thumb" href="./shop.html" tabindex="-1" aria-hidden="true"><img src="./assets/cart-pencils-thumb.webp" width="400" height="400" alt="" loading="lazy"/></a>
+            <div class="cart-item-info">
+              <h2 class="cart-item-name"><a class="link-underline" href="./shop.html">Dual Coloring Pencils, Baby!</a></h2>
+              <p class="cart-item-variation">Version: Hand-Painted Box</p>
+              <p class="cart-item-unit"><span class="sr-only">Price: </span>$10.00</p>
+            </div>
+            <div class="cart-qty" role="group" aria-label="Quantity for Dual Coloring Pencils, Baby!">
+              <button class="cart-qty-btn" type="button" data-step="-1" aria-label="Decrease quantity"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+              <label class="sr-only" for="qty-2">Quantity</label>
+              <input class="cart-qty-input" id="qty-2" type="number" inputmode="numeric" min="1" max="99" value="1"/>
+              <button class="cart-qty-btn" type="button" data-step="1" aria-label="Increase quantity"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+            </div>
+            <p class="cart-line-total"><span class="sr-only">Subtotal: </span><span class="cart-line-amount">$10.00</span></p>
+            <button class="cart-remove" type="button" aria-label="Remove Dual Coloring Pencils, Baby! from cart"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+          </li>
+          <li class="cart-item" data-price="25" data-name="The Brooklyn Coloring Book">
+            <!-- WooCommerce: cart item 10723 (variation). Price from the product; line total = price x qty. -->
+            <a class="cart-thumb" href="./product.html" tabindex="-1" aria-hidden="true"><img src="./assets/product-brooklyn-g01-thumb.webp" width="200" height="200" alt="" loading="lazy"/></a>
+            <div class="cart-item-info">
+              <h2 class="cart-item-name"><a class="link-underline" href="./product.html">The Brooklyn Coloring Book</a></h2>
+              <p class="cart-item-variation">Version: Premium Paperback</p>
+              <p class="cart-item-unit"><span class="sr-only">Price: </span>$25.00</p>
+            </div>
+            <div class="cart-qty" role="group" aria-label="Quantity for The Brooklyn Coloring Book">
+              <button class="cart-qty-btn" type="button" data-step="-1" aria-label="Decrease quantity"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+              <label class="sr-only" for="qty-3">Quantity</label>
+              <input class="cart-qty-input" id="qty-3" type="number" inputmode="numeric" min="1" max="99" value="1"/>
+              <button class="cart-qty-btn" type="button" data-step="1" aria-label="Increase quantity"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+            </div>
+            <p class="cart-line-total"><span class="sr-only">Subtotal: </span><span class="cart-line-amount">$25.00</span></p>
+            <button class="cart-remove" type="button" aria-label="Remove The Brooklyn Coloring Book from cart"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+          </li>
+        </ul>
+        <p class="cart-back"><a class="link-underline" href="./shop.html"><span aria-hidden="true">←</span> Continue shopping</a></p>
+      </div>
+
+      <aside class="cart-summary" aria-labelledby="cart-summary-title">
+        <h2 id="cart-summary-title">Cart totals</h2>
+
+        <details class="cart-coupon">
+          <summary>Have a coupon?</summary>
+          <!-- WooCommerce: coupons must be enabled (WooCommerce > Settings > General). -->
+          <form class="cart-coupon-form"><label class="sr-only" for="coupon_code">Coupon code</label><input id="coupon_code" name="coupon_code" type="text" placeholder="Coupon code" autocomplete="off"/><button class="button button-outline btn-hover" type="submit">Apply coupon</button></form>
+        </details>
+
+        <dl class="cart-totals">
+          <div><dt>Subtotal</dt><dd class="cart-subtotal">$60.00</dd></div>
+          <div class="cart-shipping"><dt>Shipping</dt><dd>
+            <!-- WooCommerce: shipping rates come from the customer's address. No numbers in the prototype. -->
+            <span>Calculated at checkout</span>
+            <details class="cart-calc"><summary>Calculate shipping</summary>
+              <form class="cart-calc-form">
+                <label for="calc_country">Country / region</label><select id="calc_country"><option>United States (US)</option><option>Select a country / region…</option></select>
+                <label for="calc_state">State</label><input id="calc_state" type="text" autocomplete="address-level1"/>
+                <label for="calc_city">City</label><input id="calc_city" type="text" autocomplete="address-level2"/>
+                <label for="calc_postcode">ZIP Code</label><input id="calc_postcode" type="text" autocomplete="postal-code"/>
+                <button class="button button-outline btn-hover" type="submit">Update</button>
+              </form>
+            </details>
+          </dd></div>
+          <div><dt>Tax</dt><dd><!-- WooCommerce: tax display "Calculated at checkout". --><span>Calculated at checkout</span></dd></div>
+          <div class="cart-total-row"><dt>Total</dt><dd class="cart-total">$60.00</dd></div>
+        </dl>
+
+        <!-- CLAIM: free-shipping promise, verbatim from staging /cart/ ("Upgrade Your Order" section). Client to confirm before launch. -->
+        <p class="cart-free-ship">Add a second book and get free shipping now (US only)</p>
+
+        <a class="button button-gold btn-hover cart-checkout" id="cart-checkout" href="#">Proceed to checkout <span aria-hidden="true">→</span></a>
+        <!-- [PLACEHOLDER: checkout page not built yet.] -->
+
+        <!-- Express payment placeholders. WordPress: WooPayments express checkout (Apple Pay / Google Pay) and PayPal Payments smart buttons render here once live. Keep this min-height so the layout does not jump. -->
+        <div class="cart-express" aria-label="Express checkout (coming soon)">
+          <p class="cart-express-label"><span>or pay with</span></p>
+          <div class="cart-express-btn">PayPal</div>
+          <div class="cart-express-btn">Apple Pay / Google Pay</div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Empty state. WordPress: Elementor Cart widget > Empty cart template. Text verbatim from staging. -->
+    <section class="cart-empty" hidden aria-labelledby="cart-empty-title">
+      <h2 id="cart-empty-title">Wait a minute! You don't have any products in your cart</h2>
+      <a class="button button-gold btn-hover" href="./shop.html">Shop now! <span aria-hidden="true">→</span></a>
+    </section>
+
+    <!-- Cross-sells. Staging: H4 "Upgrade Your Order" + Loop Grid (template 14478), which renders empty. WordPress: query = Cross-sells. -->
+    <section class="cart-cross" aria-labelledby="cart-cross-title">
+      <h2 id="cart-cross-title">Upgrade Your Order</h2>
+      <div class="cart-cross-grid reveal-stagger">
+        <article class="cart-cross-card card-hover">
+          <!-- WooCommerce: cross-sell product 10757. Text-only card (no images on the cart page). -->
+          <h3><a class="link-underline" href="./shop.html">The Wynwood Coloring Book</a></h3>
+          <p class="cart-cross-price">$25</p>
+          <a class="button button-outline btn-hover cart-cross-btn" href="./shop.html">Add to cart</a>
+        </article>
+        <article class="cart-cross-card card-hover">
+          <!-- WooCommerce: cross-sell product 10809. Text-only card (no images on the cart page). -->
+          <h3><a class="link-underline" href="./shop.html">A Blooming Earth</a></h3>
+          <p class="cart-cross-price">$25 – $40</p>
+          <a class="button button-outline btn-hover cart-cross-btn" href="./shop.html">Add to cart</a>
+        </article>
+        <article class="cart-cross-card card-hover">
+          <!-- WooCommerce: cross-sell product 13430. Text-only card (no images on the cart page). -->
+          <h3><a class="link-underline" href="./shop.html">The Ultimate Street Art Coloring Book (Printables)</a></h3>
+          <p class="cart-cross-price">$5</p>
+          <a class="button button-outline btn-hover cart-cross-btn" href="./shop.html">Add to cart</a>
+        </article>
+        <article class="cart-cross-card card-hover">
+          <!-- WooCommerce: cross-sell product 14457. Text-only card (no images on the cart page). -->
+          <h3><a class="link-underline" href="./shop.html">Chaos Diamond Comic Book</a></h3>
+          <p class="cart-cross-price">$25 – $40</p>
+          <a class="button button-outline btn-hover cart-cross-btn" href="./shop.html">Add to cart</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Mobile sticky checkout bar (hidden on desktop, and hidden once the real button is on screen). -->
+    <div class="cart-bar" aria-hidden="true">
+      <p><span>Subtotal</span> <strong class="cart-bar-subtotal">$60.00</strong></p>
+      <a class="button button-gold cart-bar-btn" href="#cart-checkout" tabindex="-1">Checkout <span aria-hidden="true">→</span></a>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="footer-top"><div class="footer-brand"><a class="brand brand-light" href="./index.html" aria-label="Boundless Backer home">
+      <!-- Logo swap: replace the two spans below with
+           <img class="brand-logo" src="./assets/logo-primary-white.svg" alt="Boundless Backer" width="160" height="48" /> -->
+      <span class="bookstack" aria-hidden="true"><i></i><i></i><i></i></span><span>Boundless <br/>Backer<span class="period">.</span></span></a><p class="footer-tagline">Curated with intention. Published for impact. Chosen by you.</p></div><p>Fund the art you want to see in the world.</p></div><div class="footer-links reveal-stagger"><div><p>Explore</p><a class="link-underline" href="./shop.html">Shop</a><a class="link-underline" href="./how-it-works.html">How it works</a><a class="link-underline" href="./resources.html">Resources</a><a class="link-underline" href="./blog.html">Blog</a><a class="link-underline" href="./coloring-tutorial.html">Coloring tutorial</a><a class="link-underline" href="./about.html">About</a></div><div><p>Participate</p><a class="link-underline" href="./crowdfund-your-book.html">Crowdfund your book</a><a class="link-underline" href="./join.html">Join us</a><a class="link-underline" href="./visiting.html">Become a guest</a><a class="link-underline" href="./hosting.html">Become a host</a></div><div><p>Support</p><a class="link-underline" href="./how-it-works.html">FAQ</a><a class="link-underline" href="./reviews.html">Reviews</a><a class="link-underline" href="./wholesale.html">Wholesale</a><a class="link-underline" href="mailto:hello@boundlessbacker.com">Email us</a></div><div><p>Connect</p><!-- [PLACEHOLDER: new social URLs, client to supply] --><a class="link-underline" href="#">Instagram</a><a class="link-underline" href="#">TikTok</a><a class="link-underline" href="#">Patreon</a></div></div><div class="footer-bottom"><span>© 2026 Boundless Backer</span><span class="footer-legal"><!-- [PLACEHOLDER: legal pages] --><a class="link-underline" href="#">Privacy Policy</a><a class="link-underline" href="#">Terms of Service</a></span><span>Client approval prototype. Links are illustrative.</span></div></footer>
+</body>
+</html>

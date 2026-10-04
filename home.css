@@ -316,3 +316,14 @@ a:focus-visible, button:focus-visible, input:focus-visible, .route:focus-visible
 @media (max-width: 850px) {
   .footer-bottom .footer-legal { display: flex; gap: 20px; }
 }
+
+/* --- Header cart link + count badge (shared, every page) -----------------
+   WordPress: Elementor Menu Cart widget, items indicator = bubble.          */
+.cart-button { position: relative; text-decoration: none; }
+.cart-count {
+  position: absolute; top: 2px; right: 0; min-width: 18px; height: 18px; padding: 0 5px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 999px; background: var(--gold); color: var(--charcoal);
+  font: 700 11px/1 var(--body); pointer-events: none;
+}
+.cart-count[hidden] { display: none; }

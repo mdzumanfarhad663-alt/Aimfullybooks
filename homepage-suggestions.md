@@ -489,3 +489,49 @@ Prototype: `blog.html` (+ `blog-page.css`, `blog.js`). Hero, featured block and 
 - Featured images for all 11 articles: every in-post image on staging and live returns 404, and only the tutorial has a featured image.
 - A blog-specific hero image (Resources hero reused for now).
 - Confirm the Artist and Team bios can leave the blog.
+
+---
+
+# Cart (cart.html)
+
+Prototype: `cart.html` (+ `cart-page.css`, `cart.js`). Text-only centered title, two columns on desktop (items left, sticky "Cart totals" right), stacked item cards and a sticky checkout bar on mobile. No images except the item thumbnails; cross-sells are text-only cards. The header cart icon on every page now links to `cart.html` and shows a gold count badge (demo count; `global-header.js` + `home.css`). Empty-state preview: `cart.html?empty=1`.
+
+## Staging /cart/ content (verbatim)
+
+- Banner image `Shop-1.webp` + heading "Cart" (not used: text-only title per approval).
+- Empty state (Elementor Cart widget, custom empty template): "Wait a minute! You don't have any products in your cart" + button "Shop now!".
+- H4 "Upgrade Your Order" + text "Add a second book and get free shipping now (US only)" + a product Loop Grid (template 14478) that renders empty.
+- Pop-ups on the page: add-to-cart upsell ("ADD TO CART / GET FREE SHIPPING* / JUST ADD A SECOND BOOK / CONTINUE SHOPPING / *US Only"), exit pop-up ("NOT READY? THAT'S OKAY / Get 10 of our best coloring pages on us to print at home."), thank-you pop-up ("Done ;-) / Check your email inbox later").
+- Payment plugins loaded: WooPayments (Apple Pay / Google Pay express) and PayPal Payments.
+- Spam check: clean. Only external links are the footer's Canva press kit, diegoorlandini.com/about and aimfulmedia.com.
+- The filled-cart labels in the prototype are the WooCommerce / Elementor defaults (Product, Quantity, Subtotal, Coupon code, Apply coupon, Cart totals, Shipping, Calculate shipping, Total, Proceed to checkout); staging's filled cart could not be viewed (see CAPTCHA below).
+
+## Demo data (real, from the staging Store API)
+
+- The Ultimate Street Art Coloring Book, Version: Premium Paperback, $25 (variation 9895 of product 9894).
+- Dual Coloring Pencils, Baby!, Version: Hand-Painted Box, $10 (variation 15090).
+- The Brooklyn Coloring Book, Version: Premium Paperback, $25 (variation 10723).
+- Cross-sells: The Wynwood Coloring Book ($25), A Blooming Earth ($25 – $40), The Ultimate Street Art Coloring Book (Printables) ($5), Chaos Diamond Comic Book ($25 – $40).
+- Shipping and tax: "Calculated at checkout" (no numbers).
+
+## SiteGround CAPTCHA blocks add-to-cart links
+
+- `https://www.staging10.aimfullybooks.com/?add-to-cart=9895&quantity=1` returns HTTP 202 and a meta-refresh to `/.well-known/sgcaptcha/`. Any shopper or ad landing on an `?add-to-cart=` link (and many bots) gets a CAPTCHA page instead of a cart.
+- Check SiteGround Security Optimizer (bot protection / AI anti-bot) on the live site, and whitelist WooCommerce cart actions or switch the product buttons to AJAX add-to-cart, before launch.
+
+## How to build it in WordPress
+
+- Keep the Elementor Pro **Cart** widget (staging already uses it). It prints the classic WooCommerce cart markup (`.shop_table.cart`, `.coupon`, `.cart_totals`, `.shipping-calculator-form`), so the prototype styles map directly. Layout: "Two columns", "Sticky right column" on (offset ≈ header height), "Update cart automatically" on (the prototype has no Update cart button), Empty cart template = the "Wait a minute!" section.
+- Not the WooCommerce block cart: harder to restyle with Elementor, and it replaces the custom empty state.
+- Settings to check: coupons enabled (WooCommerce > Settings > General > Enable coupons); "Enable the shipping calculator on the cart page" (Shipping > Shipping options); "Hide shipping costs until an address is entered"; tax display "Calculated at checkout"; cross-sells set per product (Product data > Linked Products) or the "Upgrade Your Order" Loop Grid query set to Cross-sells, so it is not empty.
+- Express buttons: WooPayments Express Checkout (Apple Pay / Google Pay) and PayPal Payments smart buttons render under "Proceed to checkout". Keep the reserved space (min-height in the prototype) so turning on the live keys does not move the layout; set both plugins to show on the Cart page only once tested in live mode.
+- Header: Elementor Menu Cart widget, items indicator = bubble (gold), click action = go to cart (mini-cart slide-out not built yet).
+- Remove the dead add-to-cart button for product ID 13449 in the coloring tutorial post.
+
+## Needs from client
+
+- Confirm the free-shipping promise "Add a second book and get free shipping now (US only)" (and the matching pop-up "GET FREE SHIPPING* … *US Only") before launch.
+- Product ID 13449 does not exist (Store API: invalid ID). The tutorial's second Add to cart pointed at it; the live product is 9894 (variations 9895 Premium Paperback $25, 9896 Premium Hardcover $50, 14493 Collector's Pack $50).
+- The Ultimate Street Art Coloring Book price range is $25 – $50 per the Store API and Shop; the tutorial text said "$20 -$50". Prototype tutorial updated to "$25 – $50"; please confirm and fix the post in WordPress.
+- Should the add-to-cart pop-up ("GET FREE SHIPPING… JUST ADD A SECOND BOOK") stay?
+- Real checkout page and payment setup (live keys for WooPayments / PayPal).
