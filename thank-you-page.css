@@ -1,0 +1,69 @@
+/* ==========================================================================
+   Boundless Backer: thank you / order received (thank-you.html), DESIGN ONLY
+   --------------------------------------------------------------------------
+   Loaded after checkout-page.css (reuses .co-card, .co-steps, .co-order-table,
+   .co-thumb, .co-ph). Classes prefixed ty-. Only image: the item thumbnail.
+   WordPress: WooCommerce "Order received" endpoint (/checkout/order-received/)
+   styled via Elementor Theme Builder / Elementor Pro Thank You page.
+   ========================================================================== */
+
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.ty-main { background: var(--white); padding-bottom: clamp(64px, 7vw, 112px); }
+
+/* --- Title (text only, centered) ------------------------------------------ */
+.ty-title { text-align: center; padding: clamp(48px, 6vw, 80px) var(--gutter) clamp(32px, 4vw, 48px); }
+.ty-check { display: inline-flex; margin-bottom: 18px; }
+.ty-title .eyebrow { margin-bottom: 14px; }
+.ty-title h1 { font-family: var(--display); font-weight: 400; letter-spacing: 0; text-transform: uppercase; font-size: clamp(44px, 5vw, 72px); line-height: .98; margin: 0 auto; max-width: 16ch; }
+.ty-lede { margin: 16px 0 0; font-size: clamp(17px, 1.3vw, 19px); color: #444; }
+
+/* --- Content column ~960px -------------------------------------------------- */
+.ty-wrap { max-width: 960px; margin: 0 auto; padding: 0 var(--gutter); box-sizing: content-box; display: grid; gap: 20px; }
+
+/* Order overview strip */
+.ty-overview { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border: 1px solid #E4E4E4; border-radius: 10px; background: var(--silver); }
+.ty-overview li { padding: 18px 20px; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.ty-overview li + li { border-left: 1px solid #DADADA; }
+.ty-overview span { font-family: var(--heading); font-weight: 700; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #595959; }
+.ty-overview strong { font-size: 16px; overflow-wrap: anywhere; }
+
+/* Cards */
+.ty-card h2 { margin-bottom: 14px; }
+.ty-table thead th:last-child { width: 30%; }
+.ty-table .co-order-totals td { white-space: nowrap; }
+.ty-addresses { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.ty-card address { font-style: normal; line-height: 1.7; color: #444; }
+.ty-contact { margin: 10px 0 0; line-height: 1.7; color: #444; }
+
+/* What happens next (placeholder) */
+.ty-next { padding: 24px 28px; border: 1px dashed #A8A8A8; border-radius: 10px; }
+.ty-next h2 { font-family: var(--display); font-weight: 400; letter-spacing: 0; text-transform: uppercase; font-size: 26px; line-height: 1.05; margin: 0 0 10px; }
+.ty-next p { margin: 0; }
+
+/* Share block (staging extra) */
+.ty-share { display: grid; gap: 16px; justify-items: center; text-align: center; }
+.ty-video { width: 100%; aspect-ratio: 16 / 9; border-radius: var(--radius); background: var(--charcoal); display: flex; flex-direction: column; gap: 12px; align-items: center; justify-content: center; color: var(--white); }
+.ty-play { width: 64px; height: 64px; border-radius: 50%; background: var(--gold); color: var(--charcoal); display: flex; align-items: center; justify-content: center; }
+.ty-play svg { margin-left: 4px; }
+.ty-video-label { font-family: var(--heading); font-weight: 700; font-size: 12px; letter-spacing: .18em; text-transform: uppercase; }
+.ty-share-text { margin: 0; font-family: var(--heading); font-weight: 700; font-size: 20px; line-height: 1.4; max-width: 34ch; }
+.ty-share-btn { gap: 10px; color: var(--plum); border-color: var(--plum); }
+.ty-share-btn:hover { background: var(--plum); color: var(--white); }
+
+/* Actions */
+.ty-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 12px; }
+
+/* --- Responsive --------------------------------------------------------------- */
+@media (max-width: 850px) {
+  .ty-overview { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ty-overview li + li { border-left: 0; }
+  .ty-overview li { border-top: 1px solid #DADADA; }
+  .ty-overview li:nth-child(-n+2) { border-top: 0; }
+  .ty-overview li:nth-child(even) { border-left: 1px solid #DADADA; }
+  .ty-overview li:last-child { grid-column: 1 / -1; border-left: 0; }
+}
+@media (max-width: 600px) {
+  .ty-addresses { grid-template-columns: 1fr; }
+  .ty-next { padding: 20px 18px; }
+  .ty-actions .button { width: 100%; }
+}

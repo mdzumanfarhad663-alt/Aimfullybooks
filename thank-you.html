@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="robots" content="noindex"/>
+  <title>Thank You | Boundless Backer</title>
+  <!-- DESIGN ONLY: visual reference for the WooCommerce "Order received" page. All order values are demo/placeholders; WooCommerce fills them.
+       Staging /thank-you/ (Elementor page 10071): heading "welcome to our tribe!", YouTube video, "SHARE IT WITH YOURS" button,
+       [share_purchased_product_popup] shortcode (renders as raw text: the plugin/snippet is missing), "Crowdfunding needs a crowd..." line. -->
+  <link rel="preload" href="./fonts/norwester-400.woff2" as="font" type="font/woff2" crossorigin/>
+  <link rel="preload" href="./fonts/dm-sans-variable.woff2" as="font" type="font/woff2" crossorigin/>
+  <link rel="stylesheet" href="./styles.css"/>
+  <link rel="stylesheet" href="./mobile.css"/>
+  <link rel="stylesheet" href="./refinements.css"/>
+  <link rel="stylesheet" href="./animations.css"/>
+  <link rel="stylesheet" href="./home.css"/>
+  <link rel="stylesheet" href="./checkout-page.css"/>
+  <link rel="stylesheet" href="./thank-you-page.css"/>
+  <script src="./global-header.js" defer></script>
+  <script src="./animations.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <global-site-header class="site-header"></global-site-header>
+  <main id="main" class="ty-main">
+    <header class="ty-title">
+      <span class="ty-check" aria-hidden="true"><svg viewBox="0 0 48 48" width="64" height="64" focusable="false"><circle cx="24" cy="24" r="22" fill="#FFC301"/><path d="M14 24.5l7 7 13-14" fill="none" stroke="#333333" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <p class="eyebrow">Order complete</p>
+      <!-- Heading verbatim from staging /thank-you/. -->
+      <h1>welcome to our tribe!</h1>
+      <!-- WooCommerce default order-received notice. -->
+      <p class="ty-lede">Thank you. Your order has been received.</p>
+      <ol class="co-steps" aria-label="Checkout progress">
+        <li class="is-done"><a class="link-underline" href="./cart.html">Cart</a></li>
+        <li class="is-done"><a class="link-underline" href="./checkout.html">Checkout</a></li>
+        <li class="is-current" aria-current="step">Done</li>
+      </ol>
+    </header>
+
+    <div class="ty-wrap">
+      <!-- Order overview: WooCommerce fills these (woocommerce-order-overview). Values below are demo. -->
+      <ul class="ty-overview">
+        <li><span>Order number:</span><strong>10234</strong><!-- demo --></li>
+        <li><span>Date:</span><strong>[Order date]</strong><!-- demo --></li>
+        <li><span>Email:</span><strong>[customer email]</strong><!-- demo: the address entered at checkout --></li>
+        <li><span>Total:</span><strong>[total]</strong><!-- WooCommerce order total (same placeholder as checkout) --></li>
+        <li><span>Payment method:</span><strong>Card</strong></li>
+      </ul>
+
+      <section class="co-card ty-card" aria-labelledby="ty-details-title">
+        <h2 id="ty-details-title">Order details</h2>
+        <table class="co-order-table ty-table">
+          <thead><tr><th scope="col">Product</th><th scope="col">Total</th></tr></thead>
+          <tbody>
+            <tr class="co-order-item"><td><div class="co-item"><span class="co-thumb"><img src="./assets/cart-street-art-thumb.webp" width="400" height="400" alt="" loading="lazy"/><span class="co-thumb-qty" aria-hidden="true">2</span></span><span class="co-item-name">The Ultimate Street Art Coloring Book - Premium Paperback <strong class="co-item-qty">× 2</strong></span></div></td><td>$50.00</td></tr>
+          </tbody>
+          <tbody class="co-order-totals">
+            <tr><th scope="row">Subtotal:</th><td>$50.00</td></tr>
+            <tr><th scope="row">Shipping:</th><td><!-- WooCommerce shipping rate --><span class="co-ph">[shipping]</span></td></tr>
+            <!-- CLAIM: client to confirm insurance option/price -->
+            <tr><th scope="row">Insurance:</th><td>$0.99</td></tr>
+            <tr><th scope="row">Tax:</th><td><!-- WooCommerce tax --><span class="co-ph">[tax]</span></td></tr>
+            <tr><th scope="row">Payment method:</th><td>Card</td></tr>
+            <tr class="co-total"><th scope="row">Total:</th><td><!-- WooCommerce order total --><span class="co-ph">[total]</span></td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <div class="ty-addresses">
+        <section class="co-card ty-card" aria-labelledby="ty-billing-title">
+          <h2 id="ty-billing-title">Billing address</h2>
+          <!-- demo address -->
+              <address>[Full name]<br/>[Street address]<br/>[Town / City], [State] [ZIP]<br/>United States (US)</address>
+          <p class="ty-contact">[phone]<br/>[customer email]</p>
+        </section>
+        <section class="co-card ty-card" aria-labelledby="ty-shipping-title">
+          <h2 id="ty-shipping-title">Shipping address</h2>
+          <!-- demo address -->
+              <address>[Full name]<br/>[Street address]<br/>[Town / City], [State] [ZIP]<br/>United States (US)</address>
+        </section>
+      </div>
+
+      <!-- CLIENT: next-steps copy (confirmation email, shipping time) -->
+      <section class="ty-next" aria-labelledby="ty-next-title">
+        <h2 id="ty-next-title">What happens next</h2>
+        <p class="co-ph">[Next-steps copy from the client: confirmation email, shipping time. Staging has none.]</p>
+      </section>
+
+      <!-- Staging extra, verbatim: share block. Staging uses an HTML-widget share icon + [share_purchased_product_popup] (popup not working). -->
+      <section class="co-card ty-share" aria-labelledby="ty-share-title">
+        <h2 id="ty-share-title" class="sr-only">Share</h2>
+        <!-- Staging video: YouTube APpZO-jWZe0. Neutral placeholder (no images on this page); WordPress: Elementor Video widget, click-to-play. -->
+        <div class="ty-video" role="img" aria-label="Video placeholder"><span class="ty-play" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" focusable="false"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="ty-video-label">Video</span></div>
+        <p class="ty-share-text">Crowdfunding needs a crowd. Share this art project with your tribe!</p>
+        <!-- [PLACEHOLDER: share popup / share links for the purchased product; staging button links to #.] -->
+        <a class="button button-outline btn-hover ty-share-btn" href="#"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><line x1="6" y1="12" x2="16" y2="7" stroke="currentColor" stroke-width="1.6"/><line x1="6" y1="12" x2="16" y2="17" stroke="currentColor" stroke-width="1.6"/><circle cx="6" cy="12" r="3" fill="#fff" stroke="currentColor" stroke-width="1.6"/><circle cx="18" cy="6" r="3" fill="#fff" stroke="currentColor" stroke-width="1.6"/><circle cx="18" cy="18" r="3" fill="#fff" stroke="currentColor" stroke-width="1.6"/></svg>SHARE IT WITH YOURS</a>
+      </section>
+
+      <div class="ty-actions">
+        <a class="button button-gold btn-hover" href="./shop.html">Continue shopping <span aria-hidden="true">→</span></a>
+        <!-- [PLACEHOLDER: my-account.html not built yet.] -->
+        <a class="button button-outline btn-hover" href="#">View my account</a>
+      </div>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="footer-top"><div class="footer-brand"><a class="brand brand-light" href="./index.html" aria-label="Boundless Backer home">
+      <!-- Logo swap: replace the two spans below with
+           <img class="brand-logo" src="./assets/logo-primary-white.svg" alt="Boundless Backer" width="160" height="48" /> -->
+      <span class="bookstack" aria-hidden="true"><i></i><i></i><i></i></span><span>Boundless <br/>Backer<span class="period">.</span></span></a><p class="footer-tagline">Curated with intention. Published for impact. Chosen by you.</p></div><p>Fund the art you want to see in the world.</p></div><div class="footer-links reveal-stagger"><div><p>Explore</p><a class="link-underline" href="./shop.html">Shop</a><a class="link-underline" href="./how-it-works.html">How it works</a><a class="link-underline" href="./resources.html">Resources</a><a class="link-underline" href="./blog.html">Blog</a><a class="link-underline" href="./coloring-tutorial.html">Coloring tutorial</a><a class="link-underline" href="./about.html">About</a></div><div><p>Participate</p><a class="link-underline" href="./crowdfund-your-book.html">Crowdfund your book</a><a class="link-underline" href="./join.html">Join us</a><a class="link-underline" href="./visiting.html">Become a guest</a><a class="link-underline" href="./hosting.html">Become a host</a></div><div><p>Support</p><a class="link-underline" href="./how-it-works.html">FAQ</a><a class="link-underline" href="./reviews.html">Reviews</a><a class="link-underline" href="./wholesale.html">Wholesale</a><a class="link-underline" href="mailto:hello@boundlessbacker.com">Email us</a></div><div><p>Connect</p><!-- [PLACEHOLDER: new social URLs, client to supply] --><a class="link-underline" href="#">Instagram</a><a class="link-underline" href="#">TikTok</a><a class="link-underline" href="#">Patreon</a></div></div><div class="footer-bottom"><span>© 2026 Boundless Backer</span><span class="footer-legal"><!-- [PLACEHOLDER: legal pages] --><a class="link-underline" href="#">Privacy Policy</a><a class="link-underline" href="#">Terms of Service</a></span><span>Client approval prototype. Links are illustrative.</span></div></footer>
+</body>
+</html>

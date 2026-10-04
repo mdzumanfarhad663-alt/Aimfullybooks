@@ -585,3 +585,39 @@ Prototype: `checkout.html` (+ `checkout-page.css`, `checkout.js`). Visual refere
 - Shipping rates: USPS rates per zone, when Free Shipping applies (the cart promise "Add a second book and get free shipping now (US only)"), and international shipping.
 - Check payments: keep the "Check payments" gateway on the live site? If yes, supply the payee details and instructions shown to buyers.
 - Tax: which states / products are taxed (shown as a placeholder).
+
+---
+
+# Thank You page (thank-you.html), design only
+
+Prototype: `thank-you.html` (+ `thank-you-page.css`, reusing the checkout card/table styles). Text-only centered title with a gold check icon, eyebrow "Order complete", Cart → Checkout → Done (Done active), order overview strip, Order details card (the only image: the item thumbnail), Billing / Shipping address cards, a "What happens next" placeholder, the staging share block, and "Continue shopping" / "View my account" buttons. Checkout's "Place order" links here (demo navigation only).
+
+## Staging /thank-you/ (Elementor page 10071), verbatim
+
+- Image `Imagen1.png` (not used: no images on this page).
+- Heading "welcome to our tribe!" (used as the H1; WooCommerce's notice "Thank you. Your order has been received." sits under it).
+- YouTube video `APpZO-jWZe0` (neutral placeholder in the prototype).
+- Button "SHARE IT WITH YOURS" (links to #), an HTML-widget share icon, and the shortcode `[share_purchased_product_popup]`, which prints as raw text: the plugin or snippet behind it is missing or inactive.
+- Text "Crowdfunding needs a crowd. Share this art project with your tribe!"
+- No order details, next-steps copy, newsletter or Instagram block on the page. Spam check: clean.
+
+## How to build it in WordPress
+
+- Recommended: keep WooCommerce's real endpoint `/checkout/order-received/{id}/?key=…` (it has the order data) and style it with Elementor Pro: Theme Builder or the Checkout widget's thank-you settings, or a custom `woocommerce/checkout/thankyou.php` override in the child theme. Add the staging "welcome to our tribe!" and share block above or below the WooCommerce order details (`woocommerce_thankyou` hook or Elementor sections).
+- The separate /thank-you/ page has no order data. If it stays, redirect to it only via a "thank you page" plugin that passes the order ID; otherwise retire it.
+- Order overview labels come from WooCommerce (Order number, Date, Email, Total, Payment method); order details table, billing and shipping address are standard WooCommerce templates.
+- Fix or remove `[share_purchased_product_popup]` (find the plugin/snippet that registered it).
+
+## Tracking (live site only)
+
+- GA4 `purchase` and Meta `Purchase` should fire once per order on the order-received endpoint. PixelYourSite Pro is installed on staging and already handles both (plus Meta CAPI server-side when the access token is set). Check its WooCommerce purchase event is on, "fire once per order" is on, and value/currency use the order total.
+- Turn tracking on only on the live site (exclude staging) so test orders do not pollute GA4 / Meta.
+- If the separate /thank-you/ page is kept, make sure purchase events are not fired twice (endpoint + page).
+
+## Needs from client
+
+- "What happens next" copy: confirmation email wording and what the buyer should expect.
+- Delivery time wording (none on staging; no times are promised in the prototype).
+- Share block: keep "SHARE IT WITH YOURS"? Which networks, and what should be shared (product link)?
+- The thank-you video: keep YouTube `APpZO-jWZe0` here?
+- My Account page (the "View my account" button is a placeholder).
