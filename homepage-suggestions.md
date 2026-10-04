@@ -381,3 +381,69 @@ It is not on staging. On the live site (aimfullybooks.com/shop/the-brooklyn-colo
 - Remove the live site's Comic Sans review shortcode and use `[cusrev_all_reviews]`.
 - Confirm the CusRev role labels ("Verified owner", "Store manager", "Reviewer") can stay as shown.
 - Full gallery images and alt text for every product (the template sample uses 5).
+
+---
+
+# Blog Post (single post template: coloring tutorial)
+
+Prototype: `blog-post.html` (+ `blog-post-page.css`, `blog-post.js`). Source: staging post "The Ultimate Coloring Tutorial for Your Adult Coloring Books". This is the one Single Post template; future posts reuse the same layout. Text is verbatim from staging except the typo/changes list below.
+
+## How to build it in WordPress
+
+- Elementor Pro Theme Builder > Single Post template: hero (Post Title + excerpt + sign-up form), Table of Contents widget (sticky left rail on desktop, collapsible "Contents" bar on mobile), Post Content widget for the article body.
+- Post date: not shown in the prototype. Use the WordPress post date later (the staging meta date is unreliable).
+- Sign-up bands: one reusable Elementor Form section (email → Mailchimp). Kept 3 of the 6 staging bands: after Part 1, after Part 3, end of post.
+- Product cards: the Shop Loop Item template. The price range means a variable product, so both cards link to the variable product page (`product-variable.html` in the prototype, not yet built).
+- Videos: use a click-to-load (lite YouTube) embed so 20 iframes do not load with the page.
+- The two GIFs are served as muted looping MP4s with the GIF as a fallback.
+
+## Typo fixes and changes made
+
+1. Tip 5: removed the duplicate sentence "Taking care of your tools will make them last longer."
+2. "artist- quality" → "artist-quality"; "level- up" → "level-up".
+3. "Rule of 5″" → "Rule of 5”" (closing quote).
+4. "thrugh" → "through" (paper quality block).
+5. "darkestarea" → "darkest area" (Realistic Technique).
+6. "old leaf" → "Gold leaf" (first word of the Gold Leaf Technique).
+7. Added missing final periods: "…once you've conquered them.", "…look like a mosaic.", "…make your artwork pop."
+8. "4. Multi-hue Gradient" moved into the gradient-types list (it sat outside the list on staging).
+9. Second "Some of the artists in our books" heading (above 3 reviews) → "What others say about our books".
+10. Removed duplicates: the title shown twice (desktop/mobile copies), the repeated "The Geometric Pattern Technique" line under its own heading, 3 of 6 sign-up bands, and repeated reviews (each review shows once; Dirk W shows once, in the longer version).
+11. Product card button reads "Select options" (variable product, matches the Shop card) instead of "Add to cart".
+
+## Images: missing or weak (please supply)
+
+- Kenny Scharf artist photo (staging: 125px Canva screenshot). Placeholder shown.
+- Dual Coloring Pencils, Baby! product photo (staging URL returns 404). Placeholder shown.
+- "A Blooming Earth" image after the harmony section (staging URL returns 404). Placeholder shown.
+- Harmony diagrams: staging uses only 2 small images (225px) for all 6 formulas. Analogous and Complementary reuse them; Triadic, Split complementary, Tetradic and Square tetradic show placeholders. Proper diagrams needed for all 6.
+- Paper quality block: middle image is a 161px Canva screenshot. Placeholder shown.
+- "6 things you didn't know" block: staging shows the Elementor default placeholder image. No image in the prototype.
+- Ballpoint Pen Technique: text says "See how we colored a page… inspired by street artist Rush Bowles' mural", but no image is shown. Placeholder shown.
+- Psychedelic Technique: "Here are a few other examples to help you get inspired" but no examples follow.
+- All 15 technique images are Canva screenshots (`Captura-de-pantalla…jpeg`, 380–980px). Usable for the prototype, but please export proper high-resolution images with alt text.
+- Colour-wheel images from 2022 are small (581–869px).
+
+## Blog post — confirm before launch
+
+Claims kept verbatim with placeholder comments in the HTML. Please confirm or send replacement wording:
+
+- "OUR PAPER QUALITY IS THE BEST IN THE MARKET — OR YOUR MONEY BACK" (guarantee).
+- "We have 10 years of experience publishing fiercely independent art books."
+- "We've donated thousands of educational books to small schools in Peru, Cambodia, India, and Argentina."
+- "five-star rated The Ultimate Street Art Coloring Book".
+- "features over 100 different artists"; "140 no-bleed through thick pages"; "200 gsm woodfree paper"; "limited print hardcover features embossed details"; "cleanly perforated pages".
+- Aimfully Books "crowdfunding model that directly supports: artists from underserved communities worldwide, art education workshops in developing regions, cultural exchange programs".
+- Market and research statistics with no source: adult coloring market "over $100 million annually", art supplies market "nearly $20 billion a year", "78% of enthusiasts" (Craft & Hobby Association), "45% of advanced colorists", "more than half of colorists use two or more mediums", Institute for Color Research figures (90 seconds, 62–90%, heart rate +10–12%, eye strain −20%), "60,000 thoughts per day, 75% negative, 95% repetitive", Disney/Pixar figures (800 hours, 70% cool colors).
+- Prices quoted in the text: "$20 -$50" (product cards), "$10" (Dual Coloring Pencils, Baby!), third-party price ranges ($8–15, $15–40, under $30, $300+).
+- Old links: aimfullybooks.com (shop, product and pencils links) and instagram.com/aimfullybooks are kept for now. During migration they become boundlessbacker.com URLs with 301 redirects; the new Instagram handle is still needed.
+- Amazon links to third-party books and supplies: confirm they should stay (and whether they are affiliate links).
+
+## Needs from client
+
+- Saturation Burnishing: the label exists on staging but its body text is missing. Please send the paragraph.
+- Product IDs conflict: the first "Add to cart" on staging uses product 9895, the second uses 13449. Which is the live Ultimate Street Art Coloring Book?
+- Videos: all 20 lessons embed the same YouTube video (XHOmBV4js_E). Is there a real video per lesson?
+- Pinterest board link for "Visit Our Pinterest Board for More Palette Ideas" (no link on staging).
+- Printables download and sign-up form targets (Mailchimp list).
+- The images listed above.
