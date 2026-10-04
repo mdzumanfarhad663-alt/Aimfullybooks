@@ -683,3 +683,42 @@ Prototype: `my-account.html` (+ `my-account-page.css`, `my-account.js`). No logi
 - Keep "Downloads" in the menu? It is only needed for the digital Printables. If printables are delivered by email instead, remove the endpoint.
 - Should customers be able to register on the My Account page, or only at checkout?
 - Lost-password and privacy policy pages (placeholders in the prototype).
+
+---
+
+# Legal pages (terms-of-service.html, privacy-policy.html)
+
+Prototype: one shared template (`legal-page.css`, `legal.js`). Text-only centered title ("Legal" eyebrow, staging title, "Last updated"), sticky "On this page" TOC built from the H2s with the current section highlighted (desktop), collapsible "On this page" bar (mobile), ~720px reading column, heading anchor links, cross-link to the other page, "Questions? Email hello@boundlessbacker.com", back-to-top button. Footer "Privacy Policy" / "Terms of Service" now link to these pages on all 20 pages; checkout's "privacy policy" and "terms and conditions" and the My Account register privacy text link here too.
+
+Source: staging /terms-of-service/ (Elementor page 12335, 11 sections) and /privacy-policy/ (page 12325, 12 sections). Text is word-for-word except the replacements below (checked against staging character by character). Spam check: clean (only Stripe, PayPal and Google Analytics opt-out links, all plain text or kept as is).
+
+## Replacements made (approved brand update)
+
+Terms of Service:
+1. 1.1 "Welcome to the AimfulyBooks.com website!" → "Welcome to the boundlessbacker.com website!" (also fixes the "Aimfuly" typo).
+2. 1.2 "By using the aimfullybooks.com (the “Website”)" → "By using the boundlessbacker.com (the “Website”)".
+3. 11.1 contact email "hello[at]aimfullybooks.com" → "hello@boundlessbacker.com".
+4. Typo: 10.1 "not with standing" → "notwithstanding".
+5. Typo: 2.1 missing final period added ("…and the latest products.").
+
+Privacy Policy:
+6. 2 "our website located at [aimfullybooks.com(the “Website”)" → "our website located at boundlessbacker.com (the “Website”)" (stray "[" removed, space added).
+7. Contact email "hello@aimfullybooks.com" → "hello@boundlessbacker.com" (3 places: sections 8, 15 and 23).
+8. Formatting: "[Google Analytics Opt-out Browser Add-on](https://tools.google.com/dlpage/gaoptout)" was raw Markdown (2 places, sections 12 and 22); now a real link with the same text and URL.
+
+## Not changed: Diego (or his lawyer) must confirm
+
+- Company legal name: "AimfulMedia LLC" (1.1 Terms; 1 Privacy). Is this still the contracting entity for Boundless Backer, or a new LLC?
+- Business address: none in either document (no mailing address for notices).
+- Governing law: "the State of Florida, the USA" (Terms 10.1) and "the laws of the State of Florida" (Privacy).
+- Dates: Terms "Effective as of: 11 24 2015" / "Last amended: 11 24 2024" (page shows "Last updated: 11 24 2024"); Privacy "Last Updated: September 2026". Set the real date when the new versions are published.
+- Payment providers: Terms 3.4 names "Stripe (https://stripe.com) and Paypal (http://paypal.com)"; checkout now uses WooPayments + PayPal. Privacy names Google Analytics and Mailchimp; the site also uses PixelYourSite (Meta pixel / CAPI): should Meta be listed?
+- Policy terms copied as written (shipping "mail them the next day", refunds/exchanges in section V, age "at least 18", COPPA "under 13"). These differ from the FAQ (USPS Media Mail, 30-day returns): align the FAQ, Terms and checkout before launch.
+- "order now" button (Terms 3.1): the site's buttons say "Select options" / "Add to cart".
+- Diego or his lawyer must review and update both documents for the new brand before launch. The prototype is a design reference, not legal advice.
+
+## How to build it in WordPress
+
+- One Elementor single-page template for legal pages (Theme Builder > Single Page, condition: the Terms and Privacy pages): title area, Table of Contents widget (anchors from H2, sticky, "collapse on mobile"), Post Content in a 720px column.
+- Write each document in the block editor with real H2 headings (not bold paragraphs) so the TOC and anchors work; keep the "–" lists as real lists.
+- Settings > Privacy: set the Privacy Policy page. WooCommerce > Settings > Advanced > Page setup: set "Terms and conditions" to the Terms page (this links the checkout checkbox). WooCommerce > Settings > Accounts & Privacy: the privacy text links to the Privacy page.
