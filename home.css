@@ -353,3 +353,35 @@ a:focus-visible, button:focus-visible, input:focus-visible, .route:focus-visible
   .review-dots { gap: 8px; }
 }
 @media (prefers-reduced-motion: reduce) { .review-track { transition: none; } }
+
+/* Home process timeline (steps-timeline.js) */
+.steps-timeline { position: relative; }
+.steps-timeline::before,
+.steps-timeline::after {
+  content: ""; position: absolute; z-index: 0; width: 2px;
+  left: var(--tl-left, 28px); top: var(--tl-top, 0); height: var(--tl-height, 0);
+  margin-left: -1px; transform-origin: top; pointer-events: none;
+}
+.steps-timeline::before { background: rgba(255, 255, 255, .18); }
+.steps-timeline::after { background: var(--gold); transform: scaleY(var(--tl-progress, 1)); will-change: transform; }
+.steps-timeline li { position: relative; }
+.steps-timeline span {
+  position: relative; z-index: 1; justify-self: start; align-self: start;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 56px; height: 56px; border-radius: 50%; line-height: 1;
+  background: var(--charcoal); border: 2px solid rgba(255, 255, 255, .18);
+}
+.steps-timeline li > h3, .steps-timeline li > p { align-self: center; }
+.js .steps-timeline span { opacity: .4; transition: opacity .3s ease, border-color .3s ease; }
+.js .steps-timeline li > h3, .js .steps-timeline li > p { opacity: .35; transform: translateY(16px); transition: opacity .45s ease, transform .45s ease; }
+.js .steps-timeline li.is-active span { opacity: 1; border-color: var(--gold); animation: tl-pop .45s ease; }
+.js .steps-timeline li.is-active > h3, .js .steps-timeline li.is-active > p { opacity: 1; transform: none; }
+.js .steps-timeline li.is-active > p { transition-delay: .08s; }
+@keyframes tl-pop { 0% { transform: scale(1); } 50% { transform: scale(1.15); } 100% { transform: scale(1); } }
+@media (max-width: 767px) {
+  .steps-timeline span { width: 44px; height: 44px; font-size: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .steps-timeline span, .js .steps-timeline li > h3, .js .steps-timeline li > p { opacity: 1; transform: none; transition: none; animation: none; }
+  .steps-timeline::after { transform: none; }
+}

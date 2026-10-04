@@ -732,3 +732,20 @@ The Home reviews section is now a carousel (reviews-slider.js) with 10 verbatim 
 - Anne Krutko Reffitt: "purchased from Aimfully Books" → "purchased from Boundless Backer" (Home slider and reviews.html)
 
 No other review mentioned the old brand or domain.
+
+# Home: "From discovery to real impact" scroll timeline
+
+The 01 / 02 / 03 steps now work as a scroll-linked timeline. A faint vertical line joins the number nodes, and a gold line draws down over it as the visitor scrolls. When the gold line reaches a node, the number lights up with a small scale pop and that step's title and text slide in. Scrolling up reverses it. With prefers-reduced-motion, the final state shows (full gold line, all steps visible) with no animation.
+
+Files: `steps-timeline.js` (plain JS, IntersectionObserver + scroll listener with requestAnimationFrame) and the "Home process timeline" block at the end of `home.css`.
+
+Class names and hooks:
+- `.steps-timeline` on the `<ol>`. `::before` is the faint line, `::after` is the gold line (`transform: scaleY(var(--tl-progress))`).
+- CSS variables set by the JS: `--tl-top`, `--tl-height`, `--tl-left` (line position, measured from the number nodes) and `--tl-progress` (0 to 1).
+- `li.is-active` lights the node and reveals the row. The dimmed default state applies only under `html.js`, so the steps stay visible without JavaScript.
+
+## Rebuilding in Elementor
+
+- **Option A (recommended): custom CSS + small JS snippet.** Build the steps as a container with three rows (number, title, text). Give the list container the CSS class `steps-timeline`. Paste the CSS block into Site Settings > Custom CSS (or the page's Custom CSS). Add `steps-timeline.js` through Elementor > Custom Code (footer). Make sure each row is a direct child of the list and the number is the first `span` in each row, or update the selectors in the JS.
+- **Option B: Motion Effects only.** Use Scrolling Effects > Vertical Scroll / Transparency on each row and Entrance Animation on the numbers. This gives the fade-in, but not the scroll-linked gold line that connects the numbers.
+- **Option C: a timeline widget** (for example Essential Addons or PowerPack "Timeline", or JetElements "Vertical Timeline"), which has a scroll-progress line built in. Set the line color to Golden Sun `#FFC301` and the inactive line to white at about 18% opacity. Restyle the points as 56px charcoal circles with the gold number inside.
