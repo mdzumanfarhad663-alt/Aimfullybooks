@@ -410,6 +410,7 @@ Prototype: `coloring-tutorial.html` (+ `blog-post-page.css`, `blog-post.js`). So
 9. Second "Some of the artists in our books" heading (above 3 reviews) → "What others say about our books".
 10. Removed duplicates: the title shown twice (desktop/mobile copies), the repeated "The Geometric Pattern Technique" line under its own heading, 3 of 6 sign-up bands, and repeated reviews (each review shows once; Dirk W shows once, in the longer version).
 11. Product card button reads "Select options" (variable product, matches the Shop card) instead of "Add to cart".
+12. Product cards: price "$20 -$50" → "$25 – $50" (Store API range for product 9894). The second card's Add to cart pointed at product ID 13449, which does not exist; that button was removed (see Cart > Needs from client).
 
 ## Images: missing or weak (please supply)
 
