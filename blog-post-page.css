@@ -114,11 +114,13 @@ html { scroll-padding-top: 104px; }
 .bp-mission-copy p { font-size: 16px; margin-bottom: .8em; }
 
 .bp-artists { margin: 44px 0 0; }
-.bp-artist-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
-.bp-artist { margin: 0; border-radius: var(--radius); overflow: hidden; }
-.bp-artist img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: var(--radius); }
-.bp-artist figcaption { font-family: var(--heading); font-weight: 700; font-size: 14px; margin-top: 8px; }
-.bp-artists-more { font-family: var(--heading); font-weight: 700; margin: 18px 0 0; }
+.bp-artist-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.bp-artist { margin: 0; display: flex; flex-direction: column; align-items: center; text-align: center; }
+/* Round profile photos, max 200px. height:auto beats the img height attribute so aspect-ratio applies. */
+.bp-artist img, .bp-artist .bp-media-ph { display: block; width: 100%; max-width: 200px; height: auto; aspect-ratio: 1; object-fit: cover; object-position: center 25%; border-radius: 50%; }
+.bp-artist .bp-media-ph { display: flex; padding: 12px; font-size: 11px; }
+.bp-artist figcaption { font-family: var(--heading); font-weight: 700; font-size: 14px; margin-top: 10px; }
+.bp-artists-more { font-family: var(--heading); font-weight: 700; margin: 20px 0 0; text-align: center; }
 
 .bp-product { margin: 40px 0; display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr); gap: 24px; padding: 16px; height: auto; }
 .bp-product .shop-product-image { aspect-ratio: 1; }

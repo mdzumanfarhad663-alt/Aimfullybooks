@@ -386,7 +386,7 @@ It is not on staging. On the live site (aimfullybooks.com/shop/the-brooklyn-colo
 
 # Blog Post (single post template: coloring tutorial)
 
-Prototype: `blog-post.html` (+ `blog-post-page.css`, `blog-post.js`). Source: staging post "The Ultimate Coloring Tutorial for Your Adult Coloring Books". This is the one Single Post template; future posts reuse the same layout. Text is verbatim from staging except the typo/changes list below.
+Prototype: `coloring-tutorial.html` (+ `blog-post-page.css`, `blog-post.js`). Source: staging post "The Ultimate Coloring Tutorial for Your Adult Coloring Books". This is the one Single Post template; future posts reuse the same layout. Text is verbatim from staging except the typo/changes list below.
 
 ## How to build it in WordPress
 
