@@ -3,6 +3,7 @@
     { href: './shop.html', label: 'Shop', file: 'shop.html' },
     { href: './how-it-works.html', label: 'How It Works', file: 'how-it-works.html' },
     { href: './resources.html', label: 'Resources', file: 'resources.html' },
+    { href: './blog.html', label: 'Blog', file: 'blog.html' },
     { href: './about.html', label: 'About', file: 'about.html' }
   ];
 

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- CLIENT: blog meta description / intro line to supply. -->
+  <title>Blog | Boundless Backer</title>
+  <!-- Blog archive. WordPress: Elementor Theme Builder > Archive template (Posts page + category archives). -->
+  <link rel="preload" href="./fonts/norwester-400.woff2" as="font" type="font/woff2" crossorigin/>
+  <link rel="preload" href="./fonts/dm-sans-variable.woff2" as="font" type="font/woff2" crossorigin/>
+  <link rel="stylesheet" href="./styles.css"/>
+  <link rel="stylesheet" href="./mobile.css"/>
+  <link rel="stylesheet" href="./refinements.css"/>
+  <link rel="stylesheet" href="./resources.css"/>
+  <!-- Shared design system, Resources components (hero, featured block, newsletter), Shop filter pills, then page layout. -->
+  <link rel="stylesheet" href="./animations.css"/>
+  <link rel="stylesheet" href="./home.css"/>
+  <link rel="stylesheet" href="./resources-page.css"/>
+  <link rel="stylesheet" href="./shop-page.css"/>
+  <link rel="stylesheet" href="./blog-page.css"/>
+  <script src="./global-header.js" defer></script>
+  <script src="./animations.js" defer></script>
+  <script src="./blog.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <global-site-header class="site-header"></global-site-header>
+  <main id="main">
+    <section class="resources-hero blog-hero">
+      <div class="resources-hero-copy reveal"><p class="eyebrow">Journal</p><h1>Blog</h1>
+        <!-- CLIENT: one-line blog intro. Staging /blog/ has only the H1 "Blog". -->
+        <p class="blog-intro-ph">[Blog intro line, client to supply]</p>
+        <a class="button button-gold btn-hover" href="#posts">Browse posts <span aria-hidden="true">→</span></a></div>
+      <div class="resources-hero-media"><img src="./assets/resources-hero.webp" width="1200" height="675" alt="Open illustrated book and creative tools"/></div>
+    </section>
+
+    <!-- Featured post. WordPress: Posts widget / Loop Grid, 1 post (sticky, or category Master Coloring Tutorial). -->
+    <section class="featured-printables blog-featured" aria-labelledby="blog-featured-title">
+      <a class="printables-media img-zoom" href="./coloring-tutorial.html" tabindex="-1" aria-hidden="true"><img src="./assets/bp-hero.webp" width="1024" height="1024" alt="" loading="lazy"/></a>
+      <div class="printables-copy reveal"><p class="eyebrow">Featured post</p><p class="blog-tags"><span class="blog-tag">Journal</span><span class="blog-tag">Master Coloring Tutorial</span></p><h2 id="blog-featured-title">The Ultimate Coloring Tutorial for Your Adult Coloring Books</h2><p>With the help of professional street artists and muralists, we created some of the best adult coloring books in the world.</p>
+        <a class="button button-charcoal btn-hover" href="./coloring-tutorial.html">Read more <span aria-hidden="true">→</span></a></div>
+    </section>
+
+    <section class="blog-archive section" id="posts" aria-labelledby="blog-archive-title">
+      <div class="blog-archive-head reveal"><p class="eyebrow">All posts</p><h2 id="blog-archive-title">Latest from <br/>the blog.</h2></div>
+      <!-- WordPress: Elementor Taxonomy Filter widget linked to the Loop Grid. -->
+      <div class="filter-row blog-filters" role="group" aria-label="Filter posts by category"><button class="filter" type="button" data-filter="all" aria-pressed="true">All</button><button class="filter" type="button" data-filter="journal" aria-pressed="false">Journal</button><button class="filter" type="button" data-filter="stories" aria-pressed="false">Stories</button><button class="filter" type="button" data-filter="wellness" aria-pressed="false">Wellness</button><button class="filter" type="button" data-filter="master-coloring-tutorial" aria-pressed="false">Master Coloring Tutorial</button></div>
+      <p class="blog-count" aria-live="polite">Showing all 8 posts</p>
+      <!-- WordPress: Loop Grid (Posts; exclude Artist + Team; order by date desc; 9 per page). Card = Loop Item template. -->
+      <div class="blog-grid reveal-stagger">
+        <article class="blog-card card-hover" data-category="journal master-coloring-tutorial">
+          <a class="blog-card-image img-zoom" href="./coloring-tutorial.html" tabindex="-1" aria-hidden="true"><img src="./assets/bp-hero.webp" width="1024" height="1024" alt="" loading="lazy"/></a>
+          <div class="blog-card-body"><p class="blog-tags"><span class="blog-tag">Journal</span><span class="blog-tag">Master Coloring Tutorial</span></p><h3><a class="blog-card-title" href="./coloring-tutorial.html">The Ultimate Coloring Tutorial for Your Adult Coloring Books</a></h3><p class="blog-excerpt">With the help of professional street artists and muralists, we created some of the best adult coloring books in the world.</p><a class="blog-read link-underline" href="./coloring-tutorial.html" aria-label="Read more: The Ultimate Coloring Tutorial for Your Adult Coloring Books">Read more <span aria-hidden="true">→</span></a></div>
+        </article>
+        <article class="blog-card card-hover" data-category="journal"><!-- PLACEHOLDER: single post not built yet; uses the single post template. WP post ID 6351. -->
+          <a class="blog-card-image img-zoom" href="#" tabindex="-1" aria-hidden="true"><!-- PLACEHOLDER IMAGE: staging image 404; client to supply a featured image. --><span class="blog-media-ph">Image coming soon</span></a>
+          <div class="blog-card-body"><p class="blog-tags"><span class="blog-tag">Journal</span></p><h3><a class="blog-card-title" href="#">150+ Street Artists Create Gorgeous Books With A Heart-Warming Goal</a></h3><p class="blog-excerpt">Diego Orlandini in front of Pawn Price mural in the book Imagine the impact 150 of the best street artists could have in the world if they were to work together on a single cause? That’s the question illustrator and…</p><a class="blog-read link-underline" href="#" aria-label="Read more: 150+ Street Artists Create Gorgeous Books With A Heart-Warming Goal">Read more <span aria-hidden="true">→</span></a></div>
+        </article>
+        <article class="blog-card card-hover" data-category="journal"><!-- PLACEHOLDER: single post not built yet; uses the single post template. WP post ID 262. -->
+          <a class="blog-card-image img-zoom" href="#" tabindex="-1" aria-hidden="true"><!-- PLACEHOLDER IMAGE: staging image 404; client to supply a featured image. --><span class="blog-media-ph">Image coming soon</span></a>
+          <div class="blog-card-body"><p class="blog-tags"><span class="blog-tag">Journal</span></p><h3><a class="blog-card-title" href="#">Collaboration among Top Street Artists Might be a World Record</a></h3><p class="blog-excerpt">The Ultimate Street Art Coloring Book – A Book with a Mission More than 150 of the best street artists in the world collaborated to create a series of premium coloring books for a social cause. Diego Orlandini, a writer…</p><a class="blog-read link-underline" href="#" aria-label="Read more: Collaboration among Top Street Artists Might be a World Record">Read more <span aria-hidden="true">→</span></a></div>
+        </article>
+        <article class="blog-card card-hover" data-category="wellness"><!-- PLACEHOLDER: single post not built yet; uses the single post template. WP post ID 1461. -->
+          <a class="blog-card-image img-zoom" href="#" tabindex="-1" aria-hidden="true"><!-- PLACEHOLDER IMAGE: staging image 404; client to supply a featured image. --><span class="blog-media-ph">Image coming soon</span></a>
+          <div class="blog-card-body"><p class="blog-tags"><span class="blog-tag">Wellness</span></p><h3><a class="blog-card-title" href="#">Why Is Coloring a Great Stress Reliever Among Adults?</a></h3><p class="blog-excerpt">In today’s world, where we deal with constant change, bombarded with information, overworked, with little time for ourselves and… In today’s world, where we deal with constant change, bombarded with information, overworked, with little time for ourselves and to enjoy life, it’s no surprise so many of us deal with stress and anxiety. Many turn […]</p><a class="blog-read link-underline" href="#" aria-label="Read more: Why Is Coloring a Great Stress Reliever Among Adults?">Read more <span aria-hidden="true">→</span></a></div>
+        </article>
+        <article class="blog-card card-hover" data-category="journal"><!-- PLACEHOLDER: single post not built yet; uses the single post template. WP post ID 281. -->
+          <a class="blog-card-image img-zoom" href="#" tabindex="-1" aria-hidden="true"><!-- PLACEHOLDER IMAGE: staging image 404; client to supply a featured image. --><span class="blog-media-ph">Image coming soon</span></a>
+          <div class="blog-card-body"><p class="blog-tags"><span class="blog-tag">Journal</span></p><h3><a class="blog-card-title" href="#">The One Coloring Book That Belongs in A Museum</a></h3><p class="blog-excerpt">Popular Street Art from Around the World Makes Its Way to The Ultimate Street Art Coloring Book Street art and urban art have become increasingly popular in the last couple of decades. Urban art emerges from the city life, inspired…</p><a class="blog-read link-underline" href="#" aria-label="Read more: The One Coloring Book That Belongs in A Museum">Read more <span aria-hidden="true">→</span></a></div>
+        </article>
+        <article class="blog-card card-hover" data-category="journal"><!-- PLACEHOLDER: single post not built yet; uses the single post template. WP post ID 1796. -->
+          <a class="blog-card-image img-zoom" href="#" tabindex="-1" aria-hidden="true"><!-- PLACEHOLDER IMAGE: staging image 404; client to supply a featured image. --><span class="blog-media-ph">Image coming soon</span></a>
+          <div class="blog-card-body"><p class="blog-tags"><span class="blog-tag">Journal</span></p><h3><a class="blog-card-title" href="#">100 Street Artists Get Together To Create Epic Adult Coloring Book</a></h3><p class="blog-excerpt">Street art and urban art is everywhere. It dresses cities and neighborhoods across the globe from New York City to Paris. It brings color, art, and culture, and gives voice to the communities in the works of hundreds of thousands of street artists and their murals. Writer turned illustrator Diego Orlandini, a Miami-resident and Wynwood […]</p><a class="blog-read link-underline" href="#" aria-label="Read more: 100 Street Artists Get Together To Create Epic Adult Coloring Book">Read more <span aria-hidden="true">→</span></a></div>
+        </article>
+        <article class="blog-card card-hover" data-category="stories"><!-- PLACEHOLDER: single post not built yet; uses the single post template. WP post ID 1447. -->
+          <a class="blog-card-image img-zoom" href="#" tabindex="-1" aria-hidden="true"><!-- PLACEHOLDER IMAGE: staging image 404; client to supply a featured image. --><span class="blog-media-ph">Image coming soon</span></a>
+          <div class="blog-card-body"><p class="blog-tags"><span class="blog-tag">Stories</span></p><h3><a class="blog-card-title" href="#">Wynwood Street Artist Visits School in Cambodia</a></h3><p class="blog-excerpt">Fallen Rose, a Miami-transplant, muralist and street artist based in Wynwood traveled to Cambodia and visited the same school…</p><a class="blog-read link-underline" href="#" aria-label="Read more: Wynwood Street Artist Visits School in Cambodia">Read more <span aria-hidden="true">→</span></a></div>
+        </article>
+        <article class="blog-card card-hover" data-category="stories"><!-- PLACEHOLDER: single post not built yet; uses the single post template. WP post ID 1441. -->
+          <a class="blog-card-image img-zoom" href="#" tabindex="-1" aria-hidden="true"><!-- PLACEHOLDER IMAGE: staging image 404; client to supply a featured image. --><span class="blog-media-ph">Image coming soon</span></a>
+          <div class="blog-card-body"><p class="blog-tags"><span class="blog-tag">Stories</span></p><h3><a class="blog-card-title" href="#">A Journey of Purpose</a></h3><p class="blog-excerpt">One of the reasons we launched Aimful Coloring Books is so that you and I could contribute to the…</p><a class="blog-read link-underline" href="#" aria-label="Read more: A Journey of Purpose">Read more <span aria-hidden="true">→</span></a></div>
+        </article>
+      </div>
+      <p class="blog-empty" hidden>No posts in this category yet.</p>
+      <!-- Pagination: static, design only. WordPress outputs .page-numbers in the Loop Grid pagination. -->
+      <nav class="blog-pagination" aria-label="Blog pagination"><ul><li><span aria-current="page" class="page-numbers current">1</span></li><li><a class="page-numbers" href="#">2</a></li><li><a class="next page-numbers" href="#">Next <span aria-hidden="true">→</span></a></li></ul></nav>
+    </section>
+
+    <section class="resources-newsletter section">
+      <div class="reveal"><p class="eyebrow">One lesson every month</p><h2>Discover your inner artist.</h2><p>One coloring lesson a month to turn you into an artist in 12 short months.</p></div>
+      <!-- WordPress: Elementor Form (single email field) connected to Mailchimp. -->
+      <form class="reveal"><label for="blog-email">Your email</label><div class="email-row"><input id="blog-email" type="email" placeholder="your@email.com" autocomplete="email" required/><button class="button button-gold btn-hover" type="submit">Become an artist</button></div><p class="form-note">You are safe with us. Unsubscribe anytime.</p></form>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="footer-top"><div class="footer-brand"><a class="brand brand-light" href="./index.html" aria-label="Boundless Backer home">
+      <!-- Logo swap: replace the two spans below with
+           <img class="brand-logo" src="./assets/logo-primary-white.svg" alt="Boundless Backer" width="160" height="48" /> -->
+      <span class="bookstack" aria-hidden="true"><i></i><i></i><i></i></span><span>Boundless <br/>Backer<span class="period">.</span></span></a><p class="footer-tagline">Curated with intention. Published for impact. Chosen by you.</p></div><p>Fund the art you want to see in the world.</p></div><div class="footer-links reveal-stagger"><div><p>Explore</p><a class="link-underline" href="./shop.html">Shop</a><a class="link-underline" href="./how-it-works.html">How it works</a><a class="link-underline" href="./resources.html">Resources</a><a class="link-underline" href="./blog.html" aria-current="page">Blog</a><a class="link-underline" href="./coloring-tutorial.html">Coloring tutorial</a><a class="link-underline" href="./about.html">About</a></div><div><p>Participate</p><a class="link-underline" href="./crowdfund-your-book.html">Crowdfund your book</a><a class="link-underline" href="./join.html">Join us</a><a class="link-underline" href="./visiting.html">Become a guest</a><a class="link-underline" href="./hosting.html">Become a host</a></div><div><p>Support</p><a class="link-underline" href="./how-it-works.html">FAQ</a><a class="link-underline" href="./reviews.html">Reviews</a><a class="link-underline" href="./wholesale.html">Wholesale</a><a class="link-underline" href="mailto:hello@boundlessbacker.com">Email us</a></div><div><p>Connect</p><!-- [PLACEHOLDER: new social URLs, client to supply] --><a class="link-underline" href="#">Instagram</a><a class="link-underline" href="#">TikTok</a><a class="link-underline" href="#">Patreon</a></div></div><div class="footer-bottom"><span>© 2026 Boundless Backer</span><span class="footer-legal"><!-- [PLACEHOLDER: legal pages] --><a class="link-underline" href="#">Privacy Policy</a><a class="link-underline" href="#">Terms of Service</a></span><span>Client approval prototype. Links are illustrative.</span></div></footer>
+</body>
+</html>

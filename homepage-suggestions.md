@@ -447,3 +447,45 @@ Claims kept verbatim with placeholder comments in the HTML. Please confirm or se
 - Pinterest board link for "Visit Our Pinterest Board for More Palette Ideas" (no link on staging).
 - Printables download and sign-up form targets (Mailchimp list).
 - The images listed above.
+
+---
+
+# Blog (archive: blog.html)
+
+Prototype: `blog.html` (+ `blog-page.css`, `blog.js`). Hero, featured block and newsletter reuse the Resources components; filter pills reuse the Shop pills. "Blog" added to the header nav (`global-header.js`) and to the footer Explore column on every page, after Resources. Resources links here ("Read the blog →"); the coloring tutorial breadcrumb is now "Blog / Coloring tutorial".
+
+## Posts on staging (REST API, 182 posts)
+
+- Shown (8, real titles and verbatim WordPress excerpts): The Ultimate Coloring Tutorial (8031, also the featured post), 150+ Street Artists Create Gorgeous Books With A Heart-Warming Goal (6351), Collaboration among Top Street Artists Might be a World Record (262), Why Is Coloring a Great Stress Reliever Among Adults? (1461), The One Coloring Book That Belongs in A Museum (281), 100 Street Artists Get Together To Create Epic Adult Coloring Book (1796), Wynwood Street Artist Visits School in Cambodia (1447), A Journey of Purpose (1441).
+- Page 2 (not shown): Brooklyn, The Most Iconic Street Art District In The World, Gets Its Own Coloring Book (6352), The Coolest Souvenir from America's Most Instagrammable City (273), Wynwood Artists Unveil Second Edition of Their Popular Coloring Book (1454).
+- Excluded: Artist (167 short bios) and Team (3 staff bios). Suggest moving the artist bios to their own post type or an artist directory, and the team bios to About.
+- Duplicate: post 7469 (/the-basics/) is an older copy of the coloring tutorial. Delete it or 301 it to the tutorial (8031).
+- Empty categories to delete: "The Basics", "Uncategorized".
+- Dates and read times are not shown (staging dates are unreliable; the tutorial's REST date 2022-11-22 conflicts with its meta date 2025-08-03).
+
+## Changes made
+
+- Tutorial excerpt: WordPress excerpt starts with the TOC widget label "Table of Contents". The card uses its first sentence without that label: "With the help of professional street artists and muralists, we created some of the best adult coloring books in the world."
+- Excerpts are clamped to 3 lines on cards. The Wellness post excerpt repeats its first sentence on staging (fix the manual excerpt in WordPress).
+
+## Spam / link check (11 article bodies, excerpts and titles, plus the rendered staging pages)
+
+- No ghostwriting / thesis / Masterarbeit / Bachelorarbeit / intellischreiber links and no `text-decoration: none !important; color: inherit` injections found.
+- Broken or old links worth cleaning while editing: post 8031 links to `http://link/` ("how to transition colors evenly") and `http://anchortosection/` ("remove the black outlines"), plus 4 links to the old Instagram handle `instagram.com/aimfulbooks`. Post 1454 links to an old Eventbrite page (2018 release party).
+- The live site returned SSL errors for posts 262, 1461 and 6352, so those 3 rendered pages could not be scanned on the live domain (staging versions were clean).
+
+## How to build it in WordPress
+
+- Theme Builder > Archive template, applied to the Posts page (Settings > Reading > Posts page = Blog) and to category archives.
+- Featured post: Posts widget or Loop Grid with 1 post (Sticky Posts only, or category Master Coloring Tutorial).
+- Grid: Loop Grid widget. Query: Posts; exclude categories Artist and Team; exclude the featured post ID; order by date, descending; 9 per page; pagination = numbers + next.
+- Filter: Taxonomy Filter widget linked to the Loop Grid; categories Journal, Stories, Wellness, Master Coloring Tutorial. Empty categories show "No posts in this category yet."
+- Loop Item template = the card: Featured Image (16:10, fallback image for posts without one), Post Terms (category), Post Title, Post Excerpt (about 25 words, CSS 3-line clamp), Read More link.
+- Newsletter: the same Elementor Form section used on Resources.
+
+## Needs from client
+
+- One-line blog intro for the hero (staging /blog/ has only the H1 "Blog"), plus a meta description.
+- Featured images for all 11 articles: every in-post image on staging and live returns 404, and only the tutorial has a featured image.
+- A blog-specific hero image (Resources hero reused for now).
+- Confirm the Artist and Team bios can leave the blog.
