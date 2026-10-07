@@ -402,7 +402,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, .route:focus-visible
   z-index: 20;
   top: calc(100% + 12px);
   left: 50%;
-  width: min(560px, 82vw);
+  width: min(620px, 82vw);
   display: grid;
   grid-template-columns: 1fr 1.4fr;
   gap: 30px;

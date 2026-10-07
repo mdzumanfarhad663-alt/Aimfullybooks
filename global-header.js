@@ -13,8 +13,8 @@
           <div class="nav-shop">
             <a${active('shop.html')} href="./shop.html" aria-haspopup="true">Shop</a>
             <div class="mega-menu" aria-label="Shop categories">
-              <div><p class="mega-heading">Browse the shelf</p><a href="./shop.html#catalog">All titles <span aria-hidden="true">→</span></a></div>
-              <div><p class="mega-heading">Shop by category</p><a href="./shop.html?category=coloring-books#catalog">Coloring Books <span aria-hidden="true">→</span></a><a href="./shop.html?category=street-art#catalog">Street Art <span aria-hidden="true">→</span></a><a href="./shop.html?category=world-books#catalog">World Books <span aria-hidden="true">→</span></a></div>
+              <div><p class="mega-heading">Browse the shelf</p><a href="./shop.html#catalog">All titles <span aria-hidden="true">→</span></a><a href="./shop.html?stage=raising#catalog">Raising funds <span aria-hidden="true">→</span></a><a href="./shop.html?stage=funded#catalog">Funded &amp; in stock <span aria-hidden="true">→</span></a></div>
+              <div><p class="mega-heading">Shop by category</p><a href="./shop.html?category=coloring-books#catalog">Coloring Books <span aria-hidden="true">→</span></a><a href="./shop.html?category=childrens-books#catalog">Children's Books <span aria-hidden="true">→</span></a><a href="./shop.html?category=comic-books#catalog">Comic Books <span aria-hidden="true">→</span></a><a href="./shop.html?category=illustrated-books#catalog">Illustrated Books <span aria-hidden="true">→</span></a><a href="./shop.html?category=world-books#catalog">World Books <span aria-hidden="true">→</span></a><a href="./shop.html?category=art-supplies#catalog">Art Supplies <span aria-hidden="true">→</span></a><a href="./shop.html?category=printables#catalog">Printables <span aria-hidden="true">→</span></a></div>
             </div>
           </div>
           <a${active('how-it-works.html')} href="./how-it-works.html">How It Works</a>
