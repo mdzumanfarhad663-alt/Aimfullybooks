@@ -47,6 +47,20 @@
   });
   applyFilters();
 
+  const rotatingWord = document.querySelector('.rotating-word');
+  const descriptors = ['Awesome', 'Unique', 'Art', 'Coloring', 'Comic', 'Artsy', 'World', 'Illustrated', 'Quirky'];
+  if (rotatingWord && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    let wordIndex = 0;
+    window.setInterval(() => {
+      rotatingWord.classList.add('is-changing');
+      window.setTimeout(() => {
+        wordIndex = (wordIndex + 1) % descriptors.length;
+        rotatingWord.textContent = descriptors[wordIndex];
+        rotatingWord.classList.remove('is-changing');
+      }, 180);
+    }, 2400);
+  }
+
   document.getElementById('orderby').addEventListener('change', (event) => {
     const mode = event.target.value;
     const byOrder = (a, b) => Number(a.dataset.order) - Number(b.dataset.order);
