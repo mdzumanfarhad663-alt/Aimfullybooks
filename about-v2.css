@@ -8,6 +8,7 @@
    ========================================================================== */
 
 /* --- Shared heading treatment (Norwester, one weight, no fake bold) ------ */
+.site-header .brand-logo { width: 210px; height: auto; flex: 0 0 210px; }
 .about-hero h1, .about-impact h2, .about-manifesto h2,
 .about-story h2, .about-community h2, .about-newsletter h2, .about-impact li strong {
   font-family: var(--display);
@@ -79,6 +80,7 @@
 
 /* --- Tablet / mobile ---------------------------------------------------- */
 @media (max-width: 850px) {
+  .site-header .brand-logo { width: 170px; flex-basis: 170px; }
   .about-hero { height: auto; grid-template-columns: 1fr; }
   .about-hero-copy { padding: 56px var(--gutter) 44px; max-width: none; }
   .about-hero h1 { font-size: clamp(44px, 12vw, 52px); }
