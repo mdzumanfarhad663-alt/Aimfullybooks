@@ -12,6 +12,28 @@
 .button-charcoal { background: var(--charcoal); border-color: var(--charcoal); color: var(--white); }
 .button-charcoal:hover { background: #1F1F1F; border-color: #1F1F1F; }
 
+/* --- Client-requested purple accent and publishing journey --------------- */
+.cf-eyebrow { margin: 0 0 14px; color: var(--plum); font-size: 12px; font-weight: 700; letter-spacing: .14em; line-height: 1.4; text-transform: uppercase; }
+.cf-hero-copy { position: relative; }
+.cf-hero h1 { max-width: 10ch; }
+.cf-subline { max-width: 54ch; }
+.cf-hero-art { background: var(--plum); }
+.cf-journey-heading { max-width: 720px; margin: 0 auto 40px; text-align: center; }
+.cf-journey-heading h2 { max-width: 16ch; margin: 0 auto; font: 400 clamp(36px, 4vw, 52px)/1 var(--display); text-transform: uppercase; }
+.cf-publishing-journey { display: grid; grid-template-columns: 1fr minmax(56px, .4fr) 1fr minmax(56px, .4fr) 1fr; align-items: center; gap: 18px; padding: clamp(24px, 4vw, 48px); margin-bottom: 44px; background: #fff; border: 1px solid #dedede; border-radius: var(--radius); }
+.cf-journey-stop { display: flex; flex-direction: column; align-items: center; gap: 14px; min-width: 0; text-align: center; }
+.cf-journey-art { display: grid; place-items: center; width: clamp(96px, 13vw, 158px); height: clamp(96px, 13vw, 158px); overflow: hidden; border-radius: 50%; background: #f1edf3; }
+.cf-journey-art img { display: block; width: 72%; height: 72%; object-fit: contain; }
+.cf-journey-bulb img { filter: invert(19%) sepia(24%) saturate(1054%) hue-rotate(238deg) brightness(82%); }
+.cf-journey-maze { border-radius: 32% 68% 54% 46% / 51% 38% 62% 49%; background: #eee; }
+.cf-journey-maze img { width: 78%; height: 78%; }
+.cf-journey-book { background: #f7e6f1; }
+.cf-journey-book img { filter: invert(35%) sepia(27%) saturate(1037%) hue-rotate(263deg) brightness(86%); }
+.cf-journey-label { max-width: 18ch; color: var(--charcoal); font-size: 14px; font-weight: 700; line-height: 1.4; }
+.cf-journey-path { display: flex; align-items: center; justify-content: space-between; gap: 5px; position: relative; min-width: 40px; height: 2px; background: #ab6b9c; }
+.cf-journey-path::after { content: ""; position: absolute; right: 0; top: -4px; width: 8px; height: 8px; border-top: 2px solid #ab6b9c; border-right: 2px solid #ab6b9c; transform: rotate(45deg); }
+.cf-journey-path i { display: block; width: 4px; height: 4px; border-radius: 50%; background: var(--plum); }
+
 /* --- Hero (same pattern as About / How It Works) ------------------------ */
 .cf-hero { display: grid; grid-template-columns: 1fr 1fr; height: min(560px, calc(100dvh - 80px)); background: var(--white); }
 .cf-hero-copy { padding: 56px var(--gutter); max-width: calc(var(--container) / 2 + var(--gutter)); margin-left: auto; width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
@@ -42,9 +64,10 @@
 
 /* --- Independent artists band (charcoal) -------------------------------- */
 .cf-artists { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(32px, 6vw, 96px); background: var(--charcoal); color: var(--white); padding: var(--section-y) max(var(--gutter), calc((100% - var(--container)) / 2)); }
-.cf-artists-art { background: var(--white); border-radius: var(--radius); padding: 24px; display: flex; justify-content: center; }
-.cf-artists-art img { width: 100%; max-width: 468px; height: auto; aspect-ratio: 468 / 344; }
+.cf-artists-art { min-height: 240px; display: flex; justify-content: center; align-items: center; }
+.cf-artists-art img { width: 100%; max-width: 468px; height: auto; aspect-ratio: 468 / 344; filter: invert(1); mix-blend-mode: screen; }
 .cf-artists h2 { font-size: clamp(40px, 3.9vw, 56px); line-height: 1; max-width: 14ch; }
+.cf-artists .cf-eyebrow { color: #dca7d0; }
 .cf-instagram { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin-top: 24px; color: var(--white); font-weight: 600; letter-spacing: .1em; text-transform: uppercase; font-size: 12px; }
 .cf-artists a:focus-visible { box-shadow: 0 0 0 2px var(--charcoal), 0 0 0 4px var(--gold); }
 
@@ -91,6 +114,7 @@
 .cf-status.is-success { padding: 16px 20px; border-radius: var(--radius); background: var(--silver); border-left: 4px solid var(--gold); }
 .cf-alt { margin: 0; font-size: 14px; color: #444; }
 .cf-alt a { color: var(--charcoal); font-weight: 600; }
+.cf-privacy { margin: 0; padding: 18px 20px; border-left: 3px solid var(--plum); background: #f5eff4; color: #414141; font-size: 14px; line-height: 1.6; }
 
 /* --- Tablet / mobile ---------------------------------------------------- */
 @media (max-width: 850px) {
@@ -99,9 +123,16 @@
   .cf-hero h1 { font-size: clamp(44px, 12vw, 52px); }
   .cf-hero-art { border-radius: 0; padding: 32px; }
   .cf-hero-art img { height: 200px; }
+  .cf-journey-heading { margin-bottom: 28px; }
+  .cf-publishing-journey { grid-template-columns: 1fr; gap: 18px; margin-bottom: 28px; }
+  .cf-journey-art { width: 108px; height: 108px; }
+  .cf-journey-path { width: 2px; min-width: 0; height: 28px; justify-self: center; flex-direction: column; }
+  .cf-journey-path::after { top: auto; right: -3px; bottom: 0; transform: rotate(135deg); }
+  .cf-journey-path i { width: 4px; height: 4px; }
   .cf-card-grid { grid-template-columns: 1fr; gap: 18px; }
   .cf-card-icon { height: 80px; }
   .cf-artists { grid-template-columns: 1fr; padding: 64px var(--gutter); }
+  .cf-artists-art { min-height: 0; }
   .cf-artists h2 { font-size: clamp(32px, 9vw, 38px); }
   .cf-submit { grid-template-columns: 1fr; gap: 32px; }
   .cf-submit-intro h2 { font-size: clamp(32px, 9vw, 38px); }
