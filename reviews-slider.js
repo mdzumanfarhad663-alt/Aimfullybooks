@@ -1,4 +1,4 @@
-/* Home reviews carousel: plain JS, loops, autoplay off under reduced motion. */
+/* Home reviews carousel: plain JS, loops, autoplay pauses on hover/focus. */
 (function () {
   var root = document.querySelector('.review-slider');
   if (!root) return;
@@ -7,7 +7,7 @@
   var cards = Array.prototype.slice.call(track.children);
   var dotsWrap = root.querySelector('.review-dots');
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
-  var index = 0, timer = null, paused = false;
+  var index = 0, timer = null, hoverPaused = false, focusPaused = false;
 
   function perView() {
     var w = window.innerWidth;
@@ -45,12 +45,11 @@
 
   function start() {
     stop();
-    if (reduce.matches || paused) return;
-    timer = setInterval(function () { go(index + 1); }, 5000);
+    if (reduce.matches || hoverPaused || focusPaused) return;
+    timer = setInterval(function () { go(index + 1); }, 4000);
   }
   function stop() { clearInterval(timer); timer = null; }
-  function pause() { paused = true; stop(); }
-  function resume() { paused = false; start(); }
+  function syncAutoplay() { if (hoverPaused || focusPaused || reduce.matches) stop(); else start(); }
 
   /* Clamp long reviews; reveal "Read more" only when text overflows. */
   function setupClamp() {
@@ -76,18 +75,22 @@
     if (e.key === 'ArrowLeft') { e.preventDefault(); go(index - 1); }
     if (e.key === 'ArrowRight') { e.preventDefault(); go(index + 1); }
   });
-  root.addEventListener('mouseenter', pause);
-  root.addEventListener('mouseleave', resume);
-  root.addEventListener('focusin', pause);
-  root.addEventListener('focusout', function (e) { if (!root.contains(e.relatedTarget)) resume(); });
+  root.addEventListener('mouseenter', function () { hoverPaused = true; syncAutoplay(); });
+  root.addEventListener('mouseleave', function () { hoverPaused = false; syncAutoplay(); });
+  root.addEventListener('focusin', function () { focusPaused = true; syncAutoplay(); });
+  root.addEventListener('focusout', function (e) {
+    if (!root.contains(e.relatedTarget)) { focusPaused = false; syncAutoplay(); }
+  });
 
   var startX = null;
-  viewport.addEventListener('touchstart', function (e) { pause(); startX = e.touches[0].clientX; }, { passive: true });
+  viewport.addEventListener('touchstart', function (e) { hoverPaused = true; syncAutoplay(); startX = e.touches[0].clientX; }, { passive: true });
   viewport.addEventListener('touchend', function (e) {
     if (startX === null) return;
     var dx = e.changedTouches[0].clientX - startX;
     if (Math.abs(dx) > 40) go(dx < 0 ? index + 1 : index - 1);
     startX = null;
+    hoverPaused = false;
+    syncAutoplay();
   });
 
   var lastPv = perView();
@@ -96,7 +99,7 @@
     go(Math.min(index, pages() - 1));
     setupClamp();
   });
-  if (reduce.addEventListener) reduce.addEventListener('change', start);
+  if (reduce.addEventListener) reduce.addEventListener('change', syncAutoplay);
 
   buildDots();
   go(0);

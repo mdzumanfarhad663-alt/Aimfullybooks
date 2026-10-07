@@ -190,7 +190,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, .route:focus-visible
 .impact-number { color: var(--white); font-variant-numeric: tabular-nums; } /* white: gold on plum fails contrast */
 .impact-number .count { font-size: 1em; }
 .impact h2 { font-family: var(--heading); font-weight: 400; letter-spacing: 0; line-height: 1.2; max-width: 22ch; }
-.impact-photo.img-zoom:hover img { transform: scale(1.03); }
+.impact-photo.img-zoom img,
+.impact-photo.img-zoom:hover img { transform: none; }
 
 /* --- Participate ----------------------------------------------------------- */
 .route { border-radius: var(--radius); position: relative; }
@@ -383,8 +384,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, .route:focus-visible
   max-width: 1120px;
   margin-inline: auto;
   font-size: clamp(28px, 3.25vw, 48px);
-  line-height: 1.08;
+  line-height: 1.24;
+  letter-spacing: .005em;
+  text-wrap: pretty;
 }
+.quote { padding-block: clamp(80px, 10vw, 140px); }
 
 /* Primary navigation and Shop mega menu. */
 .site-header nav { align-items: center; }
