@@ -32,8 +32,7 @@
 .hero-covers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(12px, 2vw, 28px); width: min(100%, 680px); }
 .hero-covers img { width: 100%; height: auto; aspect-ratio: 1; object-fit: contain; filter: drop-shadow(0 16px 18px rgba(0, 0, 0, .22)); }
 .hero-covers img { transform: translateY(0); transition: transform .12s linear; }
-.hero-covers img:first-child, .hero-covers img:nth-child(3) { scale: .8; }
-.hero-covers img:nth-child(2) { scale: .72 1; }
+.hero-covers img { scale: 1; }
 .shop-hero-art p { position: static; color: var(--charcoal); font-family: var(--heading); font-weight: 700; font-size: 14px; letter-spacing: .18em; text-transform: uppercase; }
 
 /* --- Toolbar: heading + WooCommerce ordering ---------------------------- */
