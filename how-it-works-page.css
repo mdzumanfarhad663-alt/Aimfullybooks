@@ -25,6 +25,7 @@
 .works-copy h1 { font-size: clamp(64px, 5.6vw, 80px); line-height: .98; max-width: 12ch; }
 .works-copy h1 br { display: none; } /* wrap by max-width; avoids an orphan line */
 .works-copy > p:not(.eyebrow) { font-size: clamp(17px, 1.3vw, 19px); line-height: 1.6; max-width: 44ch; color: #444; margin: 24px 0 32px; }
+.works-copy .eyebrow { max-width: 34ch; line-height: 1.5; }
 .works-photo { position: relative; min-height: 0; border-radius: 0 0 0 var(--radius); }
 .works-photo img { position: absolute; inset: 0; }
 
@@ -57,7 +58,7 @@
 /* --- Support cards ------------------------------------------------------- */
 .support-strip { padding: var(--section-y) max(var(--gutter), calc((100% - var(--container)) / 2)); gap: clamp(32px, 5vw, 72px); align-items: start; }
 .support-title h2 { max-width: 12ch; }
-.support-points { gap: 20px; }
+.support-points { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
 .support-points > div {
   border: 0;
   border-top: 4px solid var(--gold);
@@ -69,6 +70,15 @@
 .support-points > .support-charcoal { border-top-color: var(--charcoal); }
 .support-points strong { font-family: var(--heading); font-weight: 700; font-size: 18px; }
 .support-points p { font-size: 15px; line-height: 1.6; color: #444; margin-top: 12px; }
+.support-points .backer-guarantee { grid-column: 1 / -1; margin: 8px 0 0; padding: 18px 20px; border-left: 3px solid var(--plum); background: #F7F3F6; font-size: 15px; line-height: 1.6; }
+.backer-guarantee strong { display: block; margin-bottom: 4px; }
+.support-faq-link { margin-top: 24px; }
+.support-faq-link .text-action { margin-top: 0; }
+
+/* Separate the funding economics from the customer-facing guarantee cards. */
+.impact-model { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(36px, 7vw, 100px); align-items: center; background: var(--silver); }
+.impact-model h2 { max-width: 12ch; font: 400 clamp(40px, 3.9vw, 56px)/1 var(--display); text-transform: uppercase; margin: 0; }
+.impact-model > p { max-width: 65ch; margin: 0; color: #444; font-size: 18px; line-height: 1.7; }
 
 /* --- Impact story (plum) ------------------------------------------------- */
 .impact-story-image { min-height: 520px; }
@@ -116,6 +126,8 @@
 }
 .faq-list summary:focus-visible { box-shadow: var(--focus); border-radius: 2px; }
 .faq-list p { font-size: 16px; line-height: 1.65; color: #444; margin: 0 0 22px; max-width: 60ch; }
+.faq-more-link { margin-top: 24px !important; }
+.faq-more-link .text-action { margin-top: 0; }
 /* Answer fades and lifts in when opened; height itself snaps (no layout animation). */
 .faq-list details[open] p { animation: faq-in 320ms cubic-bezier(.2, .7, .2, 1) both; }
 @keyframes faq-in { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
@@ -140,6 +152,9 @@
   .works-copy h1 { font-size: clamp(44px, 12vw, 52px); }
   .works-photo { aspect-ratio: 4 / 3; border-radius: 0; }
   .journey h2, .support-title h2, .impact-story h2, .works-faq h2, .works-final h2 { font-size: clamp(32px, 9vw, 38px); }
+  .support-points { grid-template-columns: 1fr; }
+  .impact-model { grid-template-columns: 1fr; gap: 24px; }
+  .impact-model h2 { font-size: clamp(32px, 9vw, 38px); }
 
   /* Vertical timeline: line runs down the left through the circles. */
   .journey-steps { padding-top: 48px; gap: 36px; }
