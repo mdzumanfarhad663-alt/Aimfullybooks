@@ -17,6 +17,19 @@
     slides.forEach((s, k) => (s.hidden = k !== i));
     thumbs.forEach((t, k) => t.setAttribute('aria-pressed', String(k === i)));
   };
+  const setVariationGallery = (variation) => {
+    const configuredImages = Array.isArray(variation?.images)
+      ? variation.images
+      : Number.isInteger(variation?.image) && variation.image >= 0
+        ? [variation.image]
+        : null;
+    slides.forEach((slide, index) => {
+      slide.hidden = configuredImages ? !configuredImages.includes(index) : index !== 0;
+      if (thumbs[index]) thumbs[index].closest('li').hidden = Boolean(configuredImages && !configuredImages.includes(index));
+    });
+    if (configuredImages?.length) show(configuredImages[0]);
+    else show(0);
+  };
   thumbs.forEach((t, i) => {
     t.addEventListener('click', () => show(i));
     t.addEventListener('keydown', (e) => {
@@ -45,11 +58,12 @@
       info.textContent = [v.dims, v.weight].filter(Boolean).join(' · ');
       sku.textContent = v.sku || '';
       skuWrap.hidden = !v.sku;
-      if (v.image >= 0) show(v.image);
+      setVariationGallery(v);
     } else {
       priceEl.textContent = priceEl.dataset.range;
       info.textContent = '';
       skuWrap.hidden = true;
+      setVariationGallery(null);
     }
     clear.hidden = !select.value;
     add.setAttribute('aria-disabled', String(!v));
@@ -58,6 +72,28 @@
   select.addEventListener('change', update);
   clear.addEventListener('click', () => { select.value = ''; update(); select.focus(); });
   update();
+
+  /* Keep stage-specific campaign copy tied to the product's CMS status. */
+  const stageCopy = pd.querySelector('.pd-stage-copy');
+  if (stageCopy) stageCopy.textContent = stageCopy.dataset[pd.dataset.productStatus] || stageCopy.dataset.funded;
+
+  /* Share the product URL using the device share sheet, with clipboard fallback. */
+  const share = pd.querySelector('.pd-share');
+  share?.addEventListener('click', async () => {
+    const payload = { title: document.title, text: 'Good choice. Rally your tribe. Share The Brooklyn Coloring Book.', url: window.location.href };
+    try {
+      if (navigator.share) await navigator.share(payload);
+      else if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(payload.url);
+        share.innerHTML = 'Link copied <span aria-hidden="true">✓</span>';
+        setTimeout(() => { share.innerHTML = 'Share it with your friends <span aria-hidden="true">→</span>'; }, 2200);
+      } else {
+        window.prompt('Copy this link to share:', payload.url);
+      }
+    } catch (error) {
+      if (error.name !== 'AbortError') window.prompt('Copy this link to share:', payload.url);
+    }
+  });
 
   /* --- Quantity +/- (min 1) --- */
   const qty = pd.querySelector('#pd-qty');
@@ -78,9 +114,10 @@
   const panels = [...pd.querySelectorAll('.pd-panel')];
   const triggers = [...pd.querySelectorAll('.pd-acc-trigger')];
   const select_tab = (i, focus) => {
+    const selectedPanelId = tabs[i].getAttribute('aria-controls');
     tabs.forEach((t, k) => { t.setAttribute('aria-selected', String(k === i)); t.tabIndex = k === i ? 0 : -1; });
-    panels.forEach((p, k) => (p.hidden = k !== i));
-    triggers.forEach((t, k) => t.setAttribute('aria-expanded', String(k === i)));
+    panels.forEach((p) => (p.hidden = p.id !== selectedPanelId));
+    triggers.forEach((t) => t.setAttribute('aria-expanded', String(t.getAttribute('aria-controls') === selectedPanelId)));
     if (focus) tabs[i].focus();
   };
   tabs.forEach((t, i) => {
@@ -92,10 +129,11 @@
       select_tab((map[e.key] + tabs.length) % tabs.length, true);
     });
   });
-  triggers.forEach((t, i) => t.addEventListener('click', () => {
+  triggers.forEach((t) => t.addEventListener('click', () => {
     const open = t.getAttribute('aria-expanded') === 'true';
     t.setAttribute('aria-expanded', String(!open));
-    panels[i].hidden = open;
+    const panel = document.getElementById(t.getAttribute('aria-controls'));
+    if (panel) panel.hidden = open;
   }));
   pd.classList.add('tabs-ready');
   select_tab(0);
