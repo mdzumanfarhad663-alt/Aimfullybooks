@@ -18,7 +18,7 @@
             </div>
           </div>
           <a${active('how-it-works.html')} href="./how-it-works.html">How It Works</a>
-          <span class="pending-nav" aria-disabled="true" title="Page details pending">New Page</span>
+          <a${active('sponsored-journeys.html')} href="./sponsored-journeys.html">Sponsored Journeys</a>
           <a${active('about.html')} href="./about.html">About</a>
         </nav>
         <div class="header-actions">
