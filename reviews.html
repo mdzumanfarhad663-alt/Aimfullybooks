@@ -28,8 +28,7 @@
        Review text, names and order are verbatim. -->
   <main id="main">
     <section class="rv-hero">
-      <div class="rv-hero-copy reveal"><h1>Reviews.</h1><p class="rv-subline">Sharing is caring (we need you).</p>
-        <div class="rv-giveaway"><img src="./assets/reviews-giveaway.svg" alt="" width="120" height="120"/><p>Post to your socials and DM us! We’ll mail you a set of coloring pencils!</p></div>
+      <div class="rv-hero-copy reveal"><h1>Sharing is caring.</h1><p class="rv-subline">Share your thoughts on our book product pages or across social media (tag us!), and let the world know we have the most incredible titles and the best authors on the planet. Thanks!</p>
       </div>
       <div class="rv-hero-media"><img src="./assets/reviews-hero.webp" alt="Woman in a red hat peeking over The Wynwood Coloring Book" width="999" height="632"/></div>
     </section>
@@ -38,7 +37,7 @@
       <!-- Reel: muted loop; under reduced motion only the poster frame shows. WordPress: Elementor Video widget. -->
       <div class="rv-reel reveal"><video class="rv-video" autoplay muted loop playsinline preload="metadata" poster="./assets/reviews-reel-poster.jpg" width="720" height="1280" aria-label="Short video of a reader with The Ultimate Street Art Coloring Book"><source src="./assets/reviews-reel.mp4" type="video/mp4"/></video></div>
       <div class="rv-gallery-wrap">
-        <!-- 41 community photos (Elementor Image Gallery). The first 12 show by default; the rest stay in the HTML and are revealed by the button. -->
+        <!-- 40 community photos (Elementor Image Gallery). The first 12 show by default; the rest stay in the HTML and are revealed by the button. -->
         <div class="rv-gallery reveal-stagger" id="rv-gallery">
           <div class="rv-photo img-zoom"><img src="./assets/reviews-photo-01.webp" alt="Woman at a picnic table with a coloring book" width="800" height="800" loading="lazy" decoding="async"/></div>
           <div class="rv-photo img-zoom"><img src="./assets/reviews-photo-02.webp" alt="Man holding an open coloring book" width="800" height="800" loading="lazy" decoding="async"/></div>
@@ -80,7 +79,6 @@
           <div class="rv-photo img-zoom rv-photo-extra"><img src="./assets/reviews-photo-38.webp" alt="Man holding up an open coloring book in front of a mural" width="800" height="800" loading="lazy" decoding="async"/></div>
           <div class="rv-photo img-zoom rv-photo-extra"><img src="./assets/reviews-photo-39.webp" alt="Woman holding an open coloring book at an outdoor event" width="800" height="800" loading="lazy" decoding="async"/></div>
           <div class="rv-photo img-zoom rv-photo-extra"><img src="./assets/reviews-photo-40.webp" alt="Man and woman holding a coloring book" width="800" height="800" loading="lazy" decoding="async"/></div>
-          <div class="rv-photo img-zoom rv-photo-extra"><img src="./assets/reviews-photo-41.webp" alt="Woman in a hat holding a coloring book" width="800" height="800" loading="lazy" decoding="async"/></div>
         </div>
         <button class="button button-outline btn-hover rv-more" type="button" aria-expanded="false" aria-controls="rv-gallery" hidden>Show all photos</button>
       </div>
@@ -115,8 +113,13 @@
       </div>
     </section>
 
+    <section class="rv-giveaway-promo" aria-labelledby="rv-giveaway-heading">
+      <img src="./assets/reviews-giveaway.svg" alt="Giveaway" width="180" height="180" loading="lazy"/>
+      <div><p class="eyebrow">Share your review</p><h2 id="rv-giveaway-heading">Better yet.</h2><p>Post a video review to your socials and DM us! We’ll mail you our set of Dual Coloring Pencils, Baby as a thank you!</p></div>
+    </section>
+
     <section class="rv-products section">
-      <div class="rv-products-heading reveal"><h2>Helping Thousands Discover Their Inner Artists!</h2></div>
+      <div class="rv-products-heading reveal"><h2>We Started Helping Thousands Discover Their Inner Artists with Our Coloring Books!</h2></div>
       <!-- Same shared product card as Home and Shop. WordPress: WooCommerce Products widget (these 4 products). Product pages not built yet, so all link to the shop. -->
       <div class="shop-grid rv-product-grid reveal-stagger">
           <article class="shop-product card-hover">
@@ -132,8 +135,8 @@
             <div class="product-body"><h3><a class="product-title link-underline" href="./shop.html">A Blooming Earth</a></h3><p class="price">$25 - $40</p><a class="button button-gold btn-hover product-button" href="./shop.html">Select options</a></div>
           </article>
           <article class="shop-product card-hover">
-            <a class="shop-product-image silver-tile img-zoom" href="./shop.html" tabindex="-1" aria-hidden="true"><img src="./assets/reviews-product-4.webp" alt="Exploring Sanatana Dharma" width="800" height="800" loading="lazy"/></a>
-            <div class="product-body"><h3><a class="product-title link-underline" href="./shop.html">Exploring Sanatana Dharma</a></h3><p class="price">$25 - $40</p><a class="button button-gold btn-hover product-button" href="./shop.html">Select options</a></div>
+            <a class="shop-product-image silver-tile img-zoom" href="./product.html" tabindex="-1" aria-hidden="true"><img src="./assets/product-brooklyn-g03.webp" alt="The Brooklyn Coloring Book" width="1200" height="1200" loading="lazy"/></a>
+            <div class="product-body"><h3><a class="product-title link-underline" href="./product.html">The Brooklyn Coloring Book</a></h3><p class="price">$25</p><a class="button button-gold btn-hover product-button" href="./product.html">Add to cart</a></div>
           </article>
       </div>
       <div class="rv-shop-cta reveal"><a class="button button-gold btn-hover" href="./shop.html">Visit the shop <span aria-hidden="true">→</span></a></div>
@@ -148,8 +151,24 @@
     (() => {
       const gallery = document.getElementById('rv-gallery');
       const btn = document.querySelector('.rv-more');
+      const reel = document.querySelector('.rv-reel');
+      const video = document.querySelector('.rv-video');
       gallery.classList.add('is-collapsed');
       btn.hidden = false;
+      const syncReelHeight = () => {
+        if (window.innerWidth <= 850) {
+          reel.style.height = '';
+          video.style.height = '';
+          return;
+        }
+        const tiles = [...gallery.querySelectorAll('.rv-photo')].slice(0, 12);
+        const boxes = tiles.map((tile) => tile.getBoundingClientRect());
+        const height = Math.max(...boxes.map((box) => box.bottom)) - Math.min(...boxes.map((box) => box.top));
+        reel.style.height = `${height}px`;
+        video.style.height = '100%';
+      };
+      requestAnimationFrame(syncReelHeight);
+      window.addEventListener('resize', syncReelHeight, { passive: true });
       btn.addEventListener('click', () => {
         const open = btn.getAttribute('aria-expanded') === 'true';
         gallery.classList.toggle('is-collapsed', open);
@@ -158,7 +177,7 @@
       });
       /* Reduced motion: keep the reel on its poster frame. */
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        const v = document.querySelector('.rv-video'); v.removeAttribute('autoplay'); v.pause();
+        video.removeAttribute('autoplay'); video.pause();
       }
     })();
   </script>

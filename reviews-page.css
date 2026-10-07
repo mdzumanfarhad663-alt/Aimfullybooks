@@ -20,7 +20,7 @@
 .rv-giveaway img { width: 64px; height: 64px; flex: none; }
 .rv-giveaway p { margin: 0; font-family: var(--heading); font-weight: 700; font-size: 16px; line-height: 1.4; }
 .rv-hero-media { position: relative; min-height: 0; overflow: hidden; background: var(--gold); border-radius: 0 0 0 var(--radius); }
-.rv-hero-media img { position: absolute; inset: 32px; width: calc(100% - 64px); height: calc(100% - 64px); object-fit: contain; object-position: center bottom; }
+.rv-hero-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
 
 /* --- Community: reel + photo gallery ------------------------------------ */
 .rv-community { display: grid; grid-template-columns: minmax(220px, .32fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 56px); align-items: start; background: var(--silver); }
@@ -49,6 +49,14 @@
 .rv-press-row { display: flex; align-items: center; justify-content: center; gap: clamp(32px, 6vw, 96px); flex-wrap: wrap; }
 .rv-press-row img { height: 48px; width: auto; filter: grayscale(1); opacity: .85; }
 
+/* --- Video review giveaway, moved below community reviews --------------- */
+.rv-giveaway-promo { display:flex; align-items:center; justify-content:center; gap:clamp(28px,5vw,64px); padding:clamp(40px,5vw,64px) max(var(--gutter),calc((100% - var(--container))/2)); background:var(--silver); border-top:1px solid #e4e4e4; border-bottom:1px solid #e4e4e4; }
+.rv-giveaway-promo>img { flex:none; width:clamp(120px,14vw,180px); height:auto; }
+.rv-giveaway-promo>div { max-width:680px; }
+.rv-giveaway-promo .eyebrow { margin:0 0 8px; color:var(--plum); font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+.rv-giveaway-promo h2 { margin:0; font:400 clamp(30px,3.5vw,44px)/1 var(--display); text-transform:uppercase; }
+.rv-giveaway-promo p:last-child { margin:14px 0 0; font-size:clamp(17px,1.6vw,20px); line-height:1.55; }
+
 /* --- Products ------------------------------------------------------------ */
 .rv-products-heading { margin-bottom: 40px; }
 .rv-products h2 { max-width: 20ch; }
@@ -71,12 +79,13 @@
   .rv-hero-copy { padding: 56px var(--gutter) 44px; max-width: none; }
   .rv-hero h1 { font-size: clamp(44px, 12vw, 52px); }
   .rv-hero-media { aspect-ratio: 4 / 3; border-radius: 0; }
-  .rv-hero-media img { inset: 24px; width: calc(100% - 48px); height: calc(100% - 48px); }
+  .rv-hero-media img { inset: 0; width: 100%; height: 100%; }
   .rv-reviews h2, .rv-products h2 { font-size: clamp(32px, 9vw, 38px); }
   .rv-community { grid-template-columns: 1fr; padding: 64px var(--gutter); }
   .rv-reel { position: static; max-width: 280px; margin: 0 auto; width: 100%; }
   .rv-reviews, .rv-products { padding: 72px var(--gutter); }
   .rv-press-row img { height: 36px; }
+  .rv-giveaway-promo { flex-direction:column; gap:18px; padding:48px var(--gutter); text-align:center; }
   .rv-more { width: 100%; }
 }
 @media (max-width: 600px) {
