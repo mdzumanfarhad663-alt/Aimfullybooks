@@ -140,6 +140,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, .route:focus-visible
 .actions { gap: 14px; }
 .hero-values { font-family: var(--heading); font-size: 12px; letter-spacing: .1em; }
 .hero-values li:before { width: 8px; height: 8px; border: 0; border-radius: 50%; background: var(--gold); margin-right: 10px; vertical-align: 1px; }
+.hero .button:hover, .hero .button:focus-visible { background: var(--plum); border-color: var(--plum); color: var(--white); box-shadow: 5px 5px 0 var(--charcoal); }
+.hero .button:focus-visible { outline: 2px solid var(--charcoal); outline-offset: 4px; }
 .hero-art { border-radius: 0 0 0 var(--radius); }
 
 /* --- Intro band ------------------------------------------------------------ */

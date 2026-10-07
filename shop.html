@@ -41,6 +41,9 @@
         </div>
         <!-- WooCommerce: product category links. Prototype JS filters in place; without JS all products stay visible. -->
         <div class="filter-row reveal" role="group" aria-label="Filter by category"><button class="filter" type="button" data-filter="all" aria-pressed="true">All</button><button class="filter" type="button" data-filter="coloring-books" aria-pressed="false">Coloring Books</button><button class="filter" type="button" data-filter="street-art" aria-pressed="false">Street Art</button><button class="filter" type="button" data-filter="world-books" aria-pressed="false">World Books</button></div>
+        <p class="stage-data-note">Funding stages need confirmation from Boundless Backer before titles can be grouped as pre-order or active.</p>
+        <div class="stage-anchor" id="pre-order-titles"><h3>Pre-Order Titles</h3><p>Funding-stage assignments are awaiting confirmation.</p></div>
+        <div class="stage-anchor" id="active-titles"><h3>Active Titles</h3><p>Funding-stage assignments are awaiting confirmation.</p></div>
         <!-- WooCommerce: result count. -->
         <p class="woocommerce-result-count" aria-live="polite">Showing all 9 results</p>
 
@@ -108,6 +111,17 @@
         const cards = [...grid.children];
         const count = document.querySelector('.woocommerce-result-count');
         const empty = document.querySelector('.woocommerce-info');
+        let activeCategory = 'all';
+
+        function applyFilters() {
+          let shown = 0;
+          cards.forEach((c) => {
+            const match = activeCategory === 'all' || c.dataset.category === activeCategory;
+            c.hidden = !match;
+            if (match) shown++;
+          });
+          setCount(shown);
+        }
 
         // Result count in WooCommerce's wording.
         const setCount = (n) => {
@@ -119,14 +133,8 @@
         document.querySelectorAll('.filter').forEach((btn) => {
           btn.addEventListener('click', () => {
             document.querySelectorAll('.filter').forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
-            const f = btn.dataset.filter;
-            let shown = 0;
-            cards.forEach((c) => {
-              const match = f === 'all' || c.dataset.category === f;
-              c.hidden = !match;
-              if (match) shown++;
-            });
-            setCount(shown);
+            activeCategory = btn.dataset.filter;
+            applyFilters();
           });
         });
 

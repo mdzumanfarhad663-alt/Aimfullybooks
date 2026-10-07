@@ -9,6 +9,10 @@
    ========================================================================== */
 
 [hidden] { display: none !important; } /* filtered-out cards, hidden notices */
+.stage-data-note { margin: 24px 0 0; padding: 16px 20px; background: var(--silver); font-size: 14px; line-height: 1.5; }
+.stage-anchor { scroll-margin-top: 100px; padding: 26px 0 10px; }
+.stage-anchor h3 { margin: 0 0 6px; font: 700 18px/1.3 var(--body); }
+.stage-anchor p { margin: 0; color: #686868; font-size: 14px; line-height: 1.5; }
 
 /* --- Shared heading treatment -------------------------------------------- */
 .shop-hero h1, .catalog-toolbar h2, .creator-cta h2 {
