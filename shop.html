@@ -130,6 +130,11 @@
           });
         });
 
+        // Allow the Shop mega menu to open a category directly from any page.
+        const requestedCategory = new URLSearchParams(window.location.search).get('category');
+        const requestedFilter = [...document.querySelectorAll('.filter')].find((btn) => btn.dataset.filter === requestedCategory);
+        if (requestedFilter) requestedFilter.click();
+
         // Price options reorder the demo cards; the others keep the default order (no sales or rating data in the prototype).
         document.getElementById('orderby').addEventListener('change', (e) => {
           const v = e.target.value;
