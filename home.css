@@ -362,9 +362,21 @@ a:focus-visible, button:focus-visible, input:focus-visible, .route:focus-visible
   border-color: var(--plum);
   color: var(--white);
 }
-.hero h1 { font-size: clamp(34px, 3.6vw, 52px); max-width: none; }
+.hero h1 { font-size: clamp(64px, 5.6vw, 80px); max-width: none; }
 @media (min-width: 851px) { .hero h1 br { display: block; } }
 .hero .lede { max-width: 48ch; }
+
+/* Keep the four participation card titles and descriptions on shared rows. */
+.participate-grid .route {
+  display: grid;
+  grid-template-rows: 150px auto 1fr auto;
+  align-content: start;
+}
+.participate-grid .route h3,
+.participate-grid .route p,
+.participate-grid .route-pending { grid-column: 1 / -1; }
+.participate-grid .route h3 { align-self: end; margin-bottom: 12px; }
+.participate-grid .route p { align-self: start; }
 
 /* The client-supplied brand statement is longer than the prototype placeholder. */
 .quote blockquote {
@@ -436,7 +448,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, .route:focus-visible
 .route[aria-disabled="true"]:hover { transform: none; }
 
 @media (max-width: 850px) {
-  .hero h1 { font-size: clamp(30px, 8.5vw, 50px); }
+  .hero h1 { font-size: clamp(44px, 12vw, 52px); }
+  .participate-grid .route { grid-template-rows: 76px auto 1fr auto; }
   .mega-menu { display: none; }
   .pending-nav { display: none; }
 }
