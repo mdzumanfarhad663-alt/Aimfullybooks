@@ -6,7 +6,7 @@
 
       this.innerHTML = `
         <a class="brand" href="./index.html" aria-label="Boundless Backer home">
-          <img class="brand-logo" src="./assets/BoundlessBacker_PrimaryLogo_Main.svg" alt="Boundless Backer" width="160" height="48" />
+          <img class="brand-logo" src="./assets/BoundlessBacker_PrimaryLogo_Main.svg" alt="Boundless Backer" width="210" height="88" />
         </a>
         <nav aria-label="Primary navigation">
           <a${active('index.html')} href="./index.html">Home</a>
