@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="./thank-you-page.css"/>
   <script src="./global-header.js" defer></script>
   <script src="./animations.js" defer></script>
+  <script src="./thank-you.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -31,6 +32,7 @@
       <h1>welcome to our tribe!</h1>
       <!-- WooCommerce default order-received notice. -->
       <p class="ty-lede">Thank you. Your order has been received.</p>
+      <p class="ty-backer-message">You’re officially a Boundless Backer.</p>
       <ol class="co-steps" aria-label="Checkout progress">
         <li class="is-done"><a class="link-underline" href="./cart.html">Cart</a></li>
         <li class="is-done"><a class="link-underline" href="./checkout.html">Checkout</a></li>
@@ -53,7 +55,7 @@
         <table class="co-order-table ty-table">
           <thead><tr><th scope="col">Product</th><th scope="col">Total</th></tr></thead>
           <tbody>
-            <tr class="co-order-item"><td><div class="co-item"><span class="co-thumb"><img src="./assets/cart-street-art-thumb.webp" width="400" height="400" alt="" loading="lazy"/><span class="co-thumb-qty" aria-hidden="true">2</span></span><span class="co-item-name">The Ultimate Street Art Coloring Book - Premium Paperback <strong class="co-item-qty">× 2</strong></span></div></td><td>$50.00</td></tr>
+            <tr class="co-order-item" data-product-url="./product.html"><td><div class="co-item"><span class="co-thumb"><img src="./assets/cart-street-art-thumb.webp" width="400" height="400" alt="" loading="lazy"/><span class="co-thumb-qty" aria-hidden="true">2</span></span><span class="co-item-name">The Ultimate Street Art Coloring Book - Premium Paperback <strong class="co-item-qty">× 2</strong></span></div></td><td>$50.00</td></tr>
           </tbody>
           <tbody class="co-order-totals">
             <tr><th scope="row">Subtotal:</th><td>$50.00</td></tr>
@@ -81,10 +83,24 @@
         </section>
       </div>
 
-      <!-- CLIENT: next-steps copy (confirmation email, shipping time) -->
       <section class="ty-next" aria-labelledby="ty-next-title">
         <h2 id="ty-next-title">What happens next</h2>
-        <p class="co-ph">[Next-steps copy from the client: confirmation email, shipping time. Staging has none.]</p>
+        <div class="ty-next-content">
+          <section aria-labelledby="ty-fulfillment-title">
+            <h3 id="ty-fulfillment-title">1. Processing and Fulfillment</h3>
+            <p>If your product is in stock, we’ll ship it from Florida within 24 to 48 hours and email your tracking number immediately.</p>
+            <p>If you pre-ordered a title in the funding stage, we’ll notify you when the funding season ends. Because we curate high-end artwork, we don’t rush our artists’ process, but we don’t stretch it out forever either.</p>
+            <p>Feel free to <a class="link-underline" href="mailto:hello@boundlessbacker.com">email us</a> anytime to check your title’s status. If you need a refund, we’ll cancel your order instantly as long as the campaign is open and production hasn’t started. If a project falls short, you’ll get a full refund—though we’d prefer to help you pick another title to back.</p>
+          </section>
+          <section aria-labelledby="ty-tribe-title">
+            <h3 id="ty-tribe-title">2. Engage with the Tribe</h3>
+            <p>Bringing a new class of intentional responsibility to the world is a monumental challenge, and we need all the support we can get. Talk about us online, tag our official accounts, and follow our livestreams. Track the creative journeys of our traveling ambassadors, message the authors directly, and connect with other backers. Tell our story. Tell us your story, too. This is your tribe—let’s build it together.</p>
+          </section>
+          <section aria-labelledby="ty-feedback-title">
+            <h3 id="ty-feedback-title">3. Tell Us What You Think</h3>
+            <p>Once your book arrives, drop a review on our product pages, share a video unboxing on your socials, and tag us. We’d love to see you! Your raw feedback helps our community discover their next favorite indie author and signals which creator to back next.</p>
+          </section>
+        </div>
       </section>
 
       <!-- Staging extra, verbatim: share block. Staging uses an HTML-widget share icon + [share_purchased_product_popup] (popup not working). -->
@@ -93,8 +109,8 @@
         <!-- Staging video: YouTube APpZO-jWZe0. Neutral placeholder (no images on this page); WordPress: Elementor Video widget, click-to-play. -->
         <div class="ty-video" role="img" aria-label="Video placeholder"><span class="ty-play" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" focusable="false"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="ty-video-label">Video</span></div>
         <p class="ty-share-text">Crowdfunding needs a crowd. Share this art project with your tribe!</p>
-        <!-- [PLACEHOLDER: share popup / share links for the purchased product; staging button links to #.] -->
-        <a class="button button-outline btn-hover ty-share-btn" href="#"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><line x1="6" y1="12" x2="16" y2="7" stroke="currentColor" stroke-width="1.6"/><line x1="6" y1="12" x2="16" y2="17" stroke="currentColor" stroke-width="1.6"/><circle cx="6" cy="12" r="3" fill="#fff" stroke="currentColor" stroke-width="1.6"/><circle cx="18" cy="6" r="3" fill="#fff" stroke="currentColor" stroke-width="1.6"/><circle cx="18" cy="18" r="3" fill="#fff" stroke="currentColor" stroke-width="1.6"/></svg>SHARE IT WITH YOURS</a>
+        <!-- WooCommerce should render the permalink of the first ordered product here. -->
+        <a class="button button-outline btn-hover ty-share-btn" href="./product.html"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><line x1="6" y1="12" x2="16" y2="7" stroke="currentColor" stroke-width="1.6"/><line x1="6" y1="12" x2="16" y2="17" stroke="currentColor" stroke-width="1.6"/><circle cx="6" cy="12" r="3" fill="#fff" stroke="currentColor" stroke-width="1.6"/><circle cx="18" cy="6" r="3" fill="#fff" stroke="currentColor" stroke-width="1.6"/><circle cx="18" cy="18" r="3" fill="#fff" stroke="currentColor" stroke-width="1.6"/></svg>SHARE IT WITH YOURS</a>
       </section>
 
       <div class="ty-actions">

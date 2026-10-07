@@ -16,6 +16,7 @@
 .ty-title .eyebrow { margin-bottom: 14px; }
 .ty-title h1 { font-family: var(--display); font-weight: 400; letter-spacing: 0; text-transform: uppercase; font-size: clamp(44px, 5vw, 72px); line-height: .98; margin: 0 auto; max-width: 16ch; }
 .ty-lede { margin: 16px 0 0; font-size: clamp(17px, 1.3vw, 19px); color: #444; }
+.ty-backer-message { margin: 10px 0 0; font-family: var(--heading); font-weight: 700; font-size: clamp(19px, 1.6vw, 23px); line-height: 1.35; }
 
 /* --- Content column ~960px -------------------------------------------------- */
 .ty-wrap { max-width: 960px; margin: 0 auto; padding: 0 var(--gutter); box-sizing: content-box; display: grid; gap: 20px; }
@@ -35,10 +36,13 @@
 .ty-card address { font-style: normal; line-height: 1.7; color: #444; }
 .ty-contact { margin: 10px 0 0; line-height: 1.7; color: #444; }
 
-/* What happens next (placeholder) */
-.ty-next { padding: 24px 28px; border: 1px dashed #A8A8A8; border-radius: 10px; }
-.ty-next h2 { font-family: var(--display); font-weight: 400; letter-spacing: 0; text-transform: uppercase; font-size: 26px; line-height: 1.05; margin: 0 0 10px; }
-.ty-next p { margin: 0; }
+/* Next steps from the client */
+.ty-next { padding: 24px 28px; border: 1px solid #E4E4E4; border-radius: 10px; }
+.ty-next h2 { font-family: var(--display); font-weight: 400; letter-spacing: 0; text-transform: uppercase; font-size: 26px; line-height: 1.05; margin: 0 0 20px; }
+.ty-next-content { display: grid; gap: 20px; }
+.ty-next-content h3 { margin: 0 0 8px; font-family: var(--heading); font-size: 16px; line-height: 1.4; }
+.ty-next-content p { margin: 0 0 10px; line-height: 1.65; color: #444; }
+.ty-next-content p:last-child { margin-bottom: 0; }
 
 /* Share block (staging extra) */
 .ty-share { display: grid; gap: 16px; justify-items: center; text-align: center; }
